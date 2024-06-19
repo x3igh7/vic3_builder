@@ -8,7 +8,7 @@ class ProductionMethodGroupsParser:
         self.is_production_methods_open = False
 
     def parse(self):
-        building_district_list = []
+        item_list = []
         for filename in os.listdir(self.folder_path):
             if filename.endswith(".txt"):  # Check file extension
                 print(f"Parsing file: {filename}")
@@ -16,13 +16,13 @@ class ProductionMethodGroupsParser:
                     lines = file.readlines()
 
                     cleaner = PdxTextLineCleaner(lines)
-                    building_district_list += cleaner.clean(self.callback)
+                    item_list += cleaner.clean(self.callback)
 
                     file.close()
         with open(os.path.join(self.folder_path, 'production_method_groups.json'), 'w') as json_file:
-            json.dump(building_district_list, json_file)
+            json.dump(item_list, json_file)
 
-        return building_district_list
+        return item_list
 
     def callback(self, line, item_dict):
         item_dict = self.handleUnlockingTechnologies(line, item_dict)

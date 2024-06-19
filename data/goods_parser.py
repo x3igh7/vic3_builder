@@ -9,7 +9,7 @@ class GoodsParser:
         self.is_production_method_groups_open = False
 
     def parse(self):
-        building_district_list = []
+        item_list = []
         for filename in os.listdir(self.folder_path):
             if filename.endswith(".txt"):  # Check file extension
                 print(f"Parsing file: {filename}")
@@ -17,13 +17,13 @@ class GoodsParser:
                     lines = file.readlines()
 
                     cleaner = PdxTextLineCleaner(lines)
-                    building_district_list += cleaner.clean(self.callback)
+                    item_list += cleaner.clean(self.callback)
 
                     file.close()
         with open(os.path.join(self.folder_path, 'goods.json'), 'w') as json_file:
-            json.dump(building_district_list, json_file)
+            json.dump(item_list, json_file)
 
-        return building_district_list
+        return item_list
 
     def callback(self, line, item_dict):
         return item_dict
