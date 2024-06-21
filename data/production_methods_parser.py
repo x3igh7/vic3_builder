@@ -3,8 +3,9 @@ import json
 from pdx_text_line_cleaner import PdxTextLineCleaner
 
 class ProductionMethodsParser:
-    def __init__(self, folder_path):
+    def __init__(self, folder_path, output_path):
         self.folder_path = folder_path
+        self.output_path = output_path
         self.is_unlocking_technologies_open = False
         self.is_building_modifiers_open = False
         self.is_workforce_scaled_open = False
@@ -22,14 +23,15 @@ class ProductionMethodsParser:
                     item_list += cleaner.clean(self.callback)
 
                     file.close()
-        with open(os.path.join(self.folder_path, 'production_methods.json'), 'w') as json_file:
+        with open(os.path.join(self.output_path, 'production_methods.json'), 'w') as json_file:
             json.dump(item_list, json_file)
 
         return item_list
 
     def callback(self, line, item_dict):
         item_dict = self.handleUnlockingTechnologies(line, item_dict)
-        item_dict = self.handleBuildingModifiers(line, item_dict)
+        if(self.is_unlocking_technologies_open == False):
+            item_dict = self.handleBuildingModifiers(line, item_dict)
         return item_dict
 
     def handleUnlockingTechnologies(self, line, item_dict):
@@ -51,7 +53,7 @@ class ProductionMethodsParser:
         if isHeaderInLine and self.is_building_modifiers_open == False:
             self.is_building_modifiers_open = True
 
-        if self.is_building_modifiers_open:
+        if self.is_building_modifiers_open and isHeaderInLine == False:
             self.handleWorkforceScaled(line, item_dict)
 
         if self.is_building_modifiers_open and self.is_workforce_scaled_open == False and isHeaderInLine != True:
@@ -74,18 +76,24 @@ class ProductionMethodsParser:
                 if(line.strip() != ""):
                     goods = self.open_goods_json()
 
-                    if("input" in line and "#" not in line):
+                    if("input" in line and "=" in line):
                         results = [good for good in goods if good["name"] in line]
+                        amount = line.split("=")[1].strip()
+                        if("#" in amount):
+                            amount = amount.split("#")[0].strip()
                         input_item = {
                             "good": results[0]["name"],
-                            "amount": line.split("=")[1].strip()
+                            "amount": int(amount)
                         }
                         item_dict["inputs"].append(input_item)
-                    elif("output" in line and "#" not in line):
+                    elif("output" in line and "=" in line):
                         results = [good for good in goods if good["name"] in line]
+                        amount = line.split("=")[1].strip()
+                        if("#" in amount):
+                            amount = amount.split("#")[0].strip()
                         output_item = {
                             "good": results[0]["name"],
-                            "amount": line.split("=")[1].strip()
+                            "amount": int(amount)
                         }
                         item_dict["outputs"].append(output_item)
 

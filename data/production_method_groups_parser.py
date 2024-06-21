@@ -3,8 +3,9 @@ import json
 from pdx_text_line_cleaner import PdxTextLineCleaner
 
 class ProductionMethodGroupsParser:
-    def __init__(self, folder_path):
+    def __init__(self, folder_path, output_path):
         self.folder_path = folder_path
+        self.output_path = output_path
         self.is_production_methods_open = False
 
     def parse(self):
@@ -19,7 +20,7 @@ class ProductionMethodGroupsParser:
                     item_list += cleaner.clean(self.callback)
 
                     file.close()
-        with open(os.path.join(self.folder_path, 'production_method_groups.json'), 'w') as json_file:
+        with open(os.path.join(self.output_path, 'production_method_groups.json'), 'w') as json_file:
             json.dump(item_list, json_file)
 
         return item_list

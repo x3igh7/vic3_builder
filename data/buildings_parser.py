@@ -3,8 +3,9 @@ import json
 from pdx_text_line_cleaner import PdxTextLineCleaner
 
 class BuildingsParser:
-    def __init__(self, folder_path):
+    def __init__(self, folder_path, output_path):
         self.folder_path = folder_path
+        self.output_path = output_path
         self.is_unlocking_technologies_open = False
         self.is_production_method_groups_open = False
 
@@ -20,7 +21,7 @@ class BuildingsParser:
                     building_district_list += cleaner.clean(self.callback)
 
                     file.close()
-        with open(os.path.join(self.folder_path, 'buildings.json'), 'w') as json_file:
+        with open(os.path.join(self.output_path, 'buildings.json'), 'w') as json_file:
             json.dump(building_district_list, json_file)
 
         return building_district_list
@@ -43,7 +44,7 @@ class BuildingsParser:
                 item_dict["unlocking_technologies"].append(line)
 
         return item_dict
-    
+
     def handleProductionMethodGroups(self, line, item_dict):
         isHeaderInLine = "production_method_groups" in line
         if isHeaderInLine and self.is_production_method_groups_open == False:
