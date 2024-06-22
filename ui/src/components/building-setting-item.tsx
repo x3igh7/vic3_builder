@@ -6,6 +6,7 @@ import Building from '@/interfaces/building';
 import ProductionMethodGroup from '@/interfaces/production-method-group';
 import ProductionMethod from '@/interfaces/production_method';
 import ProductionMethodGroupItem from '@/components/production-method-group-item';
+import { css } from '@emotion/react';
 
 const BuildingSettingItem = ({
   building,
@@ -21,8 +22,21 @@ const BuildingSettingItem = ({
   onSettingChange: (setting: BuildingSetting) => void;
 }): ReactElement => {
   const handleSelectedProductionMethodChange = (
+    groupName: string,
     selectedProductionMethod: ProductionMethod,
-  ) => {};
+  ) => {
+    onSettingChange({
+      ...buildingSetting,
+      productionMethodGroups: buildingSetting.productionMethodGroups.map(
+        (group) => {
+          if (group.name === groupName) {
+            return { ...group, currentMethod: selectedProductionMethod };
+          }
+          return group;
+        },
+      ),
+    });
+  };
 
   const generateProductionMethodGroupSelectors = (): ReactElement[] => {
     const buildingProductionMethodGroups = productionMethodGroups.filter(
@@ -58,10 +72,17 @@ const BuildingSettingItem = ({
   };
 
   return (
-    <div>
+    <div
+      css={css({
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        alignContent: 'center',
+      })}
+    >
       <div>
         <label>{building.name}</label>
       </div>
+      {generateProductionMethodGroupSelectors()}
     </div>
   );
 };

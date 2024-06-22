@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactElement } from 'react';
 import ProductionMethod from '@/interfaces/production_method';
 import {
@@ -17,6 +19,7 @@ const ProductionMethodGroupItem = ({
   groupProductionMethods: ProductionMethod[];
   selectedProductionMethod: ProductionMethod;
   onSelectedProductionMethodChange: (
+    groupName: string,
     productionMethod: ProductionMethod,
   ) => void;
 }): ReactElement => {
@@ -27,7 +30,7 @@ const ProductionMethodGroupItem = ({
   };
 
   const handleProductionMethodChange = (e: AutoCompleteChangeEvent) => {
-    onSelectedProductionMethodChange(e.value);
+    onSelectedProductionMethodChange(name, e.value);
   };
 
   return (
