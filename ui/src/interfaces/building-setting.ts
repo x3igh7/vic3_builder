@@ -1,4 +1,4 @@
-import ProductionMethod from '@/interfaces/production_method';
+import ProductionMethod from '@/interfaces/production-method';
 
 export default interface BuildingSetting {
   name: string;

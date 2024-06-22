@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
-import ProductionMethod from '@/interfaces/production_method';
-import { AutoComplete, AutoCompleteChangeEvent, AutoCompleteCompleteEvent } from 'primereact/autocomplete';
+import ProductionMethod from '@/interfaces/production-method';
+import { AutoComplete, AutoCompleteCompleteEvent, AutoCompleteSelectEvent } from 'primereact/autocomplete';
 import { css } from '@emotion/react';
 
 const ProductionMethodGroupItem = ({
@@ -26,8 +26,10 @@ const ProductionMethodGroupItem = ({
     );
   };
 
-  const handleProductionMethodChange = (e: AutoCompleteChangeEvent) => {
-    onSelectedProductionMethodChange(name, e.value);
+  const handleProductionMethodChange = (e: AutoCompleteSelectEvent) => {
+    if (e.value?.hasOwnProperty('name') && groupProductionMethods.some((method) => method.name === e.value.name)) {
+      onSelectedProductionMethodChange(name, e.value);
+    }
   };
 
   return (
@@ -38,8 +40,9 @@ const ProductionMethodGroupItem = ({
         value={selectedProductionMethod}
         suggestions={suggestedMethods}
         completeMethod={handleMethodSearch}
-        onChange={handleProductionMethodChange}
+        onSelect={handleProductionMethodChange}
         dropdown
+        forceSelection
       />
     </div>
   );

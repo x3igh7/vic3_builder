@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
-import BuildingSetting from '@/interfaces/building_setting';
+import BuildingSetting from '@/interfaces/building-setting';
 import Building from '@/interfaces/building';
 import ProductionMethodGroup from '@/interfaces/production-method-group';
-import ProductionMethod from '@/interfaces/production_method';
+import ProductionMethod from '@/interfaces/production-method';
 import ProductionMethodGroupItem from '@/components/production-method-group-item';
 import { css } from '@emotion/react';
 
