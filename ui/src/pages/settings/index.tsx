@@ -17,11 +17,11 @@ const SettingsPage = (): ReactElement => {
       .then((response) => response.json())
       .then((data) => setBuildings(data));
 
-    fetch('data/production-method-groups.json')
+    fetch('data/production_method_groups.json')
       .then((response) => response.json())
       .then((data) => setProductionMethodGroups(data));
 
-    fetch('data/production-methods.json')
+    fetch('data/production_methods.json')
       .then((response) => response.json())
       .then((data) => setProductionMethods(data));
   }, []);

@@ -58,17 +58,20 @@ const BuildingSettingItem = ({
   };
 
   return (
-    <div
-      css={css({
-        display: 'flex',
-        flexFlow: 'row nowrap',
-        alignContent: 'center',
-      })}
-    >
-      <div>
-        <label>{building.name}</label>
+    <div css={{ marginBottom: '1rem' }}>
+      <h3>
+        <label>{building?.name}</label>
+      </h3>
+      <div
+        css={css({
+          display: 'flex',
+          flexFlow: 'row wrap',
+          alignContent: 'center',
+          gap: '1rem',
+        })}
+      >
+        {generateProductionMethodGroupSelectors()}
       </div>
-      {generateProductionMethodGroupSelectors()}
     </div>
   );
 };

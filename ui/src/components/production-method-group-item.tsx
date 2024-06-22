@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import ProductionMethod from '@/interfaces/production_method';
 import { AutoComplete, AutoCompleteChangeEvent, AutoCompleteCompleteEvent } from 'primereact/autocomplete';
 import { css } from '@emotion/react';
@@ -14,8 +14,16 @@ const ProductionMethodGroupItem = ({
   selectedProductionMethod: ProductionMethod;
   onSelectedProductionMethodChange: (groupName: string, productionMethod: ProductionMethod) => void;
 }): ReactElement => {
+  const [suggestedMethods, setSuggestedMethods] = useState<ProductionMethod[]>([]);
+
+  useEffect(() => {
+    setSuggestedMethods(groupProductionMethods);
+  }, []);
+
   const handleMethodSearch = (e: AutoCompleteCompleteEvent) => {
-    return groupProductionMethods.filter((method) => method.name.toLowerCase().includes(e.query.toLowerCase()));
+    setSuggestedMethods(
+      groupProductionMethods.filter((method) => method.name.toLowerCase().includes(e.query.toLowerCase())),
+    );
   };
 
   const handleProductionMethodChange = (e: AutoCompleteChangeEvent) => {
@@ -26,10 +34,12 @@ const ProductionMethodGroupItem = ({
     <div css={css({ display: 'flex', flexDirection: 'column' })}>
       <label>{name}</label>
       <AutoComplete
+        field={'name'}
         value={selectedProductionMethod}
-        suggestions={groupProductionMethods}
+        suggestions={suggestedMethods}
         completeMethod={handleMethodSearch}
         onChange={handleProductionMethodChange}
+        dropdown
       />
     </div>
   );
