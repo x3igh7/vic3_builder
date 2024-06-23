@@ -30,6 +30,7 @@ const useDataHook = () => {
       .map((building) => {
         return {
           name: building.name,
+          unlocking_technologies: building.unlocking_technologies || [],
           productionMethodGroups: productionMethodGroups
             .filter((group) => building.production_method_groups.includes(group.name))
             .map((group) => {

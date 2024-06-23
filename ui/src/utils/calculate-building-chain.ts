@@ -132,6 +132,14 @@ const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]) => {
   });
 };
 
+const getSettingRequiredTechs = (setting: BuildingSetting) => {
+  const buildingTechs = setting?.unlocking_technologies || [];
+  const productionTechs = setting.productionMethodGroups?.flatMap(
+    (group) => group.currentMethod?.unlocking_technologies || [],
+  );
+  return [...buildingTechs, ...productionTechs];
+};
+
 const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], settings: BuildingSetting[]) => {
   const totalChainDeltas = calculateBuildingChainDeltas(buildingChain);
   const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
@@ -172,6 +180,7 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
   // add updated building to the chain
   const updatedBuilding = {
     name: setting.name,
+    requiredTechs: existingBuilding?.requiredTechs || getSettingRequiredTechs(setting) || [],
     quantity: totalQuantity,
     totalInputs: totalNewBuildingInputs,
     totalOutputs: totalNewBuildingsOutputs,
@@ -194,6 +203,7 @@ const calculateBuildingChain = (selectedBuilding: Building, quantity: number, se
 
   buildingChain.push({
     name: selectedBuildingSetting.name,
+    requiredTechs: getSettingRequiredTechs(selectedBuildingSetting),
     quantity,
     totalInputs: baseInputs,
     totalOutputs: baseOutputs,
@@ -211,4 +221,5 @@ export {
   calculateBuildingChainDeltas,
   recursiveCalculateBuildingChain,
   calculateBuildingChain,
+  getSettingRequiredTechs,
 };
