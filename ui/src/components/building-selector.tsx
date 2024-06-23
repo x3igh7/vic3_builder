@@ -7,6 +7,7 @@ import {
 } from 'primereact/autocomplete';
 import { InputNumber, InputNumberChangeEvent } from 'primereact/inputnumber';
 import Building from '@/interfaces/building';
+import { css } from '@emotion/react';
 
 const BuildingSelector = ({
   buildings,
@@ -52,8 +53,10 @@ const BuildingSelector = ({
 
   return (
     <div>
-      <div>
-        <label htmlFor="buildingSelector">Building Type</label>
+      <div css={css({ marginBottom: '1rem' })}>
+        <label htmlFor="buildingSelector" css={css({ marginRight: '1rem' })}>
+          Building Type
+        </label>
         <AutoComplete
           inputId="buildingSelector"
           field={'name'}
@@ -68,7 +71,9 @@ const BuildingSelector = ({
         ></AutoComplete>
       </div>
       <div>
-        <label htmlFor="quantityInput">Quantity</label>
+        <label htmlFor="quantityInput" css={css({ marginRight: '1rem' })}>
+          Quantity
+        </label>
         <InputNumber
           inputId="quantityInput"
           value={buildingQuantity}

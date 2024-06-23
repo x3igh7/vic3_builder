@@ -4,7 +4,6 @@ import ProductionResult from '@/interfaces/production-result';
 import BuildingChain from '@/interfaces/building-chain';
 
 const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
-  console.log('setting', setting);
   return setting.productionMethodGroups
     .flatMap((group) => {
       if (!group.currentMethod.inputs) {
@@ -73,7 +72,6 @@ const getBuildingSettingByGood = (
 
 const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
   const chainInputs = buildingChain.flatMap((building) => {
-    console.log(`${building.name}`, building.totalInputs);
     return [
       ...building.totalInputs.map((input) => {
         return { ...input };
@@ -122,9 +120,7 @@ const calculateBuildingChainOutputs = (buildingChain: BuildingChain[]) => {
 
 const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]) => {
   const totalChainInputs = calculateBuildingChainInputs(buildingChain);
-  console.log('totalChainInputs', totalChainInputs);
   const totalChainOutputs = calculateBuildingChainOutputs(buildingChain);
-  console.log('totalChainOutputs', totalChainOutputs);
 
   return totalChainInputs.map((input) => {
     const outputGood = totalChainOutputs.find((output) => output.good === input.good);
@@ -139,11 +135,6 @@ const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]) => {
 const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], settings: BuildingSetting[]) => {
   const totalChainDeltas = calculateBuildingChainDeltas(buildingChain);
   const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
-
-  console.log(
-    'construction start',
-    buildingChain.find((building) => building.name.includes('construction')),
-  );
 
   // if there are no negative deltas, the chain is complete
   if (negativeDeltas.length === 0) {
@@ -185,14 +176,7 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
     totalInputs: totalNewBuildingInputs,
     totalOutputs: totalNewBuildingsOutputs,
   };
-  console.log('updatedBuilding', updatedBuilding);
   const updatedChain = [...filteredChain, updatedBuilding];
-  console.log('updatedChain', updatedChain);
-
-  console.log(
-    'construction end',
-    updatedChain.find((building) => building.name.includes('construction')),
-  );
 
   // repeat the process until all negative deltas are resolved
   return recursiveCalculateBuildingChain(updatedChain, settings);

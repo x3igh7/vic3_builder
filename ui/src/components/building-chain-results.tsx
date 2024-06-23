@@ -12,7 +12,7 @@ const BuildingChainResults = ({
   selectedBuilding: Building | undefined;
   quantity: number | null;
 }): ReactElement => {
-  const { buildings, productionMethods, productionMethodGroups, settings } = useDataHook();
+  const { settings } = useDataHook();
   const [currentBuildingChain, setCurrentBuildingChain] = useState<BuildingChain[]>([]);
 
   useEffect(() => {
@@ -26,9 +26,9 @@ const BuildingChainResults = ({
   const getBuildingChainItems = () => {
     return currentBuildingChain.map((chainItem) => {
       return (
-        <div key={chainItem.name}>
+        <div key={chainItem.name} css={css({ '> *': { marginRight: '1rem' } })}>
           <label>{chainItem.name}: </label>
-          <span>Quantity: {chainItem.quantity}</span>
+          <span css={css({ color: '#9eade6' })}>{chainItem.quantity}</span>
         </div>
       );
     });
@@ -40,7 +40,7 @@ const BuildingChainResults = ({
       const styleColor = delta.amount < 0 ? 'red' : 'green';
 
       return (
-        <div key={delta.good}>
+        <div key={delta.good} css={css({ '> *': { marginRight: '1rem' } })}>
           <label>{delta.good}</label>
           <span css={{ color: styleColor }}>Excess Output: {delta.amount}</span>
         </div>

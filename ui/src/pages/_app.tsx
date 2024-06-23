@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/viva-dark/theme.css';
+import 'primeicons/primeicons.css';
 import Link from 'next/link';
 
 export default function App({ Component, pageProps }: AppProps) {
