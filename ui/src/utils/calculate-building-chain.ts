@@ -8,6 +8,10 @@ import BuildingChain from '@/interfaces/building-chain';
 const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
   return setting.productionMethodGroups
     .flatMap((group) => {
+      if (!group.currentMethod.inputs) {
+        return [];
+      }
+
       return group.currentMethod.inputs;
     })
     .reduce<ProductionResult[]>((acc, input) => {
@@ -53,10 +57,14 @@ const getTotalSettingOutputPerBuilding = (setting: BuildingSetting) => {
 const getBuildingSettingByGood = (
   good: string,
   settings: BuildingSetting[],
-): [setting: BuildingSetting, outputGood: ProductionResult] => {
+): [setting: BuildingSetting | undefined, outputGood: ProductionResult | undefined] => {
   const setting = settings.find((s) =>
     s.productionMethodGroups.some((g) => g.currentMethod.outputs?.some((o) => o.good === good)),
   ) as BuildingSetting;
+
+  // if no setting found, return undefined
+  if (!setting) return [undefined, undefined];
+
   const outputGood = setting.productionMethodGroups
     .find((g) => g.currentMethod.outputs?.some((o) => o.good === good))
     ?.currentMethod.outputs?.find((o) => o.good === good) as ProductionResult;
@@ -68,7 +76,6 @@ const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
   const chainInputs = buildingChain.flatMap((building) => {
     return building.totalInputs;
   });
-  console.log('chainInputs', chainInputs);
   return chainInputs.reduce<ProductionResult[]>((acc, input) => {
     if (acc.some((a) => a.good === input.good)) {
       const updated = acc.map((a) => {
@@ -131,6 +138,10 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
   const delta = negativeDeltas[0];
   // find the building that produces the good
   const [setting, outputGood] = getBuildingSettingByGood(delta.good, settings);
+  // if no possible building is found for an excess good, return the chain as is
+  if (!setting || !outputGood) {
+    return buildingChain;
+  }
   const requiredGoodAmount = delta.amount * -1;
   const totalBuildingRequired = Math.ceil(requiredGoodAmount / outputGood.amount);
   const totalBuildingsOutput = getTotalSettingOutputPerBuilding(setting as BuildingSetting).map((output) => {
@@ -149,8 +160,6 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
     totalOutputs: totalBuildingsOutput,
   });
 
-  console.log('filteredChain', filteredChain);
-
   // repeat the process until all negative deltas are resolved
   return recursiveCalculateBuildingChain(filteredChain, settings);
 };
@@ -164,7 +173,6 @@ const calculateBuildingChain = (
   settings: BuildingSetting[],
 ) => {
   const selectedBuildingSetting = settings.find((s) => s.name === selectedBuilding.name) as BuildingSetting;
-  console.log('selectedBuildingSetting', selectedBuildingSetting);
   let baseInputs = getTotalSettingInputPerBuilding(selectedBuildingSetting).map((input) => {
     return { ...input, amount: (input.amount = input.amount * quantity) };
   });
@@ -179,9 +187,17 @@ const calculateBuildingChain = (
     totalInputs: baseInputs,
     totalOutputs: baseOutputs,
   });
-  console.log('buildingChain', buildingChain);
 
   return recursiveCalculateBuildingChain(buildingChain, settings);
 };
 
-export { calculateBuildingChain, calculateBuildingChainDeltas };
+export {
+  getTotalSettingInputPerBuilding,
+  getTotalSettingOutputPerBuilding,
+  getBuildingSettingByGood,
+  calculateBuildingChainInputs,
+  calculateBuildingChainOutputs,
+  calculateBuildingChainDeltas,
+  recursiveCalculateBuildingChain,
+  calculateBuildingChain,
+};
