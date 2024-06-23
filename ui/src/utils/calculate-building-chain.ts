@@ -4,6 +4,7 @@ import ProductionResult from '@/interfaces/production-result';
 import BuildingChain from '@/interfaces/building-chain';
 
 const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
+  console.log('setting', setting);
   return setting.productionMethodGroups
     .flatMap((group) => {
       if (!group.currentMethod.inputs) {
@@ -73,7 +74,11 @@ const getBuildingSettingByGood = (
 const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
   const chainInputs = buildingChain.flatMap((building) => {
     console.log(`${building.name}`, building.totalInputs);
-    return [...building.totalInputs.map((input) => input)];
+    return [
+      ...building.totalInputs.map((input) => {
+        return { ...input };
+      }),
+    ];
   });
   return chainInputs.reduce<ProductionResult[]>((acc, input) => {
     if (acc.some((a) => a.good === input.good)) {
@@ -93,7 +98,11 @@ const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
 
 const calculateBuildingChainOutputs = (buildingChain: BuildingChain[]) => {
   const chainOutputs = buildingChain.flatMap((building) => {
-    return [...building.totalOutputs.map((output) => output)];
+    return [
+      ...building.totalOutputs.map((output) => {
+        return { ...output };
+      }),
+    ];
   });
   return chainOutputs.reduce<ProductionResult[]>((acc, output) => {
     if (acc.some((a) => a.good === output.good)) {
@@ -157,7 +166,7 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
   const existingBuilding = buildingChain.find((building) => building.name === setting.name);
   // calculate new quantity
   const totalQuantity = existingBuilding ? existingBuilding.quantity + totalBuildingRequired : totalBuildingRequired;
-  
+
   // calculate new building outputs and inputs per quantity
   const totalNewBuildingsOutputs = getTotalSettingOutputPerBuilding(setting as BuildingSetting).map((output) => {
     return { ...output, ...{ amount: output.amount * totalQuantity } };

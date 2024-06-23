@@ -18,14 +18,7 @@ const BuildingChainResults = ({
   useEffect(() => {
     if (selectedBuilding && quantity) {
       // calculate building chain
-      const result = calculateBuildingChain(
-        selectedBuilding,
-        quantity,
-        buildings,
-        productionMethodGroups,
-        productionMethods,
-        settings,
-      );
+      const result = calculateBuildingChain(selectedBuilding, quantity, settings);
       setCurrentBuildingChain(result);
     }
   }, [selectedBuilding]);
