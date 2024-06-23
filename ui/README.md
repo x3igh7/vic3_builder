@@ -1,5 +1,7 @@
 ## Vic3 Builder UI
 
+Access at [http://vic3.connerpsmith.net](http://vic3.connerpsmith.net)
+
 This project contains scripts for transforming Vic3 files into usable JSON objects. There is a simple
 UI for selecting which building you wish to construct. The resulting build chain will be displayed.
 There is a setting page that allows you to adjust which projection methods are in effect for each building.
