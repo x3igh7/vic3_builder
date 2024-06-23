@@ -1,3 +1,11 @@
+## Vic3 Builder UI
+
+This project contains scripts for transforming Vic3 files into usable JSON objects. There is a simple
+UI for selecting which building you wish to construct. The resulting build chain will be displayed.
+There is a setting page that allows you to adjust which projection methods are in effect for each building.
+
+The UI can be launched with the `index.html` in the `/ui/out` directory.
+
 ## TODO
 
 * Handle multiple build paths (particularly with synthetics)
