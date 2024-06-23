@@ -68,6 +68,7 @@ const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
   const chainInputs = buildingChain.flatMap((building) => {
     return building.totalInputs;
   });
+  console.log('chainInputs', chainInputs);
   return chainInputs.reduce<ProductionResult[]>((acc, input) => {
     if (acc.some((a) => a.good === input.good)) {
       const updated = acc.map((a) => {
@@ -148,6 +149,8 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
     totalOutputs: totalBuildingsOutput,
   });
 
+  console.log('filteredChain', filteredChain);
+
   // repeat the process until all negative deltas are resolved
   return recursiveCalculateBuildingChain(filteredChain, settings);
 };
@@ -161,6 +164,7 @@ const calculateBuildingChain = (
   settings: BuildingSetting[],
 ) => {
   const selectedBuildingSetting = settings.find((s) => s.name === selectedBuilding.name) as BuildingSetting;
+  console.log('selectedBuildingSetting', selectedBuildingSetting);
   let baseInputs = getTotalSettingInputPerBuilding(selectedBuildingSetting).map((input) => {
     return { ...input, amount: (input.amount = input.amount * quantity) };
   });
@@ -175,6 +179,7 @@ const calculateBuildingChain = (
     totalInputs: baseInputs,
     totalOutputs: baseOutputs,
   });
+  console.log('buildingChain', buildingChain);
 
   return recursiveCalculateBuildingChain(buildingChain, settings);
 };
