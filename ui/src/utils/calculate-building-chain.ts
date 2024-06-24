@@ -52,22 +52,16 @@ const getTotalSettingOutputPerBuilding = (setting: BuildingSetting) => {
     }, []);
 };
 
-const getBuildingSettingByGood = (
-  good: string,
-  settings: BuildingSetting[],
-): [setting: BuildingSetting | undefined, outputGood: ProductionResult | undefined] => {
-  const setting = settings.find((s) =>
+const getBuildingSettingsByGood = (good: string, settings: BuildingSetting[]): BuildingSetting[] => {
+  return settings.filter((s) =>
     s.productionMethodGroups.some((g) => g.currentMethod.outputs?.some((o) => o.good === good)),
-  ) as BuildingSetting;
+  );
+};
 
-  // if no setting found, return undefined
-  if (!setting) return [undefined, undefined];
-
-  const outputGood = setting.productionMethodGroups
+const getOutputGoodFromSetting = (setting: BuildingSetting, good: string) => {
+  return setting.productionMethodGroups
     .find((g) => g.currentMethod.outputs?.some((o) => o.good === good))
     ?.currentMethod.outputs?.find((o) => o.good === good) as ProductionResult;
-
-  return [setting, outputGood];
 };
 
 const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
@@ -118,7 +112,7 @@ const calculateBuildingChainOutputs = (buildingChain: BuildingChain[]) => {
   }, []);
 };
 
-const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]) => {
+const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]): ProductionResult[] => {
   const totalChainInputs = calculateBuildingChainInputs(buildingChain);
   const totalChainOutputs = calculateBuildingChainOutputs(buildingChain);
 
@@ -140,24 +134,26 @@ const getSettingRequiredTechs = (setting: BuildingSetting) => {
   return [...buildingTechs, ...productionTechs];
 };
 
-const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], settings: BuildingSetting[]) => {
-  const totalChainDeltas = calculateBuildingChainDeltas(buildingChain);
-  const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
+const getActiveChains = (buildingChains: BuildingChain[][]) => {
+  return buildingChains.filter((bc) => {
+    const totalChainDeltas = calculateBuildingChainDeltas(bc);
+    const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
 
-  // if there are no negative deltas, the chain is complete
-  if (negativeDeltas.length === 0) {
-    return buildingChain;
-  }
+    // if there are no negative deltas, the chain is complete
+    // otherwise return the chain, so it can be filled out
+    if (negativeDeltas.length > 0) {
+      return bc;
+    }
+  });
+};
 
-  const delta = negativeDeltas[0];
-  // find the building that produces the good
-  const [setting, outputGood] = getBuildingSettingByGood(delta.good, settings);
-  // if no possible building is found for an excess good, return the chain as is
-  if (!setting || !outputGood) {
-    return buildingChain;
-  }
+const getUpdatedBuilding = (
+  delta: ProductionResult,
+  outputGood: ProductionResult,
+  buildingChain: BuildingChain[],
+  setting: BuildingSetting,
+) => {
   const requiredGoodAmount = delta.amount * -1;
-
   const totalBuildingRequired = Math.ceil(requiredGoodAmount / outputGood.amount);
 
   // update the chain
@@ -174,21 +170,82 @@ const recursiveCalculateBuildingChain = (buildingChain: BuildingChain[], setting
     return { ...input, ...{ amount: input.amount * totalQuantity } };
   });
 
-  // remove the existing building from the chain to avoid duplicates
-  const filteredChain = buildingChain.filter((building) => building.name !== setting.name);
-
   // add updated building to the chain
-  const updatedBuilding = {
+  return {
     name: setting.name,
     requiredTechs: existingBuilding?.requiredTechs || getSettingRequiredTechs(setting) || [],
     quantity: totalQuantity,
     totalInputs: totalNewBuildingInputs,
     totalOutputs: totalNewBuildingsOutputs,
   };
+};
+
+const recursiveCalculateBuildingChain = (buildingChains: BuildingChain[][], settings: BuildingSetting[]) => {
+  const activeChains = getActiveChains(buildingChains);
+
+  // start with the first active chain
+  const buildingChain = activeChains[0];
+
+  // remove the active chain from the list
+  const filteredBuildingChains = buildingChains.filter((bc) => bc !== buildingChain);
+
+  const totalChainDeltas = calculateBuildingChainDeltas(buildingChain);
+  const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
+
+  const delta = negativeDeltas[0];
+
+  // find the building(s) that produce the good
+  const possibleSettings = getBuildingSettingsByGood(delta.good, settings);
+
+  // if a possible building already exists in the active chain, keep using it
+  let preferredSetting = possibleSettings.find((s) => buildingChain.some((b) => b.name === s.name));
+  if (!preferredSetting) {
+    // start with the first option
+    preferredSetting = possibleSettings[0];
+  }
+
+  // handle other options
+  if (possibleSettings.length > 1) {
+    const otherOptions = possibleSettings.filter((s) => s.name !== preferredSetting.name);
+    otherOptions.forEach((setting) => {
+      const otherSettingChain = buildingChain.map((building) => {
+        return { ...building };
+      });
+
+      // create the building chain with the other setting
+      const updatedBuilding = getUpdatedBuilding(
+        delta,
+        getOutputGoodFromSetting(setting, delta.good),
+        otherSettingChain,
+        setting,
+      );
+
+      // create an alternate chain and add it to the list
+      filteredBuildingChains.push([...otherSettingChain, updatedBuilding]);
+    });
+  }
+
+  const outputGood = getOutputGoodFromSetting(preferredSetting, delta.good);
+
+  // if no possible building is found for an excess good, return the chain as is
+  if (!preferredSetting || !outputGood) {
+    return buildingChain;
+  }
+
+  // get the updated building
+  const updatedBuilding = getUpdatedBuilding(delta, outputGood, buildingChain, preferredSetting);
+
+  // remove the existing building from the chain to avoid duplicates
+  const filteredChain = buildingChain.filter((building) => building.name !== updatedBuilding.name);
+
+  // now update the chain with the new building
   const updatedChain = [...filteredChain, updatedBuilding];
 
+  // add the updated chain back to the list of chains
+  const result = [...filteredBuildingChains, updatedChain];
+
   // repeat the process until all negative deltas are resolved
-  return recursiveCalculateBuildingChain(updatedChain, settings);
+  return recursiveCalculateBuildingChain(result, settings);
 };
 
 const calculateBuildingChain = (selectedBuilding: Building, quantity: number, settings: BuildingSetting[]) => {
@@ -209,13 +266,13 @@ const calculateBuildingChain = (selectedBuilding: Building, quantity: number, se
     totalOutputs: baseOutputs,
   });
 
-  return recursiveCalculateBuildingChain(buildingChain, settings);
+  return recursiveCalculateBuildingChain([buildingChain], settings);
 };
 
 export {
   getTotalSettingInputPerBuilding,
   getTotalSettingOutputPerBuilding,
-  getBuildingSettingByGood,
+  getBuildingSettingsByGood,
   calculateBuildingChainInputs,
   calculateBuildingChainOutputs,
   calculateBuildingChainDeltas,
