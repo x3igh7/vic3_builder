@@ -10,7 +10,7 @@ The UI can be launched with the `index.html` in the `/ui/out` directory.
 
 ## TODO
 
-* Handle multiple build paths (particularly with synthetics)
+* Handle multiple build paths (particularly with synthetics/fertilizer)
 * Handle worker count calculations
 * Make prettier names
 
