@@ -180,8 +180,14 @@ const getUpdatedBuilding = (
   };
 };
 
-const recursiveCalculateBuildingChain = (buildingChains: BuildingChain[][], settings: BuildingSetting[]) => {
+const recursiveCalculateBuildingChain = (
+  buildingChains: BuildingChain[][],
+  settings: BuildingSetting[],
+): BuildingChain[][] => {
   const activeChains = getActiveChains(buildingChains);
+  if (!activeChains.length) {
+    return buildingChains;
+  }
 
   // start with the first active chain
   const buildingChain = activeChains[0];
@@ -192,10 +198,19 @@ const recursiveCalculateBuildingChain = (buildingChains: BuildingChain[][], sett
   const totalChainDeltas = calculateBuildingChainDeltas(buildingChain);
   const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
 
+  if (!negativeDeltas.length) {
+    return buildingChains;
+  }
+
   const delta = negativeDeltas[0];
 
   // find the building(s) that produce the good
   const possibleSettings = getBuildingSettingsByGood(delta.good, settings);
+
+  // if no possible building is found, return the chain as is
+  if (!possibleSettings.length) {
+    return buildingChains;
+  }
 
   // if a possible building already exists in the active chain, keep using it
   let preferredSetting = possibleSettings.find((s) => buildingChain.some((b) => b.name === s.name));
@@ -227,11 +242,6 @@ const recursiveCalculateBuildingChain = (buildingChains: BuildingChain[][], sett
 
   const outputGood = getOutputGoodFromSetting(preferredSetting, delta.good);
 
-  // if no possible building is found for an excess good, return the chain as is
-  if (!preferredSetting || !outputGood) {
-    return buildingChain;
-  }
-
   // get the updated building
   const updatedBuilding = getUpdatedBuilding(delta, outputGood, buildingChain, preferredSetting);
 
@@ -248,7 +258,7 @@ const recursiveCalculateBuildingChain = (buildingChains: BuildingChain[][], sett
   return recursiveCalculateBuildingChain(result, settings);
 };
 
-const calculateBuildingChain = (selectedBuilding: Building, quantity: number, settings: BuildingSetting[]) => {
+const calculateBuildingChains = (selectedBuilding: Building, quantity: number, settings: BuildingSetting[]) => {
   const selectedBuildingSetting = settings.find((s) => s.name === selectedBuilding.name) as BuildingSetting;
   let baseInputs = getTotalSettingInputPerBuilding(selectedBuildingSetting).map((input) => {
     return { ...input, amount: (input.amount = input.amount * quantity) };
@@ -277,6 +287,6 @@ export {
   calculateBuildingChainOutputs,
   calculateBuildingChainDeltas,
   recursiveCalculateBuildingChain,
-  calculateBuildingChain,
+  calculateBuildingChains,
   getSettingRequiredTechs,
 };

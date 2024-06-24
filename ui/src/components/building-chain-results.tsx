@@ -2,9 +2,9 @@ import { ReactElement, useEffect, useState } from 'react';
 import Building from '@/interfaces/building';
 import useDataHook from '@/hooks/use-data-hook';
 import {
-  calculateBuildingChain,
   calculateBuildingChainDeltas,
   calculateBuildingChainOutputs,
+  calculateBuildingChains,
 } from '@/utils/calculate-building-chain';
 import BuildingChain from '@/interfaces/building-chain';
 import { css } from '@emotion/react';
@@ -17,17 +17,17 @@ const BuildingChainResults = ({
   quantity: number | null;
 }): ReactElement => {
   const { settings } = useDataHook();
-  const [currentBuildingChain, setCurrentBuildingChain] = useState<BuildingChain[]>([]);
+  const [currentBuildingChains, setCurrentBuildingChains] = useState<BuildingChain[][]>([]);
 
   useEffect(() => {
     if (selectedBuilding && quantity) {
       // calculate building chain
-      const result = calculateBuildingChain(selectedBuilding, quantity, settings);
-      setCurrentBuildingChain(result);
+      const result = calculateBuildingChains(selectedBuilding, quantity, settings);
+      setCurrentBuildingChains(result);
     }
   }, [selectedBuilding]);
 
-  const getBuildingChainItems = () => {
+  const getBuildingChainItems = (currentBuildingChain: BuildingChain[]) => {
     return currentBuildingChain.map((chainItem) => {
       return (
         <div key={chainItem.name} css={css({ '> *': { marginRight: '1rem' } })}>
@@ -38,7 +38,7 @@ const BuildingChainResults = ({
     });
   };
 
-  const getBuildingChainOutputDeltaResults = () => {
+  const getBuildingChainOutputDeltaResults = (currentBuildingChain: BuildingChain[]) => {
     const deltaResults = calculateBuildingChainDeltas(currentBuildingChain);
     const totalOutputs = calculateBuildingChainOutputs(currentBuildingChain);
     return deltaResults.map((delta) => {
@@ -55,7 +55,7 @@ const BuildingChainResults = ({
     });
   };
 
-  const getBuildingChainRequestTechs = () => {
+  const getBuildingChainRequestTechs = (currentBuildingChain: BuildingChain[]) => {
     const techs = currentBuildingChain.flatMap((chainItem) => chainItem.requiredTechs) || [];
     if (!techs.length) {
       return <div>No technologies required</div>;
@@ -70,26 +70,34 @@ const BuildingChainResults = ({
     });
   };
 
+  const getPossibleBuildingChains = () => {
+    return currentBuildingChains.map((buildingChain, currentIndex) => {
+      return (
+        <div css={css({ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '1rem' })} key={currentIndex}>
+          <div css={css({ flex: '1 auto' })}>
+            <h3>Buildings</h3>
+            {getBuildingChainItems(buildingChain)}
+          </div>
+          <div css={css({ flex: '1 auto' })}>
+            <h3>Output Deltas</h3>
+            {getBuildingChainOutputDeltaResults(buildingChain)}
+          </div>
+          <div css={css({ flex: '1 auto' })}>
+            <h3>Required Technologies</h3>
+            {getBuildingChainRequestTechs(buildingChain)}
+          </div>
+        </div>
+      );
+    });
+  };
+
   if (!selectedBuilding || !quantity) {
     return <div></div>;
   }
   return (
     <div>
       <h2>Building Chain Results</h2>
-      <div css={css({ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '1rem' })}>
-        <div css={css({ flex: '1 auto' })}>
-          <h3>Buildings</h3>
-          {getBuildingChainItems()}
-        </div>
-        <div css={css({ flex: '1 auto' })}>
-          <h3>Output Deltas</h3>
-          {getBuildingChainOutputDeltaResults()}
-        </div>
-        <div css={css({ flex: '1 auto' })}>
-          <h3>Required Technologies</h3>
-          {getBuildingChainRequestTechs()}
-        </div>
-      </div>
+      {getPossibleBuildingChains()}
     </div>
   );
 };
