@@ -223,6 +223,11 @@ const recursiveCalculateBuildingChain = (
   if (possibleSettings.length > 1) {
     const otherOptions = possibleSettings.filter((s) => s.name !== preferredSetting.name);
     otherOptions.forEach((setting) => {
+      // if there's already a chain with this building then skip
+      if (buildingChains.some((bc) => bc.some((b) => b.name === setting.name))) {
+        return;
+      }
+      
       const otherSettingChain = buildingChain.map((building) => {
         return { ...building };
       });
@@ -289,4 +294,6 @@ export {
   recursiveCalculateBuildingChain,
   calculateBuildingChains,
   getSettingRequiredTechs,
+  getOutputGoodFromSetting,
+  getUpdatedBuilding,
 };
