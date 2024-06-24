@@ -227,7 +227,7 @@ const recursiveCalculateBuildingChain = (
       if (buildingChains.some((bc) => bc.some((b) => b.name === setting.name))) {
         return;
       }
-      
+
       const otherSettingChain = buildingChain.map((building) => {
         return { ...building };
       });
@@ -264,12 +264,14 @@ const recursiveCalculateBuildingChain = (
 };
 
 const calculateBuildingChains = (selectedBuilding: Building, quantity: number, settings: BuildingSetting[]) => {
-  const selectedBuildingSetting = settings.find((s) => s.name === selectedBuilding.name) as BuildingSetting;
+  const selectedBuildingSetting = { ...(settings.find((s) => s.name === selectedBuilding.name) as BuildingSetting) };
   let baseInputs = getTotalSettingInputPerBuilding(selectedBuildingSetting).map((input) => {
-    return { ...input, amount: (input.amount = input.amount * quantity) };
+    const updatedAmount = input.amount * quantity;
+    return { ...input, amount: updatedAmount };
   });
   let baseOutputs = getTotalSettingOutputPerBuilding(selectedBuildingSetting).map((output) => {
-    return { ...output, amount: (output.amount = output.amount * quantity) };
+    const updatedAmount = output.amount * quantity;
+    return { ...output, amount: updatedAmount };
   });
   const buildingChain: BuildingChain[] = [];
 

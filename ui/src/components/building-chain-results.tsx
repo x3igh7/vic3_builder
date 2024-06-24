@@ -23,9 +23,9 @@ const BuildingChainResults = ({
     if (selectedBuilding && quantity) {
       // calculate building chain
       const result = calculateBuildingChains(selectedBuilding, quantity, settings);
-      setCurrentBuildingChains(result);
+      setCurrentBuildingChains([...result]);
     }
-  }, [selectedBuilding]);
+  }, [selectedBuilding, quantity, settings]);
 
   const getBuildingChainItems = (currentBuildingChain: BuildingChain[]) => {
     return currentBuildingChain.map((chainItem) => {
