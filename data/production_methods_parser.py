@@ -83,7 +83,7 @@ class ProductionMethodsParser:
                             amount = amount.split("#")[0].strip()
                         input_item = {
                             "good": results[0]["name"],
-                            "amount": int(amount)
+                            "amount": float(amount)
                         }
                         item_dict["inputs"].append(input_item)
                     elif("output" in line and "=" in line):
@@ -93,7 +93,7 @@ class ProductionMethodsParser:
                             amount = amount.split("#")[0].strip()
                         output_item = {
                             "good": results[0]["name"],
-                            "amount": int(amount)
+                            "amount": float(amount)
                         }
                         item_dict["outputs"].append(output_item)
 
