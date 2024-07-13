@@ -3,6 +3,19 @@ import BuildingSetting from '@/interfaces/building-setting';
 import ProductionResult from '@/interfaces/production-result';
 import BuildingChain from '@/interfaces/building-chain';
 
+const sortChainsByTotalRequiredBuildings = (buildingChains: BuildingChain[][]) => {
+  return buildingChains.sort((a, b) => {
+    const totalRequiredBuildingsA = a.reduce((acc, building) => {
+      return acc + building.quantity;
+    }, 0);
+    const totalRequiredBuildingsB = b.reduce((acc, building) => {
+      return acc + building.quantity;
+    }, 0);
+
+    return totalRequiredBuildingsA - totalRequiredBuildingsB;
+  });
+};
+
 const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
   return setting.production_method_groups
     .flatMap((group) => {
@@ -131,7 +144,7 @@ const calculateBuildingChainOutputs = (buildingChain: BuildingChain[]) => {
   }, []);
 };
 
-const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]): ProductionResult[] => {
+const calculateBuildingChainInputDeltas = (buildingChain: BuildingChain[]): ProductionResult[] => {
   const totalChainInputs = calculateBuildingChainInputs(buildingChain);
   const totalChainOutputs = calculateBuildingChainOutputs(buildingChain);
 
@@ -155,7 +168,7 @@ const getSettingRequiredTechs = (setting: BuildingSetting) => {
 
 const getActiveChains = (buildingChains: BuildingChain[][]) => {
   return buildingChains.filter((bc) => {
-    const totalChainDeltas = calculateBuildingChainDeltas(bc);
+    const totalChainDeltas = calculateBuildingChainInputDeltas(bc);
     const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
 
     // if there are no negative deltas, the chain is complete
@@ -214,7 +227,7 @@ const recursiveCalculateBuildingChain = (
   // remove the active chain from the list
   const filteredBuildingChains = buildingChains.filter((bc) => bc !== buildingChain);
 
-  const totalChainDeltas = calculateBuildingChainDeltas(buildingChain);
+  const totalChainDeltas = calculateBuildingChainInputDeltas(buildingChain);
   const negativeDeltas = totalChainDeltas.filter((delta) => delta.amount < 0);
 
   if (!negativeDeltas.length) {
@@ -307,12 +320,13 @@ const calculateBuildingChains = (selectedBuilding: Building, quantity: number, s
 };
 
 export {
+  sortChainsByTotalRequiredBuildings,
   getTotalSettingInputPerBuilding,
   getTotalSettingOutputPerBuilding,
   getBuildingSettingsByGood,
   calculateBuildingChainInputs,
   calculateBuildingChainOutputs,
-  calculateBuildingChainDeltas,
+  calculateBuildingChainInputDeltas,
   recursiveCalculateBuildingChain,
   calculateBuildingChains,
   getSettingRequiredTechs,

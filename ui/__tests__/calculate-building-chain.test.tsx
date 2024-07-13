@@ -1,6 +1,6 @@
 import BuildingSetting from '@/interfaces/building-setting';
 import {
-  calculateBuildingChainDeltas,
+  calculateBuildingChainInputDeltas,
   calculateBuildingChainInputs,
   calculateBuildingChainOutputs,
   calculateBuildingChains,
@@ -260,7 +260,7 @@ describe('calculateBuildingChain functions', () => {
         },
       ];
 
-      const result = calculateBuildingChainDeltas(chain);
+      const result = calculateBuildingChainInputDeltas(chain);
       const good1 = result.find((r) => r.good === 'Good 1');
       expect(good1?.amount).toEqual(-2);
       const good2 = result.find((r) => r.good === 'Good 2');
@@ -669,7 +669,7 @@ describe('calculateBuildingChain functions', () => {
       };
 
       const results = calculateBuildingChains(selectedBuilding, 5, settings);
-      
+
       expect(results.length).toEqual(1);
       expect(results[0].find((bc) => bc.name === 'building_arms_industry')?.quantity).toEqual(5);
       expect(results[0].find((bc) => bc.name === 'building_iron_mine')?.quantity).toEqual(3);

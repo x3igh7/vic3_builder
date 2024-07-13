@@ -1,9 +1,10 @@
 import { ReactElement, useEffect, useState } from 'react';
 import Building from '@/interfaces/building';
 import {
-  calculateBuildingChainDeltas,
+  calculateBuildingChainInputDeltas,
   calculateBuildingChainOutputs,
   calculateBuildingChains,
+  sortChainsByTotalRequiredBuildings,
 } from '@/utils/calculate-building-chain';
 import BuildingChain from '@/interfaces/building-chain';
 import { css } from '@emotion/react';
@@ -23,7 +24,8 @@ const BuildingChainResults = ({
   useEffect(() => {
     if (selectedBuilding && quantity && settings.length) {
       // calculate building chain
-      const result = calculateBuildingChains(selectedBuilding, quantity, settings);
+      let result = calculateBuildingChains(selectedBuilding, quantity, settings);
+      result = sortChainsByTotalRequiredBuildings(result);
       setCurrentBuildingChains([...result]);
     }
   }, [selectedBuilding, quantity, settings]);
@@ -40,7 +42,7 @@ const BuildingChainResults = ({
   };
 
   const getBuildingChainOutputDeltaResults = (currentBuildingChain: BuildingChain[]) => {
-    const deltaResults = calculateBuildingChainDeltas(currentBuildingChain);
+    const deltaResults = calculateBuildingChainInputDeltas(currentBuildingChain);
     const totalOutputs = calculateBuildingChainOutputs(currentBuildingChain);
     return deltaResults.map((delta) => {
       const styleColor = delta.amount < 0 ? 'red' : 'green';
@@ -51,6 +53,18 @@ const BuildingChainResults = ({
           <label>{delta.good}</label>
           <span css={{ color: 'var(--text-color-secondary)' }}>Total: {total}</span>
           <span css={{ color: styleColor }}>Excess: {delta.amount}</span>
+        </div>
+      );
+    });
+  };
+
+  const getBuildingChainOutputResults = (currentBuildingChain: BuildingChain[]) => {
+    const totalOutputs = calculateBuildingChainOutputs(currentBuildingChain);
+    return totalOutputs.map((result) => {
+      return (
+        <div key={result.good} css={css({ '> *': { marginRight: '1rem' } })}>
+          <label>{result.good}</label>
+          <span css={{ color: 'var(--text-color-secondary)' }}>{result.amount}</span>
         </div>
       );
     });
@@ -81,8 +95,12 @@ const BuildingChainResults = ({
             {getBuildingChainItems(buildingChain)}
           </div>
           <div css={css({ flex: '1 auto' })}>
-            <h3>Output Deltas</h3>
+            <h3>Input Deltas</h3>
             {getBuildingChainOutputDeltaResults(buildingChain)}
+          </div>
+          <div css={css({ flex: '1 auto' })}>
+            <h3>Outputs</h3>
+            {getBuildingChainOutputResults(buildingChain)}
           </div>
           <div css={css({ flex: '1 auto' })}>
             <h3>Required Technologies</h3>
