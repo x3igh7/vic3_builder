@@ -10,6 +10,7 @@ import { IconField } from 'primereact/iconfield';
 import { css } from '@emotion/react';
 import { Button } from 'primereact/button';
 import ProductionMethod from '@/interfaces/production-method';
+import useDebounce from '@/hooks/use-debounce';
 
 const SettingsPage = (): ReactElement => {
   const { buildings, productionMethods, productionMethodGroups } = useDataHook();
@@ -24,6 +25,10 @@ const SettingsPage = (): ReactElement => {
 
     return settings;
   };
+
+  const debouncedSetFilteredSettings = useDebounce(() => {
+    setFilteredSettings(filterSettingsByQuery());
+  });
 
   const getDefaultSettings = () => {
     return buildings
@@ -56,11 +61,11 @@ const SettingsPage = (): ReactElement => {
   }, [settings, buildings, productionMethodGroups, productionMethods]);
 
   useEffect(() => {
-    setFilteredSettings(filterSettingsByQuery());
+    debouncedSetFilteredSettings();
   }, [settings]);
 
   useEffect(() => {
-    setFilteredSettings(filterSettingsByQuery());
+    debouncedSetFilteredSettings();
   }, [filterQuery]);
 
   const handleFilterQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {

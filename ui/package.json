@@ -15,7 +15,8 @@
     "primeicons": "^4.1.0",
     "primereact": "^10.6.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.0.0",
@@ -24,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/lodash": "^4.17.6",
     "eslint": "^8",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-next": "14.2.4",

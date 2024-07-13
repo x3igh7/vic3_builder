@@ -58,11 +58,12 @@ const BuildingChainResults = ({
 
   const getBuildingChainRequestTechs = (currentBuildingChain: BuildingChain[]) => {
     const techs = currentBuildingChain.flatMap((chainItem) => chainItem.requiredTechs) || [];
-    if (!techs.length) {
+    const deDupedList = Array.from(new Set(techs));
+    if (!deDupedList.length) {
       return <div>No technologies required</div>;
     }
 
-    return techs.map((tech) => {
+    return deDupedList.map((tech) => {
       return (
         <div key={tech}>
           <label>{tech}</label>
