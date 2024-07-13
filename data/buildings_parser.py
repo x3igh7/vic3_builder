@@ -18,7 +18,8 @@ class BuildingsParser:
                     lines = file.readlines()
 
                     cleaner = PdxTextLineCleaner(lines)
-                    building_district_list += cleaner.clean(self.callback)
+                    results = cleaner.clean(self.callback)
+                    self.remove_duplicates_and_add_to_list(building_district_list, results)
 
                     file.close()
         with open(os.path.join(self.output_path, 'buildings.json'), 'w') as json_file:
@@ -58,3 +59,20 @@ class BuildingsParser:
                 item_dict["production_method_groups"].append(line)
 
         return item_dict
+
+    def remove_duplicates_and_add_to_list(self, buildings_list, file_list):
+        for new_item in file_list:
+            is_unique = True
+            # Check if item already exists in list
+            for building in buildings_list:
+                if building["name"] == new_item["name"]:
+                    is_unique = False
+
+            # if unique add to list
+            if is_unique:
+                buildings_list.append(new_item)
+            # Reset is_unique
+            is_unique = True
+
+
+        return buildings_list

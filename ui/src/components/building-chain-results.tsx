@@ -1,6 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
 import Building from '@/interfaces/building';
-import useDataHook from '@/hooks/use-data-hook';
 import {
   calculateBuildingChainDeltas,
   calculateBuildingChainOutputs,
@@ -8,6 +7,8 @@ import {
 } from '@/utils/calculate-building-chain';
 import BuildingChain from '@/interfaces/building-chain';
 import { css } from '@emotion/react';
+import { useLocalStorage } from 'primereact/hooks';
+import BuildingSetting from '@/interfaces/building-setting';
 
 const BuildingChainResults = ({
   selectedBuilding,
@@ -16,11 +17,11 @@ const BuildingChainResults = ({
   selectedBuilding: Building | undefined;
   quantity: number | null;
 }): ReactElement => {
-  const { settings } = useDataHook();
+  const [settings] = useLocalStorage<BuildingSetting[]>([], 'settings_v2');
   const [currentBuildingChains, setCurrentBuildingChains] = useState<BuildingChain[][]>([]);
 
   useEffect(() => {
-    if (selectedBuilding && quantity) {
+    if (selectedBuilding && quantity && settings.length) {
       // calculate building chain
       const result = calculateBuildingChains(selectedBuilding, quantity, settings);
       setCurrentBuildingChains([...result]);

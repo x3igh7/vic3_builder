@@ -20,7 +20,7 @@ describe('calculateBuildingChain functions', () => {
     it('should return the total amount per good for all inputs', () => {
       const setting: BuildingSetting = {
         name: 'Test Building',
-        productionMethodGroups: [
+        production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
@@ -59,7 +59,7 @@ describe('calculateBuildingChain functions', () => {
     it('should return the total amount per good for all inputs', () => {
       const setting: BuildingSetting = {
         name: 'Test Building',
-        productionMethodGroups: [
+        production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
@@ -99,7 +99,7 @@ describe('calculateBuildingChain functions', () => {
       const settings: BuildingSetting[] = [
         {
           name: 'Test Building',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'Test Group',
               currentMethod: {
@@ -114,7 +114,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'Test Group 2',
               currentMethod: {
@@ -126,7 +126,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 3',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'Test Group 2',
               currentMethod: {
@@ -149,7 +149,7 @@ describe('calculateBuildingChain functions', () => {
     it('should return the specified output good production result from a setting', () => {
       const setting: BuildingSetting = {
         name: 'Test Building',
-        productionMethodGroups: [
+        production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
@@ -277,7 +277,7 @@ describe('calculateBuildingChain functions', () => {
       const buildingChain: BuildingChain[] = [];
       const setting: BuildingSetting = {
         name: 'Test Building 2',
-        productionMethodGroups: [
+        production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
@@ -308,7 +308,7 @@ describe('calculateBuildingChain functions', () => {
       const settings = [
         {
           name: 'Test Building',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'Test Group',
               currentMethod: {
@@ -320,7 +320,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'Test Group 2',
               currentMethod: {
@@ -346,7 +346,7 @@ describe('calculateBuildingChain functions', () => {
       const settings = [
         {
           name: 'building_construction_sector',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_construction_sector',
               currentMethod: {
@@ -368,7 +368,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_cotton_plantation',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_cotton_plantation',
               currentMethod: {
@@ -398,7 +398,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_logging_camp',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_logging_camp',
               currentMethod: {
@@ -446,7 +446,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_tooling_workshops',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_tooling_workshops',
               currentMethod: {
@@ -500,11 +500,188 @@ describe('calculateBuildingChain functions', () => {
       expect(cottonPlantation.quantity).toEqual(4);
     });
 
+    it('should handle multiple production methods that output goods', () => {
+      const settings = [
+        {
+          name: 'building_arms_industry',
+          unlocking_technologies: ['gunsmithing'],
+          production_method_groups: [
+            {
+              name: 'pmg_firearms_manufacturing',
+              currentMethod: {
+                name: 'pm_muskets',
+                inputs: [
+                  {
+                    good: 'iron',
+                    amount: 10,
+                  },
+                  {
+                    good: 'hardwood',
+                    amount: 10,
+                  },
+                ],
+                outputs: [
+                  {
+                    good: 'small_arms',
+                    amount: 30,
+                  },
+                ],
+              },
+            },
+            {
+              name: 'pmg_automation_building_arms_industry',
+              currentMethod: {
+                name: 'pm_automation_disabled',
+              },
+            },
+          ],
+        },
+        {
+          name: 'building_iron_mine',
+          unlocking_technologies: ['shaft_mining'],
+          production_method_groups: [
+            {
+              name: 'pmg_mining_equipment_building_iron_mine',
+              currentMethod: {
+                name: 'pm_picks_and_shovels_building_iron_mine',
+                inputs: [
+                  {
+                    good: 'tools',
+                    amount: 5,
+                  },
+                ],
+                outputs: [
+                  {
+                    good: 'iron',
+                    amount: 20,
+                  },
+                ],
+              },
+            },
+            {
+              name: 'pmg_explosives_building_iron_mine',
+              currentMethod: {
+                name: 'pm_no_explosives',
+              },
+            },
+            {
+              name: 'pmg_steam_automation_building_iron_mine',
+              currentMethod: {
+                name: 'pm_no_steam_automation',
+              },
+            },
+            {
+              name: 'pmg_train_automation_building_iron_mine',
+              currentMethod: {
+                name: 'pm_road_carts',
+              },
+            },
+          ],
+        },
+        {
+          name: 'building_logging_camp',
+          unlocking_technologies: [],
+          production_method_groups: [
+            {
+              name: 'pmg_base_building_logging_camp',
+              currentMethod: {
+                name: 'pm_simple_forestry',
+                inputs: [],
+                outputs: [
+                  {
+                    good: 'wood',
+                    amount: 30,
+                  },
+                ],
+              },
+            },
+            {
+              name: 'pmg_hardwood',
+              currentMethod: {
+                name: 'pm_hardwood',
+                inputs: [],
+                outputs: [
+                  {
+                    good: 'wood',
+                    amount: -25,
+                  },
+                  {
+                    good: 'hardwood',
+                    amount: 10,
+                  },
+                ],
+              },
+            },
+            {
+              name: 'pmg_equipment',
+              currentMethod: {
+                name: 'pm_no_equipment',
+              },
+            },
+            {
+              name: 'pmg_transportation_building_logging_camp',
+              currentMethod: {
+                name: 'pm_road_carts',
+              },
+            },
+          ],
+        },
+        {
+          name: 'building_tooling_workshops',
+          unlocking_technologies: ['manufacturies'],
+          production_method_groups: [
+            {
+              name: 'pmg_base_building_tooling_workshops',
+              currentMethod: {
+                name: 'pm_crude_tools',
+                inputs: [
+                  {
+                    good: 'wood',
+                    amount: 30,
+                  },
+                ],
+                outputs: [
+                  {
+                    good: 'tools',
+                    amount: 30,
+                  },
+                ],
+              },
+            },
+            {
+              name: 'pmg_automation_building_tooling_workshops',
+              currentMethod: {
+                name: 'pm_automation_disabled',
+              },
+            },
+          ],
+        },
+      ];
+
+      const selectedBuilding = {
+        name: 'building_arms_industry',
+        unlocking_technologies: ['gunsmithing'],
+        production_method_groups: [
+          'pmg_firearms_manufacturing',
+          'pmg_automation_building_arms_industry',
+          'pmg_ownership_capital_building_arms_industry',
+        ],
+      };
+
+      const results = calculateBuildingChains(selectedBuilding, 5, settings);
+      
+      expect(results.length).toEqual(1);
+      expect(results[0].find((bc) => bc.name === 'building_arms_industry')?.quantity).toEqual(5);
+      expect(results[0].find((bc) => bc.name === 'building_iron_mine')?.quantity).toEqual(3);
+      expect(results[0].find((bc) => bc.name === 'building_tooling_workshops')?.quantity).toEqual(1);
+      expect(results[0].find((bc) => bc.name === 'building_logging_camp')?.quantity).toEqual(6);
+    });
+
     it('should calculate multiple possible building chains if multiple buildings produce the same good', () => {
       const settings = [
         {
           name: 'building_construction_sector',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_construction_sector',
               currentMethod: {
@@ -526,7 +703,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_cotton_plantation',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_cotton_plantation',
               currentMethod: {
@@ -556,7 +733,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_cotton_plantation_small',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_cotton_plantation_small',
               currentMethod: {
@@ -586,7 +763,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_logging_camp',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_logging_camp',
               currentMethod: {
@@ -634,7 +811,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_tooling_workshops',
-          productionMethodGroups: [
+          production_method_groups: [
             {
               name: 'pmg_base_building_tooling_workshops',
               currentMethod: {

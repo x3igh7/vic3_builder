@@ -13,7 +13,7 @@ class PdxTextLineCleaner:
             cleanLines.append(newLine)
 
         return self.constructDict(cleanLines, callback)
-    
+
     def constructDict(self, cleanLines, callback):
         openBracketCount = 0
         closeBracketCount = 0
@@ -25,7 +25,7 @@ class PdxTextLineCleaner:
                     name = re.sub(r'\W', '', x)
                     itemDict["name"] = name
                 openBracketCount += 1
-            
+
             # run custom callback function
             itemDict = callback(x, itemDict)
 
@@ -37,4 +37,3 @@ class PdxTextLineCleaner:
                 openBracketCount = 0
                 closeBracketCount = 0
         return itemDictList
-    

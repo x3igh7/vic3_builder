@@ -9,16 +9,51 @@ import { InputIcon } from 'primereact/inputicon';
 import { IconField } from 'primereact/iconfield';
 import { css } from '@emotion/react';
 import { Button } from 'primereact/button';
+import ProductionMethod from '@/interfaces/production-method';
 
 const SettingsPage = (): ReactElement => {
-  const { buildings, productionMethods, productionMethodGroups, getDefaultSettings } = useDataHook();
-  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings');
+  const { buildings, productionMethods, productionMethodGroups } = useDataHook();
+  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings_v2');
   const [filterQuery, setFilterQuery] = useState<string>('');
   const [filteredSettings, setFilteredSettings] = useState<BuildingSetting[]>([]);
 
   const filterSettingsByQuery = () => {
-    return settings.filter((setting) => setting.name.toLowerCase().includes(filterQuery.toLowerCase()));
+    if (filterQuery.length) {
+      return settings.filter((setting) => setting.name.toLowerCase().includes(filterQuery.toLowerCase()));
+    }
+
+    return settings;
   };
+
+  const getDefaultSettings = () => {
+    return buildings
+      .map((building) => {
+        return {
+          name: building.name,
+          unlocking_technologies: building.unlocking_technologies || [],
+          production_method_groups: productionMethodGroups
+            .filter((group) => building.production_method_groups.includes(group.name))
+            .map((group) => {
+              const defaultMethod = productionMethods.find((method) => group.production_methods[0] === method.name);
+              return {
+                name: group.name,
+                currentMethod: defaultMethod as ProductionMethod,
+              };
+            }),
+        };
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+  };
+
+  useEffect(() => {
+    // set up default settings if none are saved
+    if (settings.length === 0) {
+      if (buildings.length && productionMethodGroups.length && productionMethods.length) {
+        const defaultSettings = getDefaultSettings();
+        setSettings(defaultSettings);
+      }
+    }
+  }, [settings, buildings, productionMethodGroups, productionMethods]);
 
   useEffect(() => {
     setFilteredSettings(filterSettingsByQuery());

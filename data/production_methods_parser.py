@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from pdx_text_line_cleaner import PdxTextLineCleaner
 
 class ProductionMethodsParser:
@@ -77,7 +78,7 @@ class ProductionMethodsParser:
                     goods = self.open_goods_json()
 
                     if("input" in line and "=" in line):
-                        results = [good for good in goods if good["name"] in line]
+                        results = [good for good in goods if self.check_goods(line, good["name"])]
                         amount = line.split("=")[1].strip()
                         if("#" in amount):
                             amount = amount.split("#")[0].strip()
@@ -87,7 +88,7 @@ class ProductionMethodsParser:
                         }
                         item_dict["inputs"].append(input_item)
                     elif("output" in line and "=" in line):
-                        results = [good for good in goods if good["name"] in line]
+                        results = [good for good in goods if self.check_goods(line, good["name"])]
                         amount = line.split("=")[1].strip()
                         if("#" in amount):
                             amount = amount.split("#")[0].strip()
@@ -99,7 +100,17 @@ class ProductionMethodsParser:
 
         return item_dict
 
+    def check_goods(self, line, good):
+        # handle special cases
+        if good == "wood":
+            if "hardwood" in line:
+                return False
+
+        if good in line:
+            return True
+
+
     def open_goods_json(self):
-        with open('./goods/goods.json', 'r') as json_file:
+        with open(f'{self.output_path}/goods.json', 'r') as json_file:
             data = json.load(json_file)
         return data

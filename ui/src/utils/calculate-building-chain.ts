@@ -4,7 +4,7 @@ import ProductionResult from '@/interfaces/production-result';
 import BuildingChain from '@/interfaces/building-chain';
 
 const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
-  return setting.productionMethodGroups
+  return setting.production_method_groups
     .flatMap((group) => {
       if (!group.currentMethod.inputs) {
         return [];
@@ -29,20 +29,25 @@ const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
 };
 
 const getTotalSettingOutputPerBuilding = (setting: BuildingSetting) => {
-  return setting.productionMethodGroups
+  // TODO: this is overriding the settings
+  return setting.production_method_groups
     .flatMap((group) => {
       if (!group.currentMethod.outputs) {
         return [];
       }
-      return group.currentMethod.outputs;
+      return group.currentMethod.outputs.map((output) => output);
     })
     .reduce<ProductionResult[]>((acc, output) => {
       if (acc.some((a) => a.good === output.good)) {
         const updated = acc.map((a) => {
+          let amount = a.amount;
           if (a.good === output.good) {
-            a.amount += output.amount;
+            amount += output.amount;
           }
-          return a;
+          return {
+            ...a,
+            amount: amount,
+          };
         });
 
         return [...updated];
@@ -54,14 +59,28 @@ const getTotalSettingOutputPerBuilding = (setting: BuildingSetting) => {
 
 const getBuildingSettingsByGood = (good: string, settings: BuildingSetting[]): BuildingSetting[] => {
   return settings.filter((s) =>
-    s.productionMethodGroups.some((g) => g.currentMethod.outputs?.some((o) => o.good === good)),
+    s.production_method_groups.some((g) => g.currentMethod.outputs?.some((o) => o.good === good)),
   );
 };
 
 const getOutputGoodFromSetting = (setting: BuildingSetting, good: string) => {
-  return setting.productionMethodGroups
-    .find((g) => g.currentMethod.outputs?.some((o) => o.good === good))
-    ?.currentMethod.outputs?.find((o) => o.good === good) as ProductionResult;
+  // TODO needs to check for multiple outputs and if they offset each other
+  const potentialMethodsGroups = setting.production_method_groups.filter((g) =>
+    g.currentMethod.outputs?.some((o) => o.good === good),
+  );
+  const totalGoodOutput = potentialMethodsGroups.reduce((outputTotal, group) => {
+    const methodOutput =
+      group.currentMethod.outputs?.reduce((acc, output) => {
+        if (output.good === good) {
+          return acc + output.amount;
+        }
+        return acc;
+      }, 0) || 0;
+
+    return outputTotal + methodOutput;
+  }, 0);
+
+  return { good, amount: totalGoodOutput };
 };
 
 const calculateBuildingChainInputs = (buildingChain: BuildingChain[]) => {
@@ -128,7 +147,7 @@ const calculateBuildingChainDeltas = (buildingChain: BuildingChain[]): Productio
 
 const getSettingRequiredTechs = (setting: BuildingSetting) => {
   const buildingTechs = setting?.unlocking_technologies || [];
-  const productionTechs = setting.productionMethodGroups?.flatMap(
+  const productionTechs = setting.production_method_groups?.flatMap(
     (group) => group.currentMethod?.unlocking_technologies || [],
   );
   return [...buildingTechs, ...productionTechs];
@@ -245,6 +264,7 @@ const recursiveCalculateBuildingChain = (
     });
   }
 
+  // TODO: there can be multiple outputs for a good, need to handle this
   const outputGood = getOutputGoodFromSetting(preferredSetting, delta.good);
 
   // get the updated building

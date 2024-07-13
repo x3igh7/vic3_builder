@@ -22,7 +22,7 @@ const BuildingSettingItem = ({
   const handleSelectedProductionMethodChange = (groupName: string, selectedProductionMethod: ProductionMethod) => {
     onSettingChange({
       ...buildingSetting,
-      productionMethodGroups: buildingSetting.productionMethodGroups.map((group) => {
+      production_method_groups: buildingSetting.production_method_groups.map((group) => {
         if (group.name === groupName) {
           return { ...group, currentMethod: selectedProductionMethod };
         }
@@ -40,7 +40,7 @@ const BuildingSettingItem = ({
       const groupProductionMethods = productionMethods.filter((method) =>
         group.production_methods.includes(method.name),
       );
-      const selectedProductionMethod = buildingSetting.productionMethodGroups.find(
+      const selectedProductionMethod = buildingSetting.production_method_groups.find(
         (settingGroup) => settingGroup.name === group.name,
       )?.currentMethod;
 
