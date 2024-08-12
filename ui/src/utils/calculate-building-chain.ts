@@ -42,7 +42,6 @@ const getTotalSettingInputPerBuilding = (setting: BuildingSetting) => {
 };
 
 const getTotalSettingOutputPerBuilding = (setting: BuildingSetting) => {
-  // TODO: this is overriding the settings
   return setting.production_method_groups
     .flatMap((group) => {
       if (!group.currentMethod.outputs) {
@@ -77,7 +76,6 @@ const getBuildingSettingsByGood = (good: string, settings: BuildingSetting[]): B
 };
 
 const getOutputGoodFromSetting = (setting: BuildingSetting, good: string) => {
-  // TODO needs to check for multiple outputs and if they offset each other
   const potentialMethodsGroups = setting.production_method_groups.filter((g) =>
     g.currentMethod.outputs?.some((o) => o.good === good),
   );
@@ -277,7 +275,6 @@ const recursiveCalculateBuildingChain = (
     });
   }
 
-  // TODO: there can be multiple outputs for a good, need to handle this
   const outputGood = getOutputGoodFromSetting(preferredSetting, delta.good);
 
   // get the updated building
