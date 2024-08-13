@@ -1,4 +1,5 @@
 export default interface ProductionMethodGroup {
-    name: string;
-    production_methods: string[];
+  name: string;
+  displayName: string;
+  production_methods: string[];
 }

@@ -31,7 +31,7 @@ const BuildingSelector = ({
 
   useEffect(() => {
     if (selectedBuilding) {
-      setFilterValue(selectedBuilding.name);
+      setFilterValue(selectedBuilding.displayName);
     }
   }, [selectedBuilding]);
 
@@ -40,7 +40,9 @@ const BuildingSelector = ({
   };
 
   const handleBuildingSearch = (e: AutoCompleteCompleteEvent) => {
-    setFilteredBuildings(buildings.filter((building) => building.name.toLowerCase().includes(e.query.toLowerCase())));
+    setFilteredBuildings(
+      buildings.filter((building) => building.displayName.toLowerCase().includes(e.query.toLowerCase())),
+    );
   };
 
   const handleSelectedBuildingChange = (e: AutoCompleteSelectEvent) => {
@@ -59,7 +61,7 @@ const BuildingSelector = ({
         </label>
         <AutoComplete
           inputId="buildingSelector"
-          field={'name'}
+          field={'displayName'}
           suggestions={filteredBuildings}
           value={filterValue}
           completeMethod={handleBuildingSearch}

@@ -203,6 +203,7 @@ const getUpdatedBuilding = (
   // add updated building to the chain
   return {
     name: setting.name,
+    displayName: setting.displayName,
     requiredTechs: existingBuilding?.requiredTechs || getSettingRequiredTechs(setting) || [],
     quantity: totalQuantity,
     totalInputs: totalNewBuildingInputs,
@@ -307,6 +308,7 @@ const calculateBuildingChains = (selectedBuilding: Building, quantity: number, s
 
   buildingChain.push({
     name: selectedBuildingSetting.name,
+    displayName: selectedBuildingSetting.displayName,
     requiredTechs: getSettingRequiredTechs(selectedBuildingSetting),
     quantity,
     totalInputs: baseInputs,

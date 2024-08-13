@@ -5,11 +5,13 @@ import { css } from '@emotion/react';
 
 const ProductionMethodGroupItem = ({
   name,
+  displayName,
   groupProductionMethods,
   selectedProductionMethod,
   onSelectedProductionMethodChange,
 }: {
   name: string;
+  displayName: string;
   groupProductionMethods: ProductionMethod[];
   selectedProductionMethod: ProductionMethod;
   onSelectedProductionMethodChange: (groupName: string, productionMethod: ProductionMethod) => void;
@@ -22,21 +24,24 @@ const ProductionMethodGroupItem = ({
 
   const handleMethodSearch = (e: AutoCompleteCompleteEvent) => {
     setSuggestedMethods(
-      groupProductionMethods.filter((method) => method.name.toLowerCase().includes(e.query.toLowerCase())),
+      groupProductionMethods.filter((method) => method.displayName.toLowerCase().includes(e.query.toLowerCase())),
     );
   };
 
   const handleProductionMethodChange = (e: AutoCompleteSelectEvent) => {
-    if (e.value?.hasOwnProperty('name') && groupProductionMethods.some((method) => method.name === e.value.name)) {
+    if (
+      e.value?.hasOwnProperty('displayName') &&
+      groupProductionMethods.some((method) => method.displayName === e.value.displayName())
+    ) {
       onSelectedProductionMethodChange(name, e.value);
     }
   };
 
   return (
     <div css={css({ display: 'flex', flexDirection: 'column' })}>
-      <label>{name}</label>
+      <label>{displayName}</label>
       <AutoComplete
-        field={'name'}
+        field={'displayName'}
         value={selectedProductionMethod}
         suggestions={suggestedMethods}
         completeMethod={handleMethodSearch}

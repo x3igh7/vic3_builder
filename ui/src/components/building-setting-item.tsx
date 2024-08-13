@@ -48,6 +48,7 @@ const BuildingSettingItem = ({
         <div key={group.name}>
           <ProductionMethodGroupItem
             name={group.name}
+            displayName={group.displayName}
             groupProductionMethods={groupProductionMethods}
             selectedProductionMethod={selectedProductionMethod ? selectedProductionMethod : groupProductionMethods[0]}
             onSelectedProductionMethodChange={handleSelectedProductionMethodChange}
@@ -60,7 +61,7 @@ const BuildingSettingItem = ({
   return (
     <div css={{ marginBottom: '1rem' }}>
       <h3>
-        <label>{building?.name}</label>
+        <label>{building?.displayName}</label>
       </h3>
       <div
         css={css({

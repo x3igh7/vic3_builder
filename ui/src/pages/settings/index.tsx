@@ -11,10 +11,12 @@ import { css } from '@emotion/react';
 import { Button } from 'primereact/button';
 import ProductionMethod from '@/interfaces/production-method';
 import useDebounce from '@/hooks/use-debounce';
+import { useTranslation } from 'react-i18next';
 
 const SettingsPage = (): ReactElement => {
+  const { t } = useTranslation();
   const { buildings, productionMethods, productionMethodGroups } = useDataHook();
-  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings_v2');
+  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings_v3');
   const [filterQuery, setFilterQuery] = useState<string>('');
   const [filteredSettings, setFilteredSettings] = useState<BuildingSetting[]>([]);
 
@@ -35,6 +37,7 @@ const SettingsPage = (): ReactElement => {
       .map((building) => {
         return {
           name: building.name,
+          displayName: t(building.name),
           unlocking_technologies: building.unlocking_technologies || [],
           production_method_groups: productionMethodGroups
             .filter((group) => building.production_method_groups.includes(group.name))
@@ -42,6 +45,7 @@ const SettingsPage = (): ReactElement => {
               const defaultMethod = productionMethods.find((method) => group.production_methods[0] === method.name);
               return {
                 name: group.name,
+                displayName: t(group.name),
                 currentMethod: defaultMethod as ProductionMethod,
               };
             }),
