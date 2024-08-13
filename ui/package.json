@@ -15,8 +15,8 @@
     "i18next-http-backend": "^2.5.2",
     "lodash": "^4.17.21",
     "next": "14.2.4",
-    "primeicons": "^4.1.0",
-    "primereact": "^10.6.6",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.8.2",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^15.0.1"

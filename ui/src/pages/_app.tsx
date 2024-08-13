@@ -7,6 +7,7 @@ import '../../i18n.config';
 import Link from 'next/link';
 import { Suspense, useEffect } from 'react';
 import Loading from '@/components/loading';
+import { Button } from 'primereact/button';
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -24,8 +25,15 @@ export default function App({ Component, pageProps }: AppProps) {
       <PrimeReactProvider>
         <div css={css({ padding: '1rem' })}>
           <div css={css({ display: 'flex', gap: '1rem' })}>
-            <Link href="/">Builder</Link>
-            <Link href="/settings">Settings</Link>
+            <Link href="/">
+              <Button icon="pi pi-wrench" label="Builder" text />
+            </Link>
+            <Link href="/settings">
+              <Button icon="pi pi-cog" label="Production Methods" text />
+            </Link>
+            <Link href="https://github.com/x3igh7/vic3_builder/issues">
+              <Button icon="pi pi-exclamation-triangle" label="Issues" text />
+            </Link>
           </div>
           <Component {...pageProps} />
         </div>
