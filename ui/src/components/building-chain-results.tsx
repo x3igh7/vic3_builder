@@ -10,6 +10,7 @@ import BuildingChain from '@/interfaces/building-chain';
 import { css } from '@emotion/react';
 import { useLocalStorage } from 'primereact/hooks';
 import BuildingSetting from '@/interfaces/building-setting';
+import { useTranslation } from 'react-i18next';
 
 const BuildingChainResults = ({
   selectedBuilding,
@@ -18,6 +19,7 @@ const BuildingChainResults = ({
   selectedBuilding: Building | undefined;
   quantity: number | null;
 }): ReactElement => {
+  const { t } = useTranslation();
   const [settings] = useLocalStorage<BuildingSetting[]>([], 'settings_v3');
   const [currentBuildingChains, setCurrentBuildingChains] = useState<BuildingChain[][]>([]);
 
@@ -51,7 +53,7 @@ const BuildingChainResults = ({
 
       return (
         <div key={output.good} css={css({ '> *': { marginRight: '1rem' } })}>
-          <label>{output.good}</label>
+          <label>{t(output.good)}</label>
           <span css={{ color: 'var(--text-color-secondary)' }}>Total: {output.amount}</span>
           <span css={{ color: styleColor }}>Excess: {deltaAmount}</span>
         </div>
