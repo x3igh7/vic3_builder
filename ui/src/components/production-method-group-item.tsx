@@ -39,7 +39,7 @@ const ProductionMethodGroupItem = ({
 
   return (
     <div css={css({ display: 'flex', flexDirection: 'column' })}>
-      <label>{displayName}</label>
+      <label css={{ color: 'var(--text-color-secondary)' }}>{displayName}</label>
       <AutoComplete
         field={'displayName'}
         value={selectedProductionMethod}

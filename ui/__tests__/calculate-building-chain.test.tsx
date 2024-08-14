@@ -20,11 +20,13 @@ describe('calculateBuildingChain functions', () => {
     it('should return the total amount per good for all inputs', () => {
       const setting: BuildingSetting = {
         name: 'Test Building',
+        displayName: 'Test Display',
         production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
               name: 'Test Method',
+              displayName: 'Test Method Display',
               inputs: [
                 { good: 'Good 1', amount: 1 },
                 { good: 'Good 2', amount: 2 },
@@ -35,6 +37,8 @@ describe('calculateBuildingChain functions', () => {
             name: 'Test Group 2',
             currentMethod: {
               name: 'Test Method 2',
+              displayName: 'Test Method Display',
+
               inputs: [
                 { good: 'Good 1', amount: 1 },
                 { good: 'Good 3', amount: 3 },
@@ -59,11 +63,13 @@ describe('calculateBuildingChain functions', () => {
     it('should return the total amount per good for all inputs', () => {
       const setting: BuildingSetting = {
         name: 'Test Building',
+        displayName: 'Test Display',
         production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
               name: 'Test Method',
+              displayName: 'Test Method Display',
               outputs: [
                 { good: 'Good 1', amount: 1 },
                 { good: 'Good 2', amount: 2 },
@@ -74,6 +80,7 @@ describe('calculateBuildingChain functions', () => {
             name: 'Test Group 2',
             currentMethod: {
               name: 'Test Method 2',
+              displayName: 'Test Method Display',
               outputs: [
                 { good: 'Good 1', amount: 1 },
                 { good: 'Good 3', amount: 3 },
@@ -99,11 +106,13 @@ describe('calculateBuildingChain functions', () => {
       const settings: BuildingSetting[] = [
         {
           name: 'Test Building',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'Test Group',
               currentMethod: {
                 name: 'Test Method',
+                displayName: 'Test Method Display',
                 outputs: [
                   { good: 'Good 1', amount: 1 },
                   { good: 'Good 2', amount: 2 },
@@ -114,11 +123,13 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'Test Group 2',
               currentMethod: {
                 name: 'Test Method 2',
+                displayName: 'Test Method Display',
                 outputs: [{ good: 'Good 3', amount: 3 }],
               },
             },
@@ -126,11 +137,13 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 3',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'Test Group 2',
               currentMethod: {
                 name: 'Test Method 2',
+                displayName: 'Test Method Display',
                 outputs: [{ good: 'Good 3', amount: 1 }],
               },
             },
@@ -149,11 +162,13 @@ describe('calculateBuildingChain functions', () => {
     it('should return the specified output good production result from a setting', () => {
       const setting: BuildingSetting = {
         name: 'Test Building',
+        displayName: 'Test Building Display',
         production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
               name: 'Test Method',
+              displayName: 'Test Method Display',
               outputs: [
                 { good: 'Good 1', amount: 1 },
                 { good: 'Good 2', amount: 2 },
@@ -173,6 +188,7 @@ describe('calculateBuildingChain functions', () => {
       const chain: BuildingChain[] = [
         {
           name: 'Test Building',
+          displayName: 'Test Building Display',
           quantity: 1,
           totalInputs: [
             { good: 'Good 1', amount: 1 },
@@ -182,6 +198,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
+          displayName: 'Test Building Display',
           quantity: 1,
           totalInputs: [
             { good: 'Good 1', amount: 1 },
@@ -209,6 +226,7 @@ describe('calculateBuildingChain functions', () => {
       const chain: BuildingChain[] = [
         {
           name: 'Test Building',
+          displayName: 'Test Building Display',
           quantity: 1,
           totalInputs: [
             { good: 'Good 1', amount: 1 },
@@ -218,6 +236,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
+          displayName: 'Test Building Display',
           quantity: 1,
           totalInputs: [
             { good: 'Good 1', amount: 1 },
@@ -242,6 +261,7 @@ describe('calculateBuildingChain functions', () => {
       const chain: BuildingChain[] = [
         {
           name: 'Test Building',
+          displayName: 'Test Building Display',
           quantity: 1,
           totalInputs: [
             { good: 'Good 1', amount: 1 },
@@ -251,6 +271,7 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
+          displayName: 'Test Building Display',
           quantity: 1,
           totalInputs: [
             { good: 'Good 1', amount: 1 },
@@ -277,11 +298,13 @@ describe('calculateBuildingChain functions', () => {
       const buildingChain: BuildingChain[] = [];
       const setting: BuildingSetting = {
         name: 'Test Building 2',
+        displayName: 'Test Building Display',
         production_method_groups: [
           {
             name: 'Test Group',
             currentMethod: {
               name: 'Test Method',
+              displayName: 'Test Method Display',
               outputs: [{ good: 'Good 3', amount: 1 }],
             },
           },
@@ -299,6 +322,7 @@ describe('calculateBuildingChain functions', () => {
       const chain: BuildingChain[] = [
         {
           name: 'Test Building',
+          displayName: 'Test Building Display',
           quantity: 10,
           totalInputs: [{ good: 'Good 1', amount: 10 }],
           totalOutputs: [],
@@ -308,11 +332,14 @@ describe('calculateBuildingChain functions', () => {
       const settings = [
         {
           name: 'Test Building',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'Test Group',
+              displayName: 'Test Group Display',
               currentMethod: {
                 name: 'Test Method',
+                displayName: 'Test Method Display',
                 inputs: [{ good: 'Good 1', amount: 1 }],
               },
             },
@@ -320,11 +347,14 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'Test Building 2',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'Test Group 2',
+              displayName: 'Test Group Display',
               currentMethod: {
                 name: 'Test Method 2',
+                displayName: 'Test Method Display',
                 inputs: [{ good: 'Good 2', amount: 1 }],
                 outputs: [{ good: 'Good 1', amount: 2 }],
               },
@@ -346,11 +376,14 @@ describe('calculateBuildingChain functions', () => {
       const settings = [
         {
           name: 'building_construction_sector',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_construction_sector',
+              displayName: 'Test Group Display',
               currentMethod: {
                 name: 'pm_wooden_buildings',
+                displayName: 'Test Method Display',
                 inputs: [
                   {
                     good: 'fabric',
@@ -368,11 +401,14 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_cotton_plantation',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_cotton_plantation',
+              displayName: 'Test Group Display',
               currentMethod: {
                 name: 'default_building_cotton_plantation',
+                displayName: 'Test Method Display',
                 inputs: [],
                 outputs: [
                   {
@@ -384,25 +420,32 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_train_automation_building_cotton_plantation',
+              displayName: 'Test Group Display',
               currentMethod: {
                 name: 'pm_road_carts',
+                displayName: 'Test Method Display',
               },
             },
             {
               name: 'pmg_ownership_land_building_cotton_plantation',
+              displayName: 'Test Group Display',
               currentMethod: {
                 name: 'pm_privately_owned_plantation',
+                displayName: 'Test Method Display',
               },
             },
           ],
         },
         {
           name: 'building_logging_camp',
+          displayName: 'Test Building Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_saw_mills',
+                displayName: 'Test Display',
                 unlocking_technologies: ['steelworking'],
                 inputs: [
                   {
@@ -420,37 +463,48 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_hardwood',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_hardwood',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_equipment',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_equipment',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_transportation_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_road_carts',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_ownership_capital_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_merchant_guilds_building_logging_camp',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_tooling_workshops',
+          displayName: 'Test Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_crude_tools',
+                displayName: 'Test Display',
                 inputs: [
                   {
                     good: 'wood',
@@ -467,14 +521,18 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_automation_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_automation_disabled',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_ownership_capital_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_merchant_guilds_building_tooling_workshops',
+                displayName: 'Test Display',
               },
             },
           ],
@@ -483,8 +541,10 @@ describe('calculateBuildingChain functions', () => {
 
       const selectedBuilding = {
         name: 'building_construction_sector',
+        displayName: 'Test Building Display',
         unlocking_technologies: ['urbanization'],
         production_method_groups: ['pmg_base_building_construction_sector'],
+        required_construction: 200,
       };
 
       const results = calculateBuildingChains(selectedBuilding, 5, settings);
@@ -504,12 +564,15 @@ describe('calculateBuildingChain functions', () => {
       const settings = [
         {
           name: 'building_arms_industry',
+          displayName: 'Test Display',
           unlocking_technologies: ['gunsmithing'],
           production_method_groups: [
             {
               name: 'pmg_firearms_manufacturing',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_muskets',
+                displayName: 'Test Display',
                 inputs: [
                   {
                     good: 'iron',
@@ -530,20 +593,25 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_automation_building_arms_industry',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_automation_disabled',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_iron_mine',
+          displayName: 'Test Display',
           unlocking_technologies: ['shaft_mining'],
           production_method_groups: [
             {
               name: 'pmg_mining_equipment_building_iron_mine',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_picks_and_shovels_building_iron_mine',
+                displayName: 'Test Display',
                 inputs: [
                   {
                     good: 'tools',
@@ -560,32 +628,41 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_explosives_building_iron_mine',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_explosives',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_steam_automation_building_iron_mine',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_steam_automation',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_train_automation_building_iron_mine',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_road_carts',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_logging_camp',
+          displayName: 'Test Display',
           unlocking_technologies: [],
           production_method_groups: [
             {
               name: 'pmg_base_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_simple_forestry',
+                displayName: 'Test Display',
                 inputs: [],
                 outputs: [
                   {
@@ -597,8 +674,10 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_hardwood',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_hardwood',
+                displayName: 'Test Display',
                 inputs: [],
                 outputs: [
                   {
@@ -614,26 +693,33 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_equipment',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_equipment',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_transportation_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_road_carts',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_tooling_workshops',
+          displayName: 'Test Display',
           unlocking_technologies: ['manufacturies'],
           production_method_groups: [
             {
               name: 'pmg_base_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_crude_tools',
+                displayName: 'Test Display',
                 inputs: [
                   {
                     good: 'wood',
@@ -650,8 +736,10 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_automation_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_automation_disabled',
+                displayName: 'Test Display',
               },
             },
           ],
@@ -660,12 +748,14 @@ describe('calculateBuildingChain functions', () => {
 
       const selectedBuilding = {
         name: 'building_arms_industry',
+        displayName: 'Test Display',
         unlocking_technologies: ['gunsmithing'],
         production_method_groups: [
           'pmg_firearms_manufacturing',
           'pmg_automation_building_arms_industry',
           'pmg_ownership_capital_building_arms_industry',
         ],
+        required_construction: 200,
       };
 
       const results = calculateBuildingChains(selectedBuilding, 5, settings);
@@ -681,11 +771,14 @@ describe('calculateBuildingChain functions', () => {
       const settings = [
         {
           name: 'building_construction_sector',
+          displayName: 'Test Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_construction_sector',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_wooden_buildings',
+                displayName: 'Test Display',
                 inputs: [
                   {
                     good: 'fabric',
@@ -703,11 +796,14 @@ describe('calculateBuildingChain functions', () => {
         },
         {
           name: 'building_cotton_plantation',
+          displayName: 'Test Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_cotton_plantation',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'default_building_cotton_plantation',
+                displayName: 'Test Display',
                 inputs: [],
                 outputs: [
                   {
@@ -719,25 +815,32 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_train_automation_building_cotton_plantation',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_road_carts',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_ownership_land_building_cotton_plantation',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_privately_owned_plantation',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_cotton_plantation_small',
+          displayName: 'Test Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_cotton_plantation_small',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'default_building_cotton_plantation_small',
+                displayName: 'Test Display',
                 inputs: [],
                 outputs: [
                   {
@@ -749,25 +852,32 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_train_automation_building_cotton_plantation_small',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_road_carts_small',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_ownership_land_building_cotton_plantation_small',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_privately_owned_plantation_small',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_logging_camp',
+          displayName: 'Test Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_saw_mills',
+                displayName: 'Test Display',
                 unlocking_technologies: ['steelworking'],
                 inputs: [
                   {
@@ -785,37 +895,48 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_hardwood',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_hardwood',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_equipment',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_no_equipment',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_transportation_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_road_carts',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_ownership_capital_building_logging_camp',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_merchant_guilds_building_logging_camp',
+                displayName: 'Test Display',
               },
             },
           ],
         },
         {
           name: 'building_tooling_workshops',
+          displayName: 'Test Display',
           production_method_groups: [
             {
               name: 'pmg_base_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_crude_tools',
+                displayName: 'Test Display',
                 inputs: [
                   {
                     good: 'wood',
@@ -832,14 +953,18 @@ describe('calculateBuildingChain functions', () => {
             },
             {
               name: 'pmg_automation_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_automation_disabled',
+                displayName: 'Test Display',
               },
             },
             {
               name: 'pmg_ownership_capital_building_tooling_workshops',
+              displayName: 'Test Display',
               currentMethod: {
                 name: 'pm_merchant_guilds_building_tooling_workshops',
+                displayName: 'Test Display',
               },
             },
           ],
@@ -848,8 +973,10 @@ describe('calculateBuildingChain functions', () => {
 
       const selectedBuilding = {
         name: 'building_construction_sector',
+        displayName: 'Test Display',
         unlocking_technologies: ['urbanization'],
         production_method_groups: ['pmg_base_building_construction_sector'],
+        required_construction: 200,
       };
 
       const results = calculateBuildingChains(selectedBuilding, 5, settings);

@@ -5,6 +5,7 @@ import ProductionMethodGroup from '@/interfaces/production-method-group';
 import ProductionMethod from '@/interfaces/production-method';
 import ProductionMethodGroupItem from '@/components/production-method-group-item';
 import { css } from '@emotion/react';
+import BuildingEfficiencyDisplay from '@/components/building-efficiency-display';
 
 const BuildingSettingItem = ({
   building,
@@ -60,9 +61,13 @@ const BuildingSettingItem = ({
 
   return (
     <div css={{ marginBottom: '1rem' }}>
-      <h3>
-        <label>{building?.displayName}</label>
-      </h3>
+      <div css={css({ display: 'flex', gap: '1rem', alignItems: 'baseline' })}>
+        <h3>
+          <label>{building?.displayName}</label>
+        </h3>
+        <BuildingEfficiencyDisplay buildingSetting={buildingSetting} />
+      </div>
+
       <div
         css={css({
           display: 'flex',

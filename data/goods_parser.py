@@ -6,8 +6,6 @@ class GoodsParser:
     def __init__(self, folder_path, output_path):
         self.folder_path = folder_path
         self.output_path = output_path
-        self.is_unlocking_technologies_open = False
-        self.is_production_method_groups_open = False
 
     def parse(self):
         item_list = []
@@ -27,4 +25,15 @@ class GoodsParser:
         return item_list
 
     def callback(self, line, item_dict):
+        item_dict = self.handle_cost(line, item_dict)
+        return item_dict
+
+    def handle_cost(self, line, item_dict):
+        if "cost" in line:
+            parts = line.split("=");
+            if parts[0].strip() == "cost":
+                try:
+                    item_dict["cost"] = int(parts[1].strip())
+                except:
+                    item_dict["cost"] = parts[1].strip()
         return item_dict

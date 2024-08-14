@@ -1,1 +1,4863 @@
-[{"name": "pm_bakery", "inputs": [{"good": "grain", "amount": 40.0}], "outputs": [{"good": "groceries", "amount": 45.0}]}, {"name": "pm_sweeteners", "unlocking_technologies": ["distillation"], "inputs": [{"good": "grain", "amount": 40.0}, {"good": "sugar", "amount": 15.0}], "outputs": [{"good": "groceries", "amount": 65.0}]}, {"name": "pm_baking_powder", "unlocking_technologies": ["baking_powder"], "inputs": [{"good": "grain", "amount": 80.0}, {"good": "sugar", "amount": 30.0}], "outputs": [{"good": "groceries", "amount": 120.0}]}, {"name": "pm_disabled_canning"}, {"name": "pm_cannery", "unlocking_technologies": ["canneries"], "inputs": [{"good": "grain", "amount": -20.0}, {"good": "meat", "amount": 20.0}, {"good": "iron", "amount": 10.0}], "outputs": [{"good": "groceries", "amount": 30.0}]}, {"name": "pm_cannery_fish", "unlocking_technologies": ["canneries"], "inputs": [{"good": "grain", "amount": -20.0}, {"good": "fish", "amount": 30.0}, {"good": "iron", "amount": 10.0}], "outputs": [{"good": "groceries", "amount": 30.0}]}, {"name": "pm_vacuum_canning", "unlocking_technologies": ["vacuum_canning"], "inputs": [{"good": "grain", "amount": -30.0}, {"good": "fish", "amount": 30.0}, {"good": "meat", "amount": 20.0}, {"good": "iron", "amount": 10.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "groceries", "amount": 60.0}]}, {"name": "pm_vacuum_canning_principle_3", "unlocking_technologies": ["vacuum_canning"], "inputs": [{"good": "grain", "amount": -30.0}, {"good": "fish", "amount": 30.0}, {"good": "meat", "amount": 20.0}, {"good": "iron", "amount": 10.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "groceries", "amount": 70.0}]}, {"name": "pm_disabled_distillery"}, {"name": "pm_pot_stills", "unlocking_technologies": ["distillation"], "inputs": [{"good": "sugar", "amount": 25.0}], "outputs": [{"good": "liquor", "amount": 60.0}, {"good": "groceries", "amount": -30.0}]}, {"name": "pm_patent_stills", "unlocking_technologies": ["fractional_distillation"], "inputs": [{"good": "sugar", "amount": 25.0}, {"good": "glass", "amount": 10.0}], "outputs": [{"good": "liquor", "amount": 100.0}, {"good": "groceries", "amount": -40.0}]}, {"name": "pm_manual_dough_processing"}, {"name": "pm_automated_bakery", "unlocking_technologies": ["dough_rollers"], "inputs": [{"good": "tools", "amount": 10.0}], "outputs": []}, {"name": "pm_handsewn_clothes", "inputs": [{"good": "fabric", "amount": 40.0}], "outputs": [{"good": "clothes", "amount": 45.0}]}, {"name": "pm_dye_workshops", "unlocking_technologies": ["", "building_modifiers = {", "workforce_scaled = {", "# input goods", "goods_input_fabric_add = 40# x20 =  800", "goods_input_dye_add = 5# x40 =  200", "", "# output goods", "goods_output_clothes_add = 60# x30 = 1800"]}, {"name": "pm_sewing_machines", "unlocking_technologies": ["mechanized_workshops"], "inputs": [{"good": "fabric", "amount": 60.0}, {"good": "dye", "amount": 10.0}, {"good": "tools", "amount": 5.0}], "outputs": [{"good": "clothes", "amount": 100.0}]}, {"name": "pm_electric_sewing_machines", "unlocking_technologies": ["electrical_capacitors"], "inputs": [{"good": "fabric", "amount": 60.0}, {"good": "dye", "amount": 20.0}, {"good": "tools", "amount": 10.0}, {"good": "electricity", "amount": 10.0}], "outputs": [{"good": "clothes", "amount": 140.0}]}, {"name": "pm_no_luxury_clothes"}, {"name": "pm_craftsman_sewing", "inputs": [{"good": "silk", "amount": 15.0}, {"good": "fabric", "amount": -15.0}], "outputs": [{"good": "clothes", "amount": -30.0}, {"good": "clothes", "amount": 30.0}]}, {"name": "pm_elastics", "unlocking_technologies": ["vulcanization"], "inputs": [{"good": "rubber", "amount": 10.0}, {"good": "silk", "amount": 35.0}, {"good": "fabric", "amount": -35.0}], "outputs": [{"good": "clothes", "amount": -70.0}, {"good": "clothes", "amount": 70.0}]}, {"name": "pm_traditional_looms"}, {"name": "pm_mechanized_looms", "unlocking_technologies": ["mechanized_workshops"], "inputs": [{"good": "tools", "amount": 5.0}], "outputs": []}, {"name": "pm_automatic_power_looms", "unlocking_technologies": ["electrical_capacitors"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "electricity", "amount": 10.0}], "outputs": []}, {"name": "pm_handcrafted_furniture", "inputs": [{"good": "wood", "amount": 30.0}, {"good": "fabric", "amount": 10.0}], "outputs": [{"good": "furniture", "amount": 45.0}]}, {"name": "pm_lathe", "unlocking_technologies": ["lathe"], "inputs": [{"good": "wood", "amount": 30.0}, {"good": "fabric", "amount": 10.0}, {"good": "tools", "amount": 5.0}], "outputs": [{"good": "furniture", "amount": 65.0}]}, {"name": "pm_mechanized_workshops", "unlocking_technologies": ["mechanized_workshops"], "inputs": [{"good": "wood", "amount": 50.0}, {"good": "fabric", "amount": 10.0}, {"good": "tools", "amount": 10.0}], "outputs": [{"good": "furniture", "amount": 110.0}]}, {"name": "pm_no_luxuries"}, {"name": "pm_luxury_furniture", "inputs": [{"good": "hardwood", "amount": 15.0}, {"good": "wood", "amount": -15.0}], "outputs": [{"good": "furniture", "amount": -25.0}, {"good": "furniture", "amount": 25.0}]}, {"name": "pm_precision_tools", "unlocking_technologies": ["mechanical_tools"], "inputs": [{"good": "hardwood", "amount": 25.0}, {"good": "tools", "amount": 10.0}, {"good": "wood", "amount": -25.0}], "outputs": [{"good": "furniture", "amount": -55.0}, {"good": "furniture", "amount": 55.0}]}, {"name": "pm_automation_disabled"}, {"name": "pm_watertube_boiler_building_furniture_manufacturies", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 5.0}], "outputs": []}, {"name": "pm_rotary_valve_engine_building_furniture_manufacturies", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 10.0}], "outputs": []}, {"name": "pm_assembly_lines_building_furniture_manufacturies", "unlocking_technologies": ["conveyors"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "oil", "amount": 5.0}, {"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_forest_glass", "inputs": [{"good": "wood", "amount": 30.0}], "outputs": [{"good": "glass", "amount": 30.0}]}, {"name": "pm_leaded_glass", "unlocking_technologies": ["lathe "], "inputs": [{"good": "wood", "amount": 20.0}, {"good": "lead", "amount": 10.0}], "outputs": [{"good": "glass", "amount": 40.0}]}, {"name": "pm_crystal_glass", "unlocking_technologies": ["crystal_glass"], "inputs": [{"good": "lead", "amount": 35.0}], "outputs": [{"good": "glass", "amount": 70.0}]}, {"name": "pm_houseware_plastics", "unlocking_technologies": ["plastics"], "inputs": [{"good": "oil", "amount": 25.0}, {"good": "lead", "amount": 35.0}], "outputs": [{"good": "glass", "amount": 110.0}]}, {"name": "pm_disabled_ceramics"}, {"name": "pm_ceramics", "inputs": [{"good": "dye", "amount": 5.0}], "outputs": [{"good": "glass", "amount": -20.0}, {"good": "porcelain", "amount": 20.0}]}, {"name": "pm_bone_china", "unlocking_technologies": ["chemical_bleaching"], "inputs": [{"good": "dye", "amount": 15.0}], "outputs": [{"good": "glass", "amount": -55.0}, {"good": "porcelain", "amount": 55.0}]}, {"name": "pm_manual_glassblowing"}, {"name": "pm_automatic_bottle_blowers", "unlocking_technologies": ["automatic_bottle_blowers"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "oil", "amount": 10.0}], "outputs": []}, {"name": "pm_crude_tools", "inputs": [{"good": "wood", "amount": 30.0}], "outputs": [{"good": "tools", "amount": 30.0}]}, {"name": "pm_pig_iron", "unlocking_technologies": ["steelworking"], "inputs": [{"good": "wood", "amount": 30.0}, {"good": "iron", "amount": 20.0}], "outputs": [{"good": "tools", "amount": 60.0}]}, {"name": "pm_steel", "unlocking_technologies": ["mechanical_tools"], "inputs": [{"good": "wood", "amount": 30.0}, {"good": "steel", "amount": 20.0}], "outputs": [{"good": "tools", "amount": 80.0}]}, {"name": "pm_rubber_grips", "unlocking_technologies": ["vulcanization"], "inputs": [{"good": "rubber", "amount": 10.0}, {"good": "steel", "amount": 30.0}], "outputs": [{"good": "tools", "amount": 110.0}]}, {"name": "pm_watertube_boiler_building_tooling_workshops", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "coal", "amount": 10.0}], "outputs": []}, {"name": "pm_rotary_valve_engine_building_tooling_workshops", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "coal", "amount": 15.0}], "outputs": []}, {"name": "pm_assembly_lines_building_tooling_workshops", "unlocking_technologies": ["conveyors"], "inputs": [{"good": "oil", "amount": 10.0}, {"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_pulp_pressing", "inputs": [{"good": "wood", "amount": 30.0}], "outputs": [{"good": "paper", "amount": 40.0}]}, {"name": "pm_sulfite_pulping", "unlocking_technologies": ["mechanical_tools"], "inputs": [{"good": "wood", "amount": 30.0}, {"good": "sulfur", "amount": 10.0}], "outputs": [{"good": "paper", "amount": 70.0}]}, {"name": "pm_bleached_paper", "unlocking_technologies": ["chemical_bleaching"], "inputs": [{"good": "wood", "amount": 30.0}, {"good": "sulfur", "amount": 10.0}, {"good": "dye", "amount": 10.0}], "outputs": [{"good": "paper", "amount": 100.0}]}, {"name": "pm_watertube_boiler_building_paper_mills", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 5.0}], "outputs": []}, {"name": "pm_rotary_valve_engine_building_paper_mills", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 10.0}], "outputs": []}, {"name": "pm_artificial_fertilizers", "inputs": [{"good": "sulfur", "amount": 30.0}, {"good": "iron", "amount": 10.0}], "outputs": [{"good": "fertilizer", "amount": 90.0}]}, {"name": "pm_improved_fertilizer", "unlocking_technologies": ["improved_fertilizer"], "inputs": [{"good": "sulfur", "amount": 30.0}, {"good": "iron", "amount": 30.0}], "outputs": [{"good": "fertilizer", "amount": 140.0}]}, {"name": "pm_nitrogen_fixation", "unlocking_technologies": ["nitrogen_fixation"], "inputs": [{"good": "sulfur", "amount": 40.0}, {"good": "oil", "amount": 20.0}, {"good": "iron", "amount": 30.0}], "outputs": [{"good": "fertilizer", "amount": 200.0}]}, {"name": "pm_no_explosives_production"}, {"name": "pm_leblanc_process", "inputs": [{"good": "sulfur", "amount": 20.0}, {"good": "fertilizer", "amount": 20.0}], "outputs": [{"good": "explosives", "amount": 50.0}]}, {"name": "pm_ammoniasoda_process", "unlocking_technologies": ["nitroglycerin"], "inputs": [{"good": "sulfur", "amount": 30.0}, {"good": "fertilizer", "amount": 30.0}, {"good": "paper", "amount": 10.0}], "outputs": [{"good": "explosives", "amount": 80.0}]}, {"name": "pm_vacuum_evaporation", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "sulfur", "amount": 40.0}, {"good": "fertilizer", "amount": 40.0}, {"good": "paper", "amount": 20.0}], "outputs": [{"good": "explosives", "amount": 110.0}]}, {"name": "pm_brine_electrolysis", "unlocking_technologies": ["electrical_capacitors"], "inputs": [{"good": "sulfur", "amount": 40.0}, {"good": "fertilizer", "amount": 50.0}, {"good": "paper", "amount": 30.0}, {"good": "electricity", "amount": 20.0}], "outputs": [{"good": "explosives", "amount": 150.0}]}, {"name": "pm_dye_production", "inputs": [{"good": "sulfur", "amount": 20.0}, {"good": "fertilizer", "amount": 30.0}], "outputs": [{"good": "dye", "amount": 80.0}]}, {"name": "pm_no_artificial_fibers"}, {"name": "pm_rayon", "unlocking_technologies": ["art_silk"], "inputs": [{"good": "wood", "amount": 40.0}], "outputs": [{"good": "dye", "amount": -40.0}, {"good": "silk", "amount": 40.0}]}, {"name": "pm_blister_steel_process", "inputs": [{"good": "iron", "amount": 40.0}, {"good": "coal", "amount": 30.0}], "outputs": [{"good": "steel", "amount": 65.0}]}, {"name": "pm_bessemer_process", "unlocking_technologies": ["bessemer_process"], "inputs": [{"good": "iron", "amount": 60.0}, {"good": "coal", "amount": 30.0}], "outputs": [{"good": "steel", "amount": 90.0}]}, {"name": "pm_open_hearth_process", "unlocking_technologies": ["open_hearth_process"], "inputs": [{"good": "iron", "amount": 90.0}, {"good": "coal", "amount": 30.0}], "outputs": [{"good": "steel", "amount": 120.0}]}, {"name": "pm_electric_arc_process", "unlocking_technologies": ["electric_arc_process"], "inputs": [{"good": "iron", "amount": 100.0}, {"good": "coal", "amount": 30.0}, {"good": "electricity", "amount": 30.0}], "outputs": [{"good": "steel", "amount": 150.0}]}, {"name": "pm_watertube_boiler_building_steel_mills", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 5.0}], "outputs": []}, {"name": "pm_rotary_valve_engine_building_steel_mills", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 10.0}], "outputs": []}, {"name": "pm_steam_engines", "inputs": [{"good": "steel", "amount": 30.0}], "outputs": [{"good": "engines", "amount": 40.0}]}, {"name": "pm_electric_engines", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "steel", "amount": 40.0}, {"good": "electricity", "amount": 30.0}], "outputs": [{"good": "engines", "amount": 80.0}]}, {"name": "pm_diesel_engines", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "steel", "amount": 50.0}, {"good": "oil", "amount": 50.0}], "outputs": [{"good": "engines", "amount": 120.0}]}, {"name": "pm_automobiles_disabled"}, {"name": "pm_automobile_production", "unlocking_technologies": ["combustion_engine"], "inputs": [{"good": "rubber", "amount": 10.0}, {"good": "oil", "amount": 20.0}], "outputs": [{"good": "engines", "amount": -20.0}, {"good": "automobiles", "amount": 25.0}]}, {"name": "pm_watertube_boiler_building_motor_industry", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 5.0}], "outputs": []}, {"name": "pm_rotary_valve_engine_building_motor_industry", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "coal", "amount": 10.0}], "outputs": []}, {"name": "pm_assembly_lines_building_motor_industry", "unlocking_technologies": ["conveyors"], "inputs": [{"good": "tools", "amount": 5.0}, {"good": "oil", "amount": 5.0}, {"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_basic_shipbuilding", "inputs": [{"good": "wood", "amount": 40.0}, {"good": "fabric", "amount": 20.0}], "outputs": [{"good": "clippers", "amount": 35.0}]}, {"name": "pm_complex_shipbuilding", "unlocking_technologies": ["screw_frigate"], "inputs": [{"good": "wood", "amount": 40.0}, {"good": "hardwood", "amount": 20.0}, {"good": "fabric", "amount": 20.0}, {"good": "engines", "amount": 5.0}], "outputs": [{"good": "clippers", "amount": 70.0}]}, {"name": "pm_metal_shipbuilding", "unlocking_technologies": ["gantry_cranes"], "inputs": [{"good": "steel", "amount": 30.0}, {"good": "coal", "amount": 10.0}, {"good": "engines", "amount": 10.0}], "outputs": [{"good": "steamers", "amount": 65.0}]}, {"name": "pm_arc_welding_shipbuilding", "unlocking_technologies": ["arc_welding"], "inputs": [{"good": "steel", "amount": 30.0}, {"good": "electricity", "amount": 30.0}, {"good": "engines", "amount": 10.0}], "outputs": [{"good": "steamers", "amount": 80.0}]}, {"name": "pm_no_military_shipbuilding"}, {"name": "pm_military_shipbuilding_wooden", "inputs": [{"good": "hardwood", "amount": 20.0}, {"good": "fabric", "amount": 20.0}, {"good": "iron", "amount": 10.0}], "outputs": [{"good": "manowars", "amount": 35.0}]}, {"name": "pm_military_shipbuilding_wooden_2", "unlocking_technologies": ["screw_frigate"], "inputs": [{"good": "hardwood", "amount": 30.0}, {"good": "fabric", "amount": 10.0}, {"good": "engines", "amount": 5.0}, {"good": "iron", "amount": 10.0}], "outputs": [{"good": "manowars", "amount": 45.0}]}, {"name": "pm_military_shipbuilding_steam", "unlocking_technologies": ["ironclad_tech"], "inputs": [{"good": "steel", "amount": 40.0}, {"good": "coal", "amount": 20.0}, {"good": "engines", "amount": 10.0}], "outputs": [{"good": "ironclads", "amount": 55.0}]}, {"name": "pm_military_shipbuilding_steam_2", "unlocking_technologies": ["arc_welding"], "inputs": [{"good": "steel", "amount": 50.0}, {"good": "electricity", "amount": 35.0}, {"good": "engines", "amount": 15.0}], "outputs": [{"good": "ironclads", "amount": 70.0}]}, {"name": "pm_aeroplane_production", "inputs": [{"good": "engines", "amount": 10.0}, {"good": "hardwood", "amount": 20.0}, {"good": "fabric", "amount": 20.0}, {"good": "oil", "amount": 20.0}], "outputs": [{"good": "aeroplanes", "amount": 50.0}]}, {"name": "pm_no_tank_production"}, {"name": "pm_tank_production", "unlocking_technologies": ["mobile_armor"], "inputs": [{"good": "engines", "amount": 10.0}, {"good": "steel", "amount": 20.0}, {"good": "oil", "amount": 10.0}], "outputs": [{"good": "aeroplanes", "amount": -10.0}, {"good": "tanks", "amount": 40.0}]}, {"name": "pm_telephones", "inputs": [{"good": "iron", "amount": 20.0}, {"good": "rubber", "amount": 20.0}, {"good": "lead", "amount": 20.0}, {"good": "tools", "amount": 10.0}], "outputs": [{"good": "telephones", "amount": 60.0}]}, {"name": "pm_no_radios"}, {"name": "pm_radios", "unlocking_technologies": ["radio"], "inputs": [{"good": "electricity", "amount": 50.0}], "outputs": [{"good": "telephones", "amount": -20.0}, {"good": "radios", "amount": 40.0}]}, {"name": "pm_muskets", "inputs": [{"good": "iron", "amount": 10.0}, {"good": "hardwood", "amount": 10.0}], "outputs": [{"good": "small_arms", "amount": 30.0}]}, {"name": "pm_rifles", "unlocking_technologies": ["rifling"], "inputs": [{"good": "steel", "amount": 10.0}, {"good": "hardwood", "amount": 10.0}, {"good": "tools", "amount": 5.0}], "outputs": [{"good": "small_arms", "amount": 50.0}]}, {"name": "pm_repeaters", "unlocking_technologies": ["repeaters"], "inputs": [{"good": "steel", "amount": 20.0}, {"good": "hardwood", "amount": 10.0}, {"good": "tools", "amount": 10.0}], "outputs": [{"good": "small_arms", "amount": 70.0}]}, {"name": "pm_bolt_action_rifles", "unlocking_technologies": ["bolt_action_rifles"], "inputs": [{"good": "steel", "amount": 20.0}, {"good": "hardwood", "amount": 10.0}, {"good": "tools", "amount": 20.0}, {"good": "oil", "amount": 10.0}], "outputs": [{"good": "small_arms", "amount": 100.0}]}, {"name": "pm_no_artillery_production"}, {"name": "pm_cannons", "unlocking_technologies": ["artillery"], "inputs": [{"good": "iron", "amount": 15.0}, {"good": "hardwood", "amount": 10.0}], "outputs": [{"good": "artillery", "amount": 25.0}]}, {"name": "pm_smoothbores", "unlocking_technologies": ["shell_gun"], "inputs": [{"good": "iron", "amount": 25.0}, {"good": "hardwood", "amount": 15.0}], "outputs": [{"good": "artillery", "amount": 45.0}]}, {"name": "pm_breech_loaders", "unlocking_technologies": ["breech_loading_artillery"], "inputs": [{"good": "steel", "amount": 25.0}, {"good": "hardwood", "amount": 10.0}, {"good": "tools", "amount": 10.0}], "outputs": [{"good": "artillery", "amount": 65.0}]}, {"name": "pm_recoiled_barrels", "unlocking_technologies": ["automatic_machine_guns"], "inputs": [{"good": "steel", "amount": 40.0}, {"good": "tools", "amount": 20.0}, {"good": "oil", "amount": 10.0}], "outputs": [{"good": "artillery", "amount": 90.0}]}, {"name": "pm_rotary_valve_engine_building_arms_industry", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "coal", "amount": 15.0}], "outputs": []}, {"name": "pm_assembly_lines_building_arms_industry", "unlocking_technologies": ["conveyors"], "inputs": [{"good": "oil", "amount": 10.0}, {"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_percussion_caps", "inputs": [{"good": "explosives", "amount": 20.0}, {"good": "lead", "amount": 20.0}], "outputs": [{"good": "ammunition", "amount": 50.0}]}, {"name": "pm_explosive_shells", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "explosives", "amount": 40.0}, {"good": "lead", "amount": 30.0}], "outputs": [{"good": "ammunition", "amount": 90.0}]}, {"name": "pm_rotary_valve_engine_building_munition_plants", "unlocking_technologies": ["rotary_valve_engine"], "inputs": [{"good": "coal", "amount": 15.0}], "outputs": []}, {"name": "pm_assembly_lines_building_munition_plants", "unlocking_technologies": ["conveyors"], "inputs": [{"good": "oil", "amount": 10.0}, {"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_simple_farming", "inputs": [], "outputs": [{"good": "grain", "amount": 20.0}]}, {"name": "pm_soil_enriching_farming", "unlocking_technologies": ["intensive_agriculture"], "inputs": [{"good": "fertilizer", "amount": 5.0}], "outputs": [{"good": "grain", "amount": 30.0}]}, {"name": "pm_fertilization", "unlocking_technologies": ["improved_fertilizer"], "inputs": [{"good": "fertilizer", "amount": 10.0}], "outputs": [{"good": "grain", "amount": 45.0}]}, {"name": "pm_chemical_fertilizer", "unlocking_technologies": ["nitrogen_fixation"], "inputs": [{"good": "fertilizer", "amount": 15.0}], "outputs": [{"good": "grain", "amount": 70.0}]}, {"name": "pm_no_secondary"}, {"name": "pm_potatoes", "inputs": [], "outputs": [{"good": "grain", "amount": -10.0}, {"good": "liquor", "amount": 10.0}]}, {"name": "pm_apple_orchards", "inputs": [], "outputs": [{"good": "grain", "amount": -10.0}, {"good": "fruit", "amount": 5.0}, {"good": "sugar", "amount": 5.0}]}, {"name": "pm_tools_disabled"}, {"name": "pm_tools", "inputs": [{"good": "tools", "amount": 2.0}], "outputs": []}, {"name": "pm_steam_threshers", "unlocking_technologies": ["threshing_machine"], "inputs": [{"good": "tools", "amount": 2.0}, {"good": "coal", "amount": 1.0}], "outputs": []}, {"name": "pm_tractors", "unlocking_technologies": ["mechanized_farming"], "inputs": [{"good": "coal", "amount": 2.0}, {"good": "engines", "amount": 1.0}], "outputs": []}, {"name": "pm_compression_ignition_tractors", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "oil", "amount": 2.0}, {"good": "engines", "amount": 1.0}], "outputs": []}, {"name": "pm_citrus_orchards", "inputs": [], "outputs": [{"good": "grain", "amount": -10.0}, {"good": "fruit", "amount": 5.0}, {"good": "sugar", "amount": 5.0}]}, {"name": "pm_simple_farming_building_rice_farm", "inputs": [], "outputs": [{"good": "grain", "amount": 40.0}]}, {"name": "pm_soil_enriching_farming_building_rice_farm", "unlocking_technologies": ["intensive_agriculture"], "inputs": [{"good": "fertilizer", "amount": 10.0}], "outputs": [{"good": "grain", "amount": 60.0}]}, {"name": "pm_fertilization_building_rice_farm", "unlocking_technologies": ["improved_fertilizer"], "inputs": [{"good": "fertilizer", "amount": 30.0}], "outputs": [{"good": "grain", "amount": 90.0}]}, {"name": "pm_chemical_fertilizer_building_rice_farm", "unlocking_technologies": ["nitrogen_fixation"], "inputs": [{"good": "fertilizer", "amount": 30.0}], "outputs": [{"good": "grain", "amount": 140.0}]}, {"name": "pm_fig_orchards_building_rice_farm", "inputs": [], "outputs": [{"good": "grain", "amount": -30.0}, {"good": "fruit", "amount": 12.0}, {"good": "sugar", "amount": 18.0}]}, {"name": "pm_tools_building_rice_farm", "inputs": [{"good": "tools", "amount": 4.0}], "outputs": []}, {"name": "pm_steam_threshers_building_rice_farm", "unlocking_technologies": ["threshing_machine"], "inputs": [{"good": "tools", "amount": 4.0}, {"good": "coal", "amount": 2.0}], "outputs": []}, {"name": "pm_fig_orchards", "inputs": [], "outputs": [{"good": "grain", "amount": -10.0}, {"good": "fruit", "amount": 5.0}, {"good": "sugar", "amount": 5.0}]}, {"name": "pm_simple_ranch", "inputs": [], "outputs": [{"good": "fabric", "amount": 5.0}]}, {"name": "pm_sheep_farms", "unlocking_technologies": ["intensive_agriculture"], "inputs": [{"good": "grain", "amount": 10.0}], "outputs": [{"good": "fabric", "amount": 15.0}, {"good": "fertilizer", "amount": 2.5}]}, {"name": "pm_intensive_grazing_ranch", "unlocking_technologies": ["mechanized_farming"], "inputs": [{"good": "grain", "amount": 20.0}], "outputs": [{"good": "fabric", "amount": 25.0}, {"good": "fertilizer", "amount": 5.0}]}, {"name": "pm_open_air_stockyards", "inputs": [], "outputs": [{"good": "meat", "amount": 10.0}]}, {"name": "pm_butchering_tools", "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "meat", "amount": 20.0}]}, {"name": "pm_slaughterhouses", "unlocking_technologies": ["mechanical_tools"], "inputs": [{"good": "tools", "amount": 10.0}], "outputs": [{"good": "meat", "amount": 30.0}]}, {"name": "pm_mechanized_slaughtering", "unlocking_technologies": ["mechanized_farming"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "coal", "amount": 5.0}], "outputs": [{"good": "meat", "amount": 45.0}]}, {"name": "pm_standard_fences"}, {"name": "pm_barbed_wire_fences", "unlocking_technologies": ["field_works"], "inputs": [{"good": "iron", "amount": 2.0}], "outputs": []}, {"name": "pm_electric_fencing", "unlocking_technologies": ["electrical_generation"], "inputs": [{"good": "iron", "amount": 2.0}, {"good": "electricity", "amount": 2.0}], "outputs": []}, {"name": "pm_unrefrigerated"}, {"name": "pm_refrigerated_storage_building_livestock_ranch", "unlocking_technologies": ["pasteurization"], "inputs": [{"good": "electricity", "amount": 3.0}], "outputs": []}, {"name": "pm_refrigerated_rail_cars_building_livestock_ranch", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "electricity", "amount": 3.0}, {"good": "transportation", "amount": 2.0}], "outputs": []}, {"name": "pm_picks_and_shovels_building_coal_mine", "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "coal", "amount": 25.0}]}, {"name": "pm_atmospheric_engine_pump_building_coal_mine", "unlocking_technologies": ["atmospheric_engine"], "inputs": [{"good": "tools", "amount": 10.0}], "outputs": [{"good": "coal", "amount": 40.0}]}, {"name": "pm_condensing_engine_pump_building_coal_mine", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 15.0}], "outputs": [{"good": "coal", "amount": 60.0}]}, {"name": "pm_diesel_pump_building_coal_mine", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "coal", "amount": 90.0}]}, {"name": "pm_no_explosives"}, {"name": "pm_nitroglycerin_building_coal_mine", "unlocking_technologies": [" nitroglycerin"], "inputs": [{"good": "explosives", "amount": 5.0}], "outputs": [{"good": "coal", "amount": 15.0}]}, {"name": "pm_dynamite_building_coal_mine", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "explosives", "amount": 10.0}], "outputs": [{"good": "coal", "amount": 25.0}]}, {"name": "pm_no_steam_automation"}, {"name": "pm_steam_donkey_building_coal_mine", "unlocking_technologies": ["steam_donkey"], "inputs": [{"good": "engines", "amount": 1.0}], "outputs": [{"good": "coal", "amount": -3.0}]}, {"name": "pm_road_carts"}, {"name": "pm_picks_and_shovels_building_iron_mine", "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "iron", "amount": 20.0}]}, {"name": "pm_atmospheric_engine_pump_building_iron_mine", "unlocking_technologies": ["atmospheric_engine"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "coal", "amount": 10.0}], "outputs": [{"good": "iron", "amount": 40.0}]}, {"name": "pm_condensing_engine_pump_building_iron_mine", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "coal", "amount": 15.0}], "outputs": [{"good": "iron", "amount": 60.0}]}, {"name": "pm_diesel_pump_building_iron_mine", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "iron", "amount": 70.0}]}, {"name": "pm_nitroglycerin_building_iron_mine", "unlocking_technologies": [" nitroglycerin"], "inputs": [{"good": "explosives", "amount": 5.0}], "outputs": [{"good": "iron", "amount": 12.0}]}, {"name": "pm_dynamite_building_iron_mine", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "explosives", "amount": 10.0}], "outputs": [{"good": "iron", "amount": 20.0}]}, {"name": "pm_steam_donkey_mine", "unlocking_technologies": ["steam_donkey"], "inputs": [{"good": "engines", "amount": 1.0}, {"good": "coal", "amount": 4.0}], "outputs": []}, {"name": "pm_rail_transport_mine", "unlocking_technologies": ["railways"], "inputs": [{"good": "transportation", "amount": 5.0}], "outputs": []}, {"name": "pm_picks_and_shovels_building_lead_mine", "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "lead", "amount": 20.0}]}, {"name": "pm_atmospheric_engine_pump_building_lead_mine", "unlocking_technologies": ["atmospheric_engine"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "coal", "amount": 10.0}], "outputs": [{"good": "lead", "amount": 40.0}]}, {"name": "pm_condensing_engine_pump_building_lead_mine", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "coal", "amount": 15.0}], "outputs": [{"good": "lead", "amount": 60.0}]}, {"name": "pm_diesel_pump_building_lead_mine", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "lead", "amount": 70.0}]}, {"name": "pm_nitroglycerin_building_lead_mine", "unlocking_technologies": [" nitroglycerin"], "inputs": [{"good": "explosives", "amount": 5.0}], "outputs": [{"good": "lead", "amount": 12.0}]}, {"name": "pm_dynamite_building_lead_mine", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "explosives", "amount": 10.0}], "outputs": [{"good": "lead", "amount": 20.0}]}, {"name": "pm_picks_and_shovels_building_sulfur_mine", "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "sulfur", "amount": 20.0}]}, {"name": "pm_atmospheric_engine_pump_building_sulfur_mine", "unlocking_technologies": ["atmospheric_engine"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "coal", "amount": 10.0}], "outputs": [{"good": "sulfur", "amount": 40.0}]}, {"name": "pm_condensing_engine_pump_building_sulfur_mine", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "coal", "amount": 15.0}], "outputs": [{"good": "sulfur", "amount": 60.0}]}, {"name": "pm_diesel_pump_building_sulfur_mine", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "sulfur", "amount": 80.0}]}, {"name": "pm_nitroglycerin_building_sulfur_mine", "unlocking_technologies": [" nitroglycerin"], "inputs": [{"good": "explosives", "amount": 5.0}], "outputs": [{"good": "sulfur", "amount": 10.0}]}, {"name": "pm_dynamite_building_sulfur_mine", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "explosives", "amount": 10.0}], "outputs": [{"good": "sulfur", "amount": 20.0}]}, {"name": "pm_picks_and_shovels_building_gold_mine", "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "gold", "amount": 8.0}]}, {"name": "pm_atmospheric_engine_pump_building_gold_mine", "unlocking_technologies": ["atmospheric_engine"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "coal", "amount": 10.0}], "outputs": [{"good": "gold", "amount": 15.0}]}, {"name": "pm_condensing_engine_pump_building_gold_mine", "unlocking_technologies": ["watertube_boiler"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "coal", "amount": 15.0}], "outputs": [{"good": "gold", "amount": 25.0}]}, {"name": "pm_diesel_pump_building_gold_mine", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "tools", "amount": 15.0}, {"good": "oil", "amount": 5.0}], "outputs": [{"good": "gold", "amount": 30.0}]}, {"name": "pm_nitroglycerin_building_gold_mine", "unlocking_technologies": [" nitroglycerin"], "inputs": [{"good": "explosives", "amount": 5.0}], "outputs": [{"good": "gold", "amount": 5.0}]}, {"name": "pm_dynamite_building_gold_mine", "unlocking_technologies": ["dynamite"], "inputs": [{"good": "explosives", "amount": 10.0}], "outputs": [{"good": "gold", "amount": 5.0}]}, {"name": "default_building_gold_fields", "inputs": [], "outputs": [{"good": "gold", "amount": 10.0}]}, {"name": "default_building_coffee_plantation", "inputs": [], "outputs": [{"good": "coffee", "amount": 20.0}]}, {"name": "automatic_irrigation_building_coffee_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "coffee", "amount": 40.0}]}, {"name": "pm_steam_rail_transport", "unlocking_technologies": ["railways"], "inputs": [{"good": "transportation", "amount": 5.0}], "outputs": []}, {"name": "default_building_cotton_plantation", "inputs": [], "outputs": [{"good": "fabric", "amount": 40.0}]}, {"name": "automatic_irrigation_building_cotton_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "fabric", "amount": 100.0}]}, {"name": "default_building_dye_plantation", "inputs": [], "outputs": [{"good": "dye", "amount": 25.0}]}, {"name": "automatic_irrigation_building_dye_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "dye", "amount": 50.0}]}, {"name": "default_building_opium_plantation", "inputs": [], "outputs": [{"good": "opium", "amount": 20.0}]}, {"name": "automatic_irrigation_building_opium_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "opium", "amount": 50.0}]}, {"name": "default_building_tea_plantation", "inputs": [], "outputs": [{"good": "tea", "amount": 20.0}]}, {"name": "automatic_irrigation_building_tea_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "tea", "amount": 40.0}]}, {"name": "default_building_tobacco_plantation", "inputs": [], "outputs": [{"good": "tobacco", "amount": 25.0}]}, {"name": "automatic_irrigation_building_tobacco_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "tobacco", "amount": 50.0}]}, {"name": "default_building_sugar_plantation", "inputs": [], "outputs": [{"good": "sugar", "amount": 30.0}]}, {"name": "automatic_irrigation_building_sugar_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "sugar", "amount": 60.0}]}, {"name": "default_building_banana_plantation", "inputs": [], "outputs": [{"good": "fruit", "amount": 30.0}]}, {"name": "automatic_irrigation_building_banana_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "fruit", "amount": 60.0}]}, {"name": "default_building_silk_plantation", "inputs": [], "outputs": [{"good": "silk", "amount": 20.0}]}, {"name": "automatic_irrigation_building_silk_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "silk", "amount": 40.0}]}, {"name": "default_building_vineyard_plantation", "inputs": [], "outputs": [{"good": "wine", "amount": 20.0}]}, {"name": "automatic_irrigation_building_vineyard_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "wine", "amount": 40.0}]}, {"name": "pm_no_organization"}, {"name": "pm_general_training", "unlocking_technologies": ["general_staff"]}, {"name": "pm_advanced_tactics_training", "unlocking_technologies": ["military_statistics"]}, {"name": "pm_training_streamlining", "unlocking_technologies": ["wargaming"]}, {"name": "pm_nco_incorporation", "unlocking_technologies": ["nco_training"], "inputs": [], "outputs": []}, {"name": "pm_mobile_warfare_tactics", "unlocking_technologies": ["mobile_armor"], "inputs": [], "outputs": []}, {"name": "pm_no_organization_conscription"}, {"name": "pm_general_training_conscription", "unlocking_technologies": ["general_staff"]}, {"name": "pm_advanced_tactics_training_conscription", "unlocking_technologies": ["military_statistics"]}, {"name": "pm_training_streamlining_conscription", "unlocking_technologies": ["wargaming"]}, {"name": "pm_nco_incorporation_conscription", "unlocking_technologies": ["nco_training"]}, {"name": "pm_mobile_warfare_tactics_conscription", "unlocking_technologies": ["mobile_armor"], "inputs": [], "outputs": []}, {"name": "pm_no_naval_theory"}, {"name": "pm_power_of_the_purse", "unlocking_technologies": ["power_of_the_purse"]}, {"name": "pm_jeune_ecole", "unlocking_technologies": ["jeune_ecole"]}, {"name": "pm_sea_lane_strategies", "unlocking_technologies": ["sea_lane_strategies"]}, {"name": "pm_battlefleet_tactics", "unlocking_technologies": ["battlefleet_tactics"]}, {"name": "pm_market_stalls", "inputs": [], "outputs": [{"good": "services", "amount": 15.0}]}, {"name": "pm_market_squares", "unlocking_technologies": ["", "building_modifiers = {", "workforce_scaled = {", "goods_input_wood_add = 1", "goods_input_glass_add = 1", "goods_output_services_add = 20"]}, {"name": "pm_covered_markets", "unlocking_technologies": ["steel_frame_buildings"], "inputs": [{"good": "glass", "amount": 2.0}, {"good": "steel", "amount": 1.0}], "outputs": [{"good": "services", "amount": 25.0}]}, {"name": "pm_arcades", "unlocking_technologies": ["elevator"], "inputs": [{"good": "glass", "amount": 2.0}, {"good": "steel", "amount": 2.0}, {"good": "electricity", "amount": 1.0}], "outputs": [{"good": "services", "amount": 30.0}]}, {"name": "pm_no_street_lighting"}, {"name": "pm_gas_streetlights", "unlocking_technologies": [], "inputs": [{"good": "coal", "amount": 1.0}], "outputs": [{"good": "services", "amount": 2.0}]}, {"name": "pm_electric_streetlights", "unlocking_technologies": ["electrical_generation"], "inputs": [{"good": "electricity", "amount": 3.0}], "outputs": [{"good": "services", "amount": 10.0}]}, {"name": "pm_no_public_transport", "inputs": [], "outputs": [{"good": "transportation", "amount": 5.0}]}, {"name": "pm_public_trams", "unlocking_technologies": ["railways"], "inputs": [{"good": "engines", "amount": 1.0}], "outputs": [{"good": "transportation", "amount": 8.0}]}, {"name": "pm_public_motor_carriages", "unlocking_technologies": ["combustion_engine"], "inputs": [{"good": "automobiles", "amount": 1.0}], "outputs": [{"good": "transportation", "amount": 10.0}]}, {"name": "pm_state_urban_clergy"}, {"name": "pm_free_urban_clergy"}, {"name": "pm_no_urban_clergy"}, {"name": "pm_traditional_art", "inputs": [{"good": "paper", "amount": 10.0}], "outputs": [{"good": "fine_art", "amount": 4.0}]}, {"name": "pm_realist_art", "unlocking_technologies": ["realism"], "inputs": [{"good": "paper", "amount": 15.0}], "outputs": [{"good": "fine_art", "amount": 5.0}]}, {"name": "pm_photographic_art", "unlocking_technologies": ["camera"], "inputs": [{"good": "paper", "amount": 15.0}, {"good": "tools", "amount": 8.0}], "outputs": [{"good": "fine_art", "amount": 7.0}]}, {"name": "pm_film_art", "unlocking_technologies": ["film"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "paper", "amount": 15.0}, {"good": "electricity", "amount": 2.0}], "outputs": [{"good": "fine_art", "amount": 8.0}]}, {"name": "pm_principle_freedom_of_movement_3"}, {"name": "pm_freedom_of_movement_no_effect"}, {"name": "pm_traditional_patronage"}, {"name": "pm_bourgeoisie_patronage", "unlocking_technologies": ["realism"]}, {"name": "pm_independent_artists", "unlocking_technologies": ["realism"]}, {"name": "pm_hydroelectric_plant", "inputs": [{"good": "engines", "amount": 10.0}], "outputs": [{"good": "electricity", "amount": 50.0}]}, {"name": "pm_coalfired_plant", "unlocking_technologies": ["steam_turbine"], "inputs": [{"good": "engines", "amount": 15.0}, {"good": "coal", "amount": 30.0}], "outputs": [{"good": "electricity", "amount": 100.0}]}, {"name": "pm_oilfired_plant", "unlocking_technologies": ["oil_turbine"], "inputs": [{"good": "engines", "amount": 20.0}, {"good": "oil", "amount": 40.0}], "outputs": [{"good": "electricity", "amount": 150.0}]}, {"name": "pm_anchorage", "inputs": [], "outputs": []}, {"name": "pm_basic_port", "inputs": [{"good": "clippers", "amount": 5.0}], "outputs": []}, {"name": "pm_industrial_port", "unlocking_technologies": ["gantry_cranes"], "inputs": [{"good": "steamers", "amount": 5.0}, {"good": "coal", "amount": 5.0}], "outputs": []}, {"name": "pm_modern_port", "unlocking_technologies": ["concrete_dockyards"], "inputs": [{"good": "steamers", "amount": 5.0}, {"good": "oil", "amount": 5.0}], "outputs": []}, {"name": "pm_simple_organization"}, {"name": "pm_horizontal_drawer_cabinets", "unlocking_technologies": ["centralization"], "inputs": [{"good": "paper", "amount": 10.0}], "outputs": []}, {"name": "pm_vertical_filing_cabinets", "unlocking_technologies": ["central_archives"], "inputs": [{"good": "paper", "amount": 20.0}], "outputs": []}, {"name": "pm_switch_boards", "unlocking_technologies": ["central_planning"], "inputs": [{"good": "paper", "amount": 20.0}, {"good": "telephones", "amount": 5.0}], "outputs": []}, {"name": "pm_hereditary_bureaucrats"}, {"name": "pm_professional_bureaucrats"}, {"name": "pm_secular_bureaucrats"}, {"name": "pm_religious_bureaucrats"}, {"name": "pm_scholastic_education", "inputs": [{"good": "paper", "amount": 5.0}], "outputs": []}, {"name": "pm_philosophy_department", "unlocking_technologies": ["dialectics"], "inputs": [{"good": "paper", "amount": 10.0}], "outputs": []}, {"name": "pm_analytical_philosophy_department", "unlocking_technologies": ["analytical_philosophy"], "inputs": [{"good": "paper", "amount": 15.0}], "outputs": []}, {"name": "pm_secular_academia"}, {"name": "pm_religious_academia"}, {"name": "pm_skyscraper_bureaucratic_nexus", "inputs": [{"good": "paper", "amount": 25.0}], "outputs": []}, {"name": "pm_skyscraper_trade_nexus", "inputs": [{"good": "paper", "amount": 25.0}], "outputs": []}, {"name": "pm_no_airships"}, {"name": "pm_airship_mooring_post", "unlocking_technologies": ["zeppelins"]}, {"name": "pm_simple_forestry", "inputs": [], "outputs": [{"good": "wood", "amount": 30.0}]}, {"name": "pm_saw_mills", "unlocking_technologies": ["steelworking"], "inputs": [{"good": "tools", "amount": 5.0}], "outputs": [{"good": "wood", "amount": 60.0}]}, {"name": "pm_electric_saw_mills", "unlocking_technologies": ["electrical_generation"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "electricity", "amount": 5.0}], "outputs": [{"good": "wood", "amount": 100.0}]}, {"name": "pm_no_hardwood"}, {"name": "pm_hardwood", "inputs": [], "outputs": [{"good": "wood", "amount": -25.0}, {"good": "hardwood", "amount": 10.0}]}, {"name": "pm_increased_hardwood", "inputs": [], "outputs": [{"good": "wood", "amount": -40.0}, {"good": "hardwood", "amount": 20.0}]}, {"name": "pm_no_equipment"}, {"name": "pm_steam_donkey_building_logging_camp", "unlocking_technologies": ["steam_donkey"], "inputs": [{"good": "engines", "amount": 1.0}, {"good": "coal", "amount": 4.0}], "outputs": []}, {"name": "pm_chainsaws", "unlocking_technologies": ["combustion_engine"], "inputs": [{"good": "tools", "amount": 10.0}, {"good": "oil", "amount": 5.0}], "outputs": []}, {"name": "pm_rail_transport_building_logging_camp", "unlocking_technologies": ["railways"], "inputs": [{"good": "transportation", "amount": 5.0}], "outputs": []}, {"name": "pm_log_carts", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "transportation", "amount": 8.0}], "outputs": []}, {"name": "default_building_rubber_plantation", "inputs": [], "outputs": [{"good": "rubber", "amount": 30.0}]}, {"name": "automatic_irrigation_building_rubber_plantation", "unlocking_technologies": ["pumpjacks"], "inputs": [{"good": "engines", "amount": 5.0}], "outputs": [{"good": "rubber", "amount": 60.0}]}, {"name": "pm_simple_fishing", "inputs": [], "outputs": [{"good": "fish", "amount": 25.0}]}, {"name": "pm_fishing_trawlers", "inputs": [{"good": "clippers", "amount": 5.0}], "outputs": [{"good": "fish", "amount": 50.0}]}, {"name": "pm_steam_trawlers", "unlocking_technologies": ["gantry_cranes"], "inputs": [{"good": "steamers", "amount": 5.0}, {"good": "coal", "amount": 15.0}], "outputs": [{"good": "fish", "amount": 100.0}]}, {"name": "pm_refrigerated_storage_building_fishing_wharf", "unlocking_technologies": ["pasteurization"], "inputs": [{"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_refrigerated_rail_cars_building_fishing_wharf", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "electricity", "amount": 5.0}, {"good": "transportation", "amount": 5.0}], "outputs": []}, {"name": "pm_flash_freezing_building_fishing_wharf", "unlocking_technologies": ["flash_freezing"], "inputs": [{"good": "electricity", "amount": 7.0}, {"good": "transportation", "amount": 7.0}], "outputs": []}, {"name": "pm_simple_whaling", "inputs": [], "outputs": [{"good": "meat", "amount": 5.0}, {"good": "oil", "amount": 10.0}]}, {"name": "pm_wooden_whaling_ships", "inputs": [{"good": "clippers", "amount": 5.0}], "outputs": [{"good": "meat", "amount": 10.0}, {"good": "oil", "amount": 20.0}]}, {"name": "pm_steam_whaling_ships", "unlocking_technologies": ["gantry_cranes"], "inputs": [{"good": "steamers", "amount": 5.0}, {"good": "coal", "amount": 20.0}], "outputs": [{"good": "meat", "amount": 20.0}, {"good": "oil", "amount": 40.0}]}, {"name": "pm_refrigerated_storage_building_whaling_station", "unlocking_technologies": ["pasteurization"], "inputs": [{"good": "electricity", "amount": 5.0}], "outputs": []}, {"name": "pm_refrigerated_rail_cars_building_whaling_station", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "electricity", "amount": 5.0}, {"good": "transportation", "amount": 5.0}], "outputs": []}, {"name": "pm_flash_freezing_building_whaling_station", "unlocking_technologies": ["flash_freezing"], "inputs": [{"good": "electricity", "amount": 7.0}, {"good": "transportation", "amount": 7.0}], "outputs": []}, {"name": "pm_steam_derricks", "inputs": [{"good": "engines", "amount": 5.0}, {"good": "coal", "amount": 10.0}], "outputs": [{"good": "oil", "amount": 60.0}]}, {"name": "pm_combustion_derricks", "unlocking_technologies": ["combustion_engine"], "inputs": [{"good": "engines", "amount": 10.0}], "outputs": [{"good": "oil", "amount": 100.0}]}, {"name": "pm_rail_transport_building_oil_rig", "unlocking_technologies": ["railways"], "inputs": [{"good": "transportation", "amount": 5.0}], "outputs": []}, {"name": "pm_tanker_cars", "unlocking_technologies": ["steel_railway_cars"], "inputs": [{"good": "transportation", "amount": 10.0}], "outputs": []}, {"name": "pm_early_trains", "inputs": [{"good": "engines", "amount": 5.0}, {"good": "coal", "amount": 2.0}], "outputs": [{"good": "transportation", "amount": 20.0}]}, {"name": "pm_steam_trains", "unlocking_technologies": ["steel_railway_cars"], "inputs": [{"good": "engines", "amount": 5.0}, {"good": "coal", "amount": 5.0}], "outputs": [{"good": "transportation", "amount": 25.0}]}, {"name": "pm_steam_trains_principle_transport_3", "unlocking_technologies": ["steel_railway_cars"], "inputs": [{"good": "engines", "amount": 6.0}, {"good": "coal", "amount": 6.0}], "outputs": [{"good": "transportation", "amount": 30.0}]}, {"name": "pm_electric_trains", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "engines", "amount": 5.0}, {"good": "electricity", "amount": 10.0}], "outputs": [{"good": "transportation", "amount": 35.0}]}, {"name": "pm_electric_trains_principle_transport_3", "unlocking_technologies": ["electric_railway"], "inputs": [{"good": "engines", "amount": 6.0}, {"good": "electricity", "amount": 12.0}], "outputs": [{"good": "transportation", "amount": 45.0}]}, {"name": "pm_diesel_trains", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "engines", "amount": 5.0}, {"good": "oil", "amount": 8.0}], "outputs": [{"good": "transportation", "amount": 40.0}]}, {"name": "pm_diesel_trains_principle_transport_3", "unlocking_technologies": ["compression_ignition"], "inputs": [{"good": "engines", "amount": 6.0}, {"good": "oil", "amount": 10.0}], "outputs": [{"good": "transportation", "amount": 55.0}]}, {"name": "pm_no_passenger_trains"}, {"name": "pm_wooden_passenger_carriages", "inputs": [{"good": "wood", "amount": 8.0}], "outputs": [{"good": "transportation", "amount": 10.0}]}, {"name": "pm_steel_passenger_carriages", "unlocking_technologies": ["steel_railway_cars"], "inputs": [{"good": "steel", "amount": 5.0}], "outputs": [{"good": "transportation", "amount": 15.0}]}, {"name": "pm_trade_center"}, {"name": "pm_trade_center_principle_external_trade_2"}, {"name": "pm_trade_center_merchant_guilds"}, {"name": "pm_trade_center_privately_owned"}, {"name": "pm_trade_center_bureaucrat_ownership"}, {"name": "pm_financial_district_privately_owned"}, {"name": "pm_financial_district_publicly_traded", "unlocking_technologies": ["", "building_modifiers = { ", "level_scaled = {", "building_employment_capitalists_add = 50", "building_employment_bureaucrats_add = 50", "building_employment_clerks_add = 150"]}, {"name": "pm_financial_district_principle_divine_economics_2"}, {"name": "pm_manor_house_privately_owned"}, {"name": "pm_manor_house_principle_divine_economics_2"}, {"name": "pm_manor_house_bureaucrat_ownership"}, {"name": "pm_manor_house_clergy_ownership"}, {"name": "pm_wooden_buildings", "inputs": [{"good": "fabric", "amount": 25.0}, {"good": "wood", "amount": 75.0}], "outputs": []}, {"name": "pm_iron_frame_buildings", "unlocking_technologies": ["urban_planning"], "inputs": [{"good": "wood", "amount": 40.0}, {"good": "fabric", "amount": 20.0}, {"good": "iron", "amount": 50.0}, {"good": "tools", "amount": 10.0}], "outputs": []}, {"name": "pm_steel_frame_buildings", "unlocking_technologies": ["steel_frame_buildings"], "inputs": [{"good": "steel", "amount": 50.0}, {"good": "glass", "amount": 40.0}, {"good": "explosives", "amount": 10.0}, {"good": "tools", "amount": 20.0}], "outputs": []}, {"name": "pm_arc_welded_buildings", "unlocking_technologies": ["arc_welding"], "inputs": [{"good": "steel", "amount": 50.0}, {"good": "glass", "amount": 40.0}, {"good": "explosives", "amount": 20.0}, {"good": "tools", "amount": 40.0}, {"good": "electricity", "amount": 40.0}], "outputs": []}]
+[
+  {
+    "name": "pm_bakery",
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_sweeteners",
+    "unlocking_technologies": [
+      "distillation"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": 40.0
+      },
+      {
+        "good": "sugar",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 65.0
+      }
+    ]
+  },
+  {
+    "name": "pm_baking_powder",
+    "unlocking_technologies": [
+      "baking_powder"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": 80.0
+      },
+      {
+        "good": "sugar",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 120.0
+      }
+    ]
+  },
+  {
+    "name": "pm_disabled_canning"
+  },
+  {
+    "name": "pm_cannery",
+    "unlocking_technologies": [
+      "canneries"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": -20.0
+      },
+      {
+        "good": "meat",
+        "amount": 20.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_cannery_fish",
+    "unlocking_technologies": [
+      "canneries"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": -20.0
+      },
+      {
+        "good": "fish",
+        "amount": 30.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_vacuum_canning",
+    "unlocking_technologies": [
+      "vacuum_canning"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": -30.0
+      },
+      {
+        "good": "fish",
+        "amount": 30.0
+      },
+      {
+        "good": "meat",
+        "amount": 20.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_vacuum_canning_principle_3",
+    "unlocking_technologies": [
+      "vacuum_canning"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": -30.0
+      },
+      {
+        "good": "fish",
+        "amount": 30.0
+      },
+      {
+        "good": "meat",
+        "amount": 20.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "groceries",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_disabled_distillery"
+  },
+  {
+    "name": "pm_pot_stills",
+    "unlocking_technologies": [
+      "distillation"
+    ],
+    "inputs": [
+      {
+        "good": "sugar",
+        "amount": 25.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "liquor",
+        "amount": 60.0
+      },
+      {
+        "good": "groceries",
+        "amount": -30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_patent_stills",
+    "unlocking_technologies": [
+      "fractional_distillation"
+    ],
+    "inputs": [
+      {
+        "good": "sugar",
+        "amount": 25.0
+      },
+      {
+        "good": "glass",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "liquor",
+        "amount": 100.0
+      },
+      {
+        "good": "groceries",
+        "amount": -40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_manual_dough_processing"
+  },
+  {
+    "name": "pm_automated_bakery",
+    "unlocking_technologies": [
+      "dough_rollers"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_handsewn_clothes",
+    "inputs": [
+      {
+        "good": "fabric",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clothes",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dye_workshops",
+    "unlocking_technologies": [
+      "",
+      "building_modifiers = {",
+      "workforce_scaled = {",
+      "# input goods",
+      "goods_input_fabric_add = 40# x20 =  800",
+      "goods_input_dye_add = 5# x40 =  200",
+      "",
+      "# output goods",
+      "goods_output_clothes_add = 60# x30 = 1800"
+    ]
+  },
+  {
+    "name": "pm_sewing_machines",
+    "unlocking_technologies": [
+      "mechanized_workshops"
+    ],
+    "inputs": [
+      {
+        "good": "fabric",
+        "amount": 60.0
+      },
+      {
+        "good": "dye",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clothes",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_sewing_machines",
+    "unlocking_technologies": [
+      "electrical_capacitors"
+    ],
+    "inputs": [
+      {
+        "good": "fabric",
+        "amount": 60.0
+      },
+      {
+        "good": "dye",
+        "amount": 20.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "electricity",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clothes",
+        "amount": 140.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_luxury_clothes"
+  },
+  {
+    "name": "pm_craftsman_sewing",
+    "inputs": [
+      {
+        "good": "silk",
+        "amount": 15.0
+      },
+      {
+        "good": "fabric",
+        "amount": -15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clothes",
+        "amount": -30.0
+      },
+      {
+        "good": "clothes",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_elastics",
+    "unlocking_technologies": [
+      "vulcanization"
+    ],
+    "inputs": [
+      {
+        "good": "rubber",
+        "amount": 10.0
+      },
+      {
+        "good": "silk",
+        "amount": 35.0
+      },
+      {
+        "good": "fabric",
+        "amount": -35.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clothes",
+        "amount": -70.0
+      },
+      {
+        "good": "clothes",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_traditional_looms"
+  },
+  {
+    "name": "pm_mechanized_looms",
+    "unlocking_technologies": [
+      "mechanized_workshops"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_automatic_power_looms",
+    "unlocking_technologies": [
+      "electrical_capacitors"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "electricity",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_handcrafted_furniture",
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      },
+      {
+        "good": "fabric",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "furniture",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_lathe",
+    "unlocking_technologies": [
+      "lathe"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      },
+      {
+        "good": "fabric",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "furniture",
+        "amount": 65.0
+      }
+    ]
+  },
+  {
+    "name": "pm_mechanized_workshops",
+    "unlocking_technologies": [
+      "mechanized_workshops"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 50.0
+      },
+      {
+        "good": "fabric",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "furniture",
+        "amount": 110.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_luxuries"
+  },
+  {
+    "name": "pm_luxury_furniture",
+    "inputs": [
+      {
+        "good": "hardwood",
+        "amount": 15.0
+      },
+      {
+        "good": "wood",
+        "amount": -15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "furniture",
+        "amount": -25.0
+      },
+      {
+        "good": "furniture",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_precision_tools",
+    "unlocking_technologies": [
+      "mechanical_tools"
+    ],
+    "inputs": [
+      {
+        "good": "hardwood",
+        "amount": 25.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "wood",
+        "amount": -25.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "furniture",
+        "amount": -55.0
+      },
+      {
+        "good": "furniture",
+        "amount": 55.0
+      }
+    ]
+  },
+  {
+    "name": "pm_automation_disabled"
+  },
+  {
+    "name": "pm_watertube_boiler_building_furniture_manufacturies",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_furniture_manufacturies",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_assembly_lines_building_furniture_manufacturies",
+    "unlocking_technologies": [
+      "conveyors"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_forest_glass",
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "glass",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_leaded_glass",
+    "unlocking_technologies": [
+      "lathe "
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 20.0
+      },
+      {
+        "good": "lead",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "glass",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_crystal_glass",
+    "unlocking_technologies": [
+      "crystal_glass"
+    ],
+    "inputs": [
+      {
+        "good": "lead",
+        "amount": 35.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "glass",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_houseware_plastics",
+    "unlocking_technologies": [
+      "plastics"
+    ],
+    "inputs": [
+      {
+        "good": "oil",
+        "amount": 25.0
+      },
+      {
+        "good": "lead",
+        "amount": 35.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "glass",
+        "amount": 110.0
+      }
+    ]
+  },
+  {
+    "name": "pm_disabled_ceramics"
+  },
+  {
+    "name": "pm_ceramics",
+    "inputs": [
+      {
+        "good": "dye",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "glass",
+        "amount": -20.0
+      },
+      {
+        "good": "porcelain",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_bone_china",
+    "unlocking_technologies": [
+      "chemical_bleaching"
+    ],
+    "inputs": [
+      {
+        "good": "dye",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "glass",
+        "amount": -55.0
+      },
+      {
+        "good": "porcelain",
+        "amount": 55.0
+      }
+    ]
+  },
+  {
+    "name": "pm_manual_glassblowing"
+  },
+  {
+    "name": "pm_automatic_bottle_blowers",
+    "unlocking_technologies": [
+      "automatic_bottle_blowers"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_crude_tools",
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "tools",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_pig_iron",
+    "unlocking_technologies": [
+      "steelworking"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      },
+      {
+        "good": "iron",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "tools",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steel",
+    "unlocking_technologies": [
+      "mechanical_tools"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      },
+      {
+        "good": "steel",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "tools",
+        "amount": 80.0
+      }
+    ]
+  },
+  {
+    "name": "pm_rubber_grips",
+    "unlocking_technologies": [
+      "vulcanization"
+    ],
+    "inputs": [
+      {
+        "good": "rubber",
+        "amount": 10.0
+      },
+      {
+        "good": "steel",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "tools",
+        "amount": 110.0
+      }
+    ]
+  },
+  {
+    "name": "pm_watertube_boiler_building_tooling_workshops",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_tooling_workshops",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_assembly_lines_building_tooling_workshops",
+    "unlocking_technologies": [
+      "conveyors"
+    ],
+    "inputs": [
+      {
+        "good": "oil",
+        "amount": 10.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_pulp_pressing",
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "paper",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_sulfite_pulping",
+    "unlocking_technologies": [
+      "mechanical_tools"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      },
+      {
+        "good": "sulfur",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "paper",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_bleached_paper",
+    "unlocking_technologies": [
+      "chemical_bleaching"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      },
+      {
+        "good": "sulfur",
+        "amount": 10.0
+      },
+      {
+        "good": "dye",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "paper",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_watertube_boiler_building_paper_mills",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_paper_mills",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_artificial_fertilizers",
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 30.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fertilizer",
+        "amount": 90.0
+      }
+    ]
+  },
+  {
+    "name": "pm_improved_fertilizer",
+    "unlocking_technologies": [
+      "improved_fertilizer"
+    ],
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 30.0
+      },
+      {
+        "good": "iron",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fertilizer",
+        "amount": 140.0
+      }
+    ]
+  },
+  {
+    "name": "pm_nitrogen_fixation",
+    "unlocking_technologies": [
+      "nitrogen_fixation"
+    ],
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 40.0
+      },
+      {
+        "good": "oil",
+        "amount": 20.0
+      },
+      {
+        "good": "iron",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fertilizer",
+        "amount": 200.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_explosives_production"
+  },
+  {
+    "name": "pm_leblanc_process",
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 20.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "explosives",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "pm_ammoniasoda_process",
+    "unlocking_technologies": [
+      "nitroglycerin"
+    ],
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 30.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 30.0
+      },
+      {
+        "good": "paper",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "explosives",
+        "amount": 80.0
+      }
+    ]
+  },
+  {
+    "name": "pm_vacuum_evaporation",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 40.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 40.0
+      },
+      {
+        "good": "paper",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "explosives",
+        "amount": 110.0
+      }
+    ]
+  },
+  {
+    "name": "pm_brine_electrolysis",
+    "unlocking_technologies": [
+      "electrical_capacitors"
+    ],
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 40.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 50.0
+      },
+      {
+        "good": "paper",
+        "amount": 30.0
+      },
+      {
+        "good": "electricity",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "explosives",
+        "amount": 150.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dye_production",
+    "inputs": [
+      {
+        "good": "sulfur",
+        "amount": 20.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "dye",
+        "amount": 80.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_artificial_fibers"
+  },
+  {
+    "name": "pm_rayon",
+    "unlocking_technologies": [
+      "art_silk"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "dye",
+        "amount": -40.0
+      },
+      {
+        "good": "silk",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_blister_steel_process",
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 40.0
+      },
+      {
+        "good": "coal",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "steel",
+        "amount": 65.0
+      }
+    ]
+  },
+  {
+    "name": "pm_bessemer_process",
+    "unlocking_technologies": [
+      "bessemer_process"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 60.0
+      },
+      {
+        "good": "coal",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "steel",
+        "amount": 90.0
+      }
+    ]
+  },
+  {
+    "name": "pm_open_hearth_process",
+    "unlocking_technologies": [
+      "open_hearth_process"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 90.0
+      },
+      {
+        "good": "coal",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "steel",
+        "amount": 120.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_arc_process",
+    "unlocking_technologies": [
+      "electric_arc_process"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 100.0
+      },
+      {
+        "good": "coal",
+        "amount": 30.0
+      },
+      {
+        "good": "electricity",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "steel",
+        "amount": 150.0
+      }
+    ]
+  },
+  {
+    "name": "pm_watertube_boiler_building_steel_mills",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_steel_mills",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_steam_engines",
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "engines",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_engines",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 40.0
+      },
+      {
+        "good": "electricity",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "engines",
+        "amount": 80.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_engines",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 50.0
+      },
+      {
+        "good": "oil",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "engines",
+        "amount": 120.0
+      }
+    ]
+  },
+  {
+    "name": "pm_automobiles_disabled"
+  },
+  {
+    "name": "pm_automobile_production",
+    "unlocking_technologies": [
+      "combustion_engine"
+    ],
+    "inputs": [
+      {
+        "good": "rubber",
+        "amount": 10.0
+      },
+      {
+        "good": "oil",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "engines",
+        "amount": -20.0
+      },
+      {
+        "good": "automobiles",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_watertube_boiler_building_motor_industry",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_motor_industry",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_assembly_lines_building_motor_industry",
+    "unlocking_technologies": [
+      "conveyors"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_basic_shipbuilding",
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 40.0
+      },
+      {
+        "good": "fabric",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clippers",
+        "amount": 35.0
+      }
+    ]
+  },
+  {
+    "name": "pm_complex_shipbuilding",
+    "unlocking_technologies": [
+      "screw_frigate"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 40.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 20.0
+      },
+      {
+        "good": "fabric",
+        "amount": 20.0
+      },
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "clippers",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_metal_shipbuilding",
+    "unlocking_technologies": [
+      "gantry_cranes"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 30.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      },
+      {
+        "good": "engines",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "steamers",
+        "amount": 65.0
+      }
+    ]
+  },
+  {
+    "name": "pm_arc_welding_shipbuilding",
+    "unlocking_technologies": [
+      "arc_welding"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 30.0
+      },
+      {
+        "good": "electricity",
+        "amount": 30.0
+      },
+      {
+        "good": "engines",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "steamers",
+        "amount": 80.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_military_shipbuilding"
+  },
+  {
+    "name": "pm_military_shipbuilding_wooden",
+    "inputs": [
+      {
+        "good": "hardwood",
+        "amount": 20.0
+      },
+      {
+        "good": "fabric",
+        "amount": 20.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "manowars",
+        "amount": 35.0
+      }
+    ]
+  },
+  {
+    "name": "pm_military_shipbuilding_wooden_2",
+    "unlocking_technologies": [
+      "screw_frigate"
+    ],
+    "inputs": [
+      {
+        "good": "hardwood",
+        "amount": 30.0
+      },
+      {
+        "good": "fabric",
+        "amount": 10.0
+      },
+      {
+        "good": "engines",
+        "amount": 5.0
+      },
+      {
+        "good": "iron",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "manowars",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_military_shipbuilding_steam",
+    "unlocking_technologies": [
+      "ironclad_tech"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 40.0
+      },
+      {
+        "good": "coal",
+        "amount": 20.0
+      },
+      {
+        "good": "engines",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "ironclads",
+        "amount": 55.0
+      }
+    ]
+  },
+  {
+    "name": "pm_military_shipbuilding_steam_2",
+    "unlocking_technologies": [
+      "arc_welding"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 50.0
+      },
+      {
+        "good": "electricity",
+        "amount": 35.0
+      },
+      {
+        "good": "engines",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "ironclads",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_aeroplane_production",
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 10.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 20.0
+      },
+      {
+        "good": "fabric",
+        "amount": 20.0
+      },
+      {
+        "good": "oil",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "aeroplanes",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_tank_production"
+  },
+  {
+    "name": "pm_tank_production",
+    "unlocking_technologies": [
+      "mobile_armor"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 10.0
+      },
+      {
+        "good": "steel",
+        "amount": 20.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "aeroplanes",
+        "amount": -10.0
+      },
+      {
+        "good": "tanks",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_telephones",
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 20.0
+      },
+      {
+        "good": "rubber",
+        "amount": 20.0
+      },
+      {
+        "good": "lead",
+        "amount": 20.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "telephones",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_radios"
+  },
+  {
+    "name": "pm_radios",
+    "unlocking_technologies": [
+      "radio"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "telephones",
+        "amount": -20.0
+      },
+      {
+        "good": "radios",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_muskets",
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 10.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "small_arms",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_rifles",
+    "unlocking_technologies": [
+      "rifling"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 10.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "small_arms",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "pm_repeaters",
+    "unlocking_technologies": [
+      "repeaters"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 20.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "small_arms",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_bolt_action_rifles",
+    "unlocking_technologies": [
+      "bolt_action_rifles"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 20.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 20.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "small_arms",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_artillery_production"
+  },
+  {
+    "name": "pm_cannons",
+    "unlocking_technologies": [
+      "artillery"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 15.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "artillery",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_smoothbores",
+    "unlocking_technologies": [
+      "shell_gun"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 25.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "artillery",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_breech_loaders",
+    "unlocking_technologies": [
+      "breech_loading_artillery"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 25.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "artillery",
+        "amount": 65.0
+      }
+    ]
+  },
+  {
+    "name": "pm_recoiled_barrels",
+    "unlocking_technologies": [
+      "automatic_machine_guns"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 40.0
+      },
+      {
+        "good": "tools",
+        "amount": 20.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "artillery",
+        "amount": 90.0
+      }
+    ]
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_arms_industry",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_assembly_lines_building_arms_industry",
+    "unlocking_technologies": [
+      "conveyors"
+    ],
+    "inputs": [
+      {
+        "good": "oil",
+        "amount": 10.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_percussion_caps",
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 20.0
+      },
+      {
+        "good": "lead",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "ammunition",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "pm_explosive_shells",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 40.0
+      },
+      {
+        "good": "lead",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "ammunition",
+        "amount": 90.0
+      }
+    ]
+  },
+  {
+    "name": "pm_rotary_valve_engine_building_munition_plants",
+    "unlocking_technologies": [
+      "rotary_valve_engine"
+    ],
+    "inputs": [
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_assembly_lines_building_munition_plants",
+    "unlocking_technologies": [
+      "conveyors"
+    ],
+    "inputs": [
+      {
+        "good": "oil",
+        "amount": 10.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_simple_farming",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_soil_enriching_farming",
+    "unlocking_technologies": [
+      "intensive_agriculture"
+    ],
+    "inputs": [
+      {
+        "good": "fertilizer",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_fertilization",
+    "unlocking_technologies": [
+      "improved_fertilizer"
+    ],
+    "inputs": [
+      {
+        "good": "fertilizer",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_chemical_fertilizer",
+    "unlocking_technologies": [
+      "nitrogen_fixation"
+    ],
+    "inputs": [
+      {
+        "good": "fertilizer",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_secondary"
+  },
+  {
+    "name": "pm_potatoes",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": -10.0
+      },
+      {
+        "good": "liquor",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_apple_orchards",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": -10.0
+      },
+      {
+        "good": "fruit",
+        "amount": 5.0
+      },
+      {
+        "good": "sugar",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_tools_disabled"
+  },
+  {
+    "name": "pm_tools",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 2.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_steam_threshers",
+    "unlocking_technologies": [
+      "threshing_machine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 2.0
+      },
+      {
+        "good": "coal",
+        "amount": 1.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_tractors",
+    "unlocking_technologies": [
+      "mechanized_farming"
+    ],
+    "inputs": [
+      {
+        "good": "coal",
+        "amount": 2.0
+      },
+      {
+        "good": "engines",
+        "amount": 1.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_compression_ignition_tractors",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "oil",
+        "amount": 2.0
+      },
+      {
+        "good": "engines",
+        "amount": 1.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_citrus_orchards",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": -10.0
+      },
+      {
+        "good": "fruit",
+        "amount": 5.0
+      },
+      {
+        "good": "sugar",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_simple_farming_building_rice_farm",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_soil_enriching_farming_building_rice_farm",
+    "unlocking_technologies": [
+      "intensive_agriculture"
+    ],
+    "inputs": [
+      {
+        "good": "fertilizer",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_fertilization_building_rice_farm",
+    "unlocking_technologies": [
+      "improved_fertilizer"
+    ],
+    "inputs": [
+      {
+        "good": "fertilizer",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 90.0
+      }
+    ]
+  },
+  {
+    "name": "pm_chemical_fertilizer_building_rice_farm",
+    "unlocking_technologies": [
+      "nitrogen_fixation"
+    ],
+    "inputs": [
+      {
+        "good": "fertilizer",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": 140.0
+      }
+    ]
+  },
+  {
+    "name": "pm_fig_orchards_building_rice_farm",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": -30.0
+      },
+      {
+        "good": "fruit",
+        "amount": 12.0
+      },
+      {
+        "good": "sugar",
+        "amount": 18.0
+      }
+    ]
+  },
+  {
+    "name": "pm_tools_building_rice_farm",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 4.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_steam_threshers_building_rice_farm",
+    "unlocking_technologies": [
+      "threshing_machine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 4.0
+      },
+      {
+        "good": "coal",
+        "amount": 2.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_fig_orchards",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "grain",
+        "amount": -10.0
+      },
+      {
+        "good": "fruit",
+        "amount": 5.0
+      },
+      {
+        "good": "sugar",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_simple_ranch",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "fabric",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_sheep_farms",
+    "unlocking_technologies": [
+      "intensive_agriculture"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fabric",
+        "amount": 15.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 2.5
+      }
+    ]
+  },
+  {
+    "name": "pm_intensive_grazing_ranch",
+    "unlocking_technologies": [
+      "mechanized_farming"
+    ],
+    "inputs": [
+      {
+        "good": "grain",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fabric",
+        "amount": 25.0
+      },
+      {
+        "good": "fertilizer",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_open_air_stockyards",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_butchering_tools",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_slaughterhouses",
+    "unlocking_technologies": [
+      "mechanical_tools"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_mechanized_slaughtering",
+    "unlocking_technologies": [
+      "mechanized_farming"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_standard_fences"
+  },
+  {
+    "name": "pm_barbed_wire_fences",
+    "unlocking_technologies": [
+      "field_works"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 2.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_electric_fencing",
+    "unlocking_technologies": [
+      "electrical_generation"
+    ],
+    "inputs": [
+      {
+        "good": "iron",
+        "amount": 2.0
+      },
+      {
+        "good": "electricity",
+        "amount": 2.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_unrefrigerated"
+  },
+  {
+    "name": "pm_refrigerated_storage_building_livestock_ranch",
+    "unlocking_technologies": [
+      "pasteurization"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 3.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_refrigerated_rail_cars_building_livestock_ranch",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 3.0
+      },
+      {
+        "good": "transportation",
+        "amount": 2.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_picks_and_shovels_building_coal_mine",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_atmospheric_engine_pump_building_coal_mine",
+    "unlocking_technologies": [
+      "atmospheric_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_condensing_engine_pump_building_coal_mine",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_pump_building_coal_mine",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": 90.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_explosives"
+  },
+  {
+    "name": "pm_nitroglycerin_building_coal_mine",
+    "unlocking_technologies": [
+      " nitroglycerin"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dynamite_building_coal_mine",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_steam_automation"
+  },
+  {
+    "name": "pm_steam_donkey_building_coal_mine",
+    "unlocking_technologies": [
+      "steam_donkey"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coal",
+        "amount": -3.0
+      }
+    ]
+  },
+  {
+    "name": "pm_road_carts"
+  },
+  {
+    "name": "pm_picks_and_shovels_building_iron_mine",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "iron",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_atmospheric_engine_pump_building_iron_mine",
+    "unlocking_technologies": [
+      "atmospheric_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "iron",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_condensing_engine_pump_building_iron_mine",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "iron",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_pump_building_iron_mine",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "iron",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_nitroglycerin_building_iron_mine",
+    "unlocking_technologies": [
+      " nitroglycerin"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "iron",
+        "amount": 12.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dynamite_building_iron_mine",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "iron",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steam_donkey_mine",
+    "unlocking_technologies": [
+      "steam_donkey"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 1.0
+      },
+      {
+        "good": "coal",
+        "amount": 4.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rail_transport_mine",
+    "unlocking_technologies": [
+      "railways"
+    ],
+    "inputs": [
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_picks_and_shovels_building_lead_mine",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "lead",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_atmospheric_engine_pump_building_lead_mine",
+    "unlocking_technologies": [
+      "atmospheric_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "lead",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_condensing_engine_pump_building_lead_mine",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "lead",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_pump_building_lead_mine",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "lead",
+        "amount": 70.0
+      }
+    ]
+  },
+  {
+    "name": "pm_nitroglycerin_building_lead_mine",
+    "unlocking_technologies": [
+      " nitroglycerin"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "lead",
+        "amount": 12.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dynamite_building_lead_mine",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "lead",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_picks_and_shovels_building_sulfur_mine",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sulfur",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_atmospheric_engine_pump_building_sulfur_mine",
+    "unlocking_technologies": [
+      "atmospheric_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sulfur",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_condensing_engine_pump_building_sulfur_mine",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sulfur",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_pump_building_sulfur_mine",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sulfur",
+        "amount": 80.0
+      }
+    ]
+  },
+  {
+    "name": "pm_nitroglycerin_building_sulfur_mine",
+    "unlocking_technologies": [
+      " nitroglycerin"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sulfur",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dynamite_building_sulfur_mine",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sulfur",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_picks_and_shovels_building_gold_mine",
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 8.0
+      }
+    ]
+  },
+  {
+    "name": "pm_atmospheric_engine_pump_building_gold_mine",
+    "unlocking_technologies": [
+      "atmospheric_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 15.0
+      }
+    ]
+  },
+  {
+    "name": "pm_condensing_engine_pump_building_gold_mine",
+    "unlocking_technologies": [
+      "watertube_boiler"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_pump_building_gold_mine",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 15.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_nitroglycerin_building_gold_mine",
+    "unlocking_technologies": [
+      " nitroglycerin"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_dynamite_building_gold_mine",
+    "unlocking_technologies": [
+      "dynamite"
+    ],
+    "inputs": [
+      {
+        "good": "explosives",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_gold_fields",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "gold",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_coffee_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "coffee",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_coffee_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "coffee",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steam_rail_transport",
+    "unlocking_technologies": [
+      "railways"
+    ],
+    "inputs": [
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "default_building_cotton_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "fabric",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_cotton_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fabric",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_dye_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "dye",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_dye_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "dye",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_opium_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "opium",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_opium_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "opium",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_tea_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "tea",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_tea_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "tea",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_tobacco_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "tobacco",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_tobacco_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "tobacco",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_sugar_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "sugar",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_sugar_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "sugar",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_banana_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "fruit",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_banana_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fruit",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_silk_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "silk",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_silk_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "silk",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "default_building_vineyard_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "wine",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_vineyard_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "wine",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_organization"
+  },
+  {
+    "name": "pm_general_training",
+    "unlocking_technologies": [
+      "general_staff"
+    ]
+  },
+  {
+    "name": "pm_advanced_tactics_training",
+    "unlocking_technologies": [
+      "military_statistics"
+    ]
+  },
+  {
+    "name": "pm_training_streamlining",
+    "unlocking_technologies": [
+      "wargaming"
+    ]
+  },
+  {
+    "name": "pm_nco_incorporation",
+    "unlocking_technologies": [
+      "nco_training"
+    ],
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "name": "pm_mobile_warfare_tactics",
+    "unlocking_technologies": [
+      "mobile_armor"
+    ],
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "name": "pm_no_organization_conscription"
+  },
+  {
+    "name": "pm_general_training_conscription",
+    "unlocking_technologies": [
+      "general_staff"
+    ]
+  },
+  {
+    "name": "pm_advanced_tactics_training_conscription",
+    "unlocking_technologies": [
+      "military_statistics"
+    ]
+  },
+  {
+    "name": "pm_training_streamlining_conscription",
+    "unlocking_technologies": [
+      "wargaming"
+    ]
+  },
+  {
+    "name": "pm_nco_incorporation_conscription",
+    "unlocking_technologies": [
+      "nco_training"
+    ]
+  },
+  {
+    "name": "pm_mobile_warfare_tactics_conscription",
+    "unlocking_technologies": [
+      "mobile_armor"
+    ],
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "name": "pm_no_naval_theory"
+  },
+  {
+    "name": "pm_power_of_the_purse",
+    "unlocking_technologies": [
+      "power_of_the_purse"
+    ]
+  },
+  {
+    "name": "pm_jeune_ecole",
+    "unlocking_technologies": [
+      "jeune_ecole"
+    ]
+  },
+  {
+    "name": "pm_sea_lane_strategies",
+    "unlocking_technologies": [
+      "sea_lane_strategies"
+    ]
+  },
+  {
+    "name": "pm_battlefleet_tactics",
+    "unlocking_technologies": [
+      "battlefleet_tactics"
+    ]
+  },
+  {
+    "name": "pm_market_stalls",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "services",
+        "amount": 15.0
+      }
+    ]
+  },
+  {
+    "name": "pm_market_squares",
+    "unlocking_technologies": [
+      "",
+      "building_modifiers = {",
+      "workforce_scaled = {",
+      "goods_input_wood_add = 1",
+      "goods_input_glass_add = 1",
+      "goods_output_services_add = 20"
+    ]
+  },
+  {
+    "name": "pm_covered_markets",
+    "unlocking_technologies": [
+      "steel_frame_buildings"
+    ],
+    "inputs": [
+      {
+        "good": "glass",
+        "amount": 2.0
+      },
+      {
+        "good": "steel",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "services",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_arcades",
+    "unlocking_technologies": [
+      "elevator"
+    ],
+    "inputs": [
+      {
+        "good": "glass",
+        "amount": 2.0
+      },
+      {
+        "good": "steel",
+        "amount": 2.0
+      },
+      {
+        "good": "electricity",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "services",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_street_lighting"
+  },
+  {
+    "name": "pm_gas_streetlights",
+    "unlocking_technologies": [],
+    "inputs": [
+      {
+        "good": "coal",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "services",
+        "amount": 2.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_streetlights",
+    "unlocking_technologies": [
+      "electrical_generation"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 3.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "services",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_public_transport",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_public_trams",
+    "unlocking_technologies": [
+      "railways"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 8.0
+      }
+    ]
+  },
+  {
+    "name": "pm_public_motor_carriages",
+    "unlocking_technologies": [
+      "combustion_engine"
+    ],
+    "inputs": [
+      {
+        "good": "automobiles",
+        "amount": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_state_urban_clergy"
+  },
+  {
+    "name": "pm_free_urban_clergy"
+  },
+  {
+    "name": "pm_no_urban_clergy"
+  },
+  {
+    "name": "pm_traditional_art",
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fine_art",
+        "amount": 4.0
+      }
+    ]
+  },
+  {
+    "name": "pm_realist_art",
+    "unlocking_technologies": [
+      "realism"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fine_art",
+        "amount": 5.0
+      }
+    ]
+  },
+  {
+    "name": "pm_photographic_art",
+    "unlocking_technologies": [
+      "camera"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 15.0
+      },
+      {
+        "good": "tools",
+        "amount": 8.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fine_art",
+        "amount": 7.0
+      }
+    ]
+  },
+  {
+    "name": "pm_film_art",
+    "unlocking_technologies": [
+      "film"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "paper",
+        "amount": 15.0
+      },
+      {
+        "good": "electricity",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fine_art",
+        "amount": 8.0
+      }
+    ]
+  },
+  {
+    "name": "pm_principle_freedom_of_movement_3"
+  },
+  {
+    "name": "pm_freedom_of_movement_no_effect"
+  },
+  {
+    "name": "pm_traditional_patronage"
+  },
+  {
+    "name": "pm_bourgeoisie_patronage",
+    "unlocking_technologies": [
+      "realism"
+    ]
+  },
+  {
+    "name": "pm_independent_artists",
+    "unlocking_technologies": [
+      "realism"
+    ]
+  },
+  {
+    "name": "pm_hydroelectric_plant",
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "electricity",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "pm_coalfired_plant",
+    "unlocking_technologies": [
+      "steam_turbine"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 15.0
+      },
+      {
+        "good": "coal",
+        "amount": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "electricity",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_oilfired_plant",
+    "unlocking_technologies": [
+      "oil_turbine"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 20.0
+      },
+      {
+        "good": "oil",
+        "amount": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "electricity",
+        "amount": 150.0
+      }
+    ]
+  },
+  {
+    "name": "pm_anchorage",
+    "inputs": [],
+    "outputs": []
+  },
+  {
+    "name": "pm_basic_port",
+    "inputs": [
+      {
+        "good": "clippers",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_industrial_port",
+    "unlocking_technologies": [
+      "gantry_cranes"
+    ],
+    "inputs": [
+      {
+        "good": "steamers",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_modern_port",
+    "unlocking_technologies": [
+      "concrete_dockyards"
+    ],
+    "inputs": [
+      {
+        "good": "steamers",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_simple_organization"
+  },
+  {
+    "name": "pm_horizontal_drawer_cabinets",
+    "unlocking_technologies": [
+      "centralization"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_vertical_filing_cabinets",
+    "unlocking_technologies": [
+      "central_archives"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 20.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_switch_boards",
+    "unlocking_technologies": [
+      "central_planning"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 20.0
+      },
+      {
+        "good": "telephones",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_hereditary_bureaucrats"
+  },
+  {
+    "name": "pm_professional_bureaucrats"
+  },
+  {
+    "name": "pm_secular_bureaucrats"
+  },
+  {
+    "name": "pm_religious_bureaucrats"
+  },
+  {
+    "name": "pm_scholastic_education",
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_philosophy_department",
+    "unlocking_technologies": [
+      "dialectics"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_analytical_philosophy_department",
+    "unlocking_technologies": [
+      "analytical_philosophy"
+    ],
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 15.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_secular_academia"
+  },
+  {
+    "name": "pm_religious_academia"
+  },
+  {
+    "name": "pm_skyscraper_bureaucratic_nexus",
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 25.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_skyscraper_trade_nexus",
+    "inputs": [
+      {
+        "good": "paper",
+        "amount": 25.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_no_airships"
+  },
+  {
+    "name": "pm_airship_mooring_post",
+    "unlocking_technologies": [
+      "zeppelins"
+    ]
+  },
+  {
+    "name": "pm_simple_forestry",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "wood",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_saw_mills",
+    "unlocking_technologies": [
+      "steelworking"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "wood",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_saw_mills",
+    "unlocking_technologies": [
+      "electrical_generation"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "wood",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_hardwood"
+  },
+  {
+    "name": "pm_hardwood",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "wood",
+        "amount": -25.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_increased_hardwood",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "wood",
+        "amount": -40.0
+      },
+      {
+        "good": "hardwood",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_equipment"
+  },
+  {
+    "name": "pm_steam_donkey_building_logging_camp",
+    "unlocking_technologies": [
+      "steam_donkey"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 1.0
+      },
+      {
+        "good": "coal",
+        "amount": 4.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_chainsaws",
+    "unlocking_technologies": [
+      "combustion_engine"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 10.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_rail_transport_building_logging_camp",
+    "unlocking_technologies": [
+      "railways"
+    ],
+    "inputs": [
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_log_carts",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "transportation",
+        "amount": 8.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "default_building_rubber_plantation",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "rubber",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "automatic_irrigation_building_rubber_plantation",
+    "unlocking_technologies": [
+      "pumpjacks"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "rubber",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_simple_fishing",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "fish",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_fishing_trawlers",
+    "inputs": [
+      {
+        "good": "clippers",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fish",
+        "amount": 50.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steam_trawlers",
+    "unlocking_technologies": [
+      "gantry_cranes"
+    ],
+    "inputs": [
+      {
+        "good": "steamers",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "fish",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_refrigerated_storage_building_fishing_wharf",
+    "unlocking_technologies": [
+      "pasteurization"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_refrigerated_rail_cars_building_fishing_wharf",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 5.0
+      },
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_flash_freezing_building_fishing_wharf",
+    "unlocking_technologies": [
+      "flash_freezing"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 7.0
+      },
+      {
+        "good": "transportation",
+        "amount": 7.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_simple_whaling",
+    "inputs": [],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_wooden_whaling_ships",
+    "inputs": [
+      {
+        "good": "clippers",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 10.0
+      },
+      {
+        "good": "oil",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steam_whaling_ships",
+    "unlocking_technologies": [
+      "gantry_cranes"
+    ],
+    "inputs": [
+      {
+        "good": "steamers",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "meat",
+        "amount": 20.0
+      },
+      {
+        "good": "oil",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_refrigerated_storage_building_whaling_station",
+    "unlocking_technologies": [
+      "pasteurization"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_refrigerated_rail_cars_building_whaling_station",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 5.0
+      },
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_flash_freezing_building_whaling_station",
+    "unlocking_technologies": [
+      "flash_freezing"
+    ],
+    "inputs": [
+      {
+        "good": "electricity",
+        "amount": 7.0
+      },
+      {
+        "good": "transportation",
+        "amount": 7.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_steam_derricks",
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "oil",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_combustion_derricks",
+    "unlocking_technologies": [
+      "combustion_engine"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "oil",
+        "amount": 100.0
+      }
+    ]
+  },
+  {
+    "name": "pm_rail_transport_building_oil_rig",
+    "unlocking_technologies": [
+      "railways"
+    ],
+    "inputs": [
+      {
+        "good": "transportation",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_tanker_cars",
+    "unlocking_technologies": [
+      "steel_railway_cars"
+    ],
+    "inputs": [
+      {
+        "good": "transportation",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_early_trains",
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steam_trains",
+    "unlocking_technologies": [
+      "steel_railway_cars"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steam_trains_principle_transport_3",
+    "unlocking_technologies": [
+      "steel_railway_cars"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 6.0
+      },
+      {
+        "good": "coal",
+        "amount": 6.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_trains",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      },
+      {
+        "good": "electricity",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 35.0
+      }
+    ]
+  },
+  {
+    "name": "pm_electric_trains_principle_transport_3",
+    "unlocking_technologies": [
+      "electric_railway"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 6.0
+      },
+      {
+        "good": "electricity",
+        "amount": 12.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 45.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_trains",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 8.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 40.0
+      }
+    ]
+  },
+  {
+    "name": "pm_diesel_trains_principle_transport_3",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 6.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 55.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_passenger_trains"
+  },
+  {
+    "name": "pm_wooden_passenger_carriages",
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 8.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_steel_passenger_carriages",
+    "unlocking_technologies": [
+      "steel_railway_cars"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "transportation",
+        "amount": 15.0
+      }
+    ]
+  },
+  {
+    "name": "pm_trade_center"
+  },
+  {
+    "name": "pm_trade_center_principle_external_trade_2"
+  },
+  {
+    "name": "pm_trade_center_merchant_guilds"
+  },
+  {
+    "name": "pm_trade_center_privately_owned"
+  },
+  {
+    "name": "pm_trade_center_bureaucrat_ownership"
+  },
+  {
+    "name": "pm_financial_district_privately_owned"
+  },
+  {
+    "name": "pm_financial_district_publicly_traded",
+    "unlocking_technologies": [
+      "",
+      "building_modifiers = { ",
+      "level_scaled = {",
+      "building_employment_capitalists_add = 50",
+      "building_employment_bureaucrats_add = 50",
+      "building_employment_clerks_add = 150"
+    ]
+  },
+  {
+    "name": "pm_financial_district_principle_divine_economics_2"
+  },
+  {
+    "name": "pm_manor_house_privately_owned"
+  },
+  {
+    "name": "pm_manor_house_principle_divine_economics_2"
+  },
+  {
+    "name": "pm_manor_house_bureaucrat_ownership"
+  },
+  {
+    "name": "pm_manor_house_clergy_ownership"
+  },
+  {
+    "name": "pm_wooden_buildings",
+    "inputs": [
+      {
+        "good": "fabric",
+        "amount": 25.0
+      },
+      {
+        "good": "wood",
+        "amount": 75.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_iron_frame_buildings",
+    "unlocking_technologies": [
+      "urban_planning"
+    ],
+    "inputs": [
+      {
+        "good": "wood",
+        "amount": 40.0
+      },
+      {
+        "good": "fabric",
+        "amount": 20.0
+      },
+      {
+        "good": "iron",
+        "amount": 50.0
+      },
+      {
+        "good": "tools",
+        "amount": 10.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_steel_frame_buildings",
+    "unlocking_technologies": [
+      "steel_frame_buildings"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 50.0
+      },
+      {
+        "good": "glass",
+        "amount": 40.0
+      },
+      {
+        "good": "explosives",
+        "amount": 10.0
+      },
+      {
+        "good": "tools",
+        "amount": 20.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_arc_welded_buildings",
+    "unlocking_technologies": [
+      "arc_welding"
+    ],
+    "inputs": [
+      {
+        "good": "steel",
+        "amount": 50.0
+      },
+      {
+        "good": "glass",
+        "amount": 40.0
+      },
+      {
+        "good": "explosives",
+        "amount": 20.0
+      },
+      {
+        "good": "tools",
+        "amount": 40.0
+      },
+      {
+        "good": "electricity",
+        "amount": 40.0
+      }
+    ],
+    "outputs": []
+  }
+]

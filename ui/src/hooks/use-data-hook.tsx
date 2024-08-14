@@ -3,11 +3,13 @@ import ProductionMethod from '@/interfaces/production-method';
 import Building from '@/interfaces/building';
 import ProductionMethodGroup from '@/interfaces/production-method-group';
 import { useTranslation } from 'react-i18next';
+import Good from '@/interfaces/good';
 
 const useDataHook = () => {
   const [buildings, setBuildings] = useState<Building[]>([]);
   const [productionMethodGroups, setProductionMethodGroups] = useState<ProductionMethodGroup[]>([]);
   const [productionMethods, setProductionMethods] = useState<ProductionMethod[]>([]);
+  const [goods, setGoods] = useState<Good[]>([]);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -46,9 +48,21 @@ const useDataHook = () => {
         });
         setProductionMethods(mappedData);
       });
+
+    fetch('data/goods.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const mappedData = data.map((good: Good) => {
+          return {
+            ...good,
+            displayName: t(good.name),
+          };
+        });
+        setGoods(mappedData);
+      });
   }, []);
 
-  return { buildings, productionMethodGroups, productionMethods };
+  return { buildings, productionMethodGroups, productionMethods, goods };
 };
 
 export default useDataHook;

@@ -28,11 +28,34 @@ class BuildingsParser:
         return building_district_list
 
     def callback(self, line, item_dict):
-        item_dict = self.handleUnlockingTechnologies(line, item_dict)
-        item_dict = self.handleProductionMethodGroups(line, item_dict)
+        item_dict = self.handle_required_cost(line, item_dict)
+        item_dict = self.handle_unlocking_technologies(line, item_dict)
+        item_dict = self.handle_production_method_groups(line, item_dict)
         return item_dict
 
-    def handleUnlockingTechnologies(self, line, item_dict):
+    def handle_required_cost(self, line, item_dict):
+        if "required_construction" in line:
+            match line.split("=")[1].strip():
+                case "construction_cost_canal":
+                    item_dict["required_construction"] = 5000
+                case "construction_cost_monument":
+                    item_dict["required_construction"] = 2500
+                case "construction_cost_very_high":
+                    item_dict["required_construction"] = 800
+                case "construction_cost_high":
+                    item_dict["required_construction"] = 600
+                case "construction_cost_medium":
+                    item_dict["required_construction"] = 400
+                case "construction_cost_low":
+                    item_dict["required_construction"] = 200
+                case "construction_cost_very_low":
+                    item_dict["required_construction"] = 100
+                case _:
+                    item_dict["required_construction"] = 0
+
+        return item_dict
+
+    def handle_unlocking_technologies(self, line, item_dict):
         isHeaderInLine = "unlocking_technologies" in line
         if isHeaderInLine and self.is_unlocking_technologies_open == False:
             item_dict["unlocking_technologies"] = []
@@ -46,7 +69,7 @@ class BuildingsParser:
 
         return item_dict
 
-    def handleProductionMethodGroups(self, line, item_dict):
+    def handle_production_method_groups(self, line, item_dict):
         isHeaderInLine = "production_method_groups" in line
         if isHeaderInLine and self.is_production_method_groups_open == False:
             item_dict["production_method_groups"] = []
