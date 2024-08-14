@@ -1,5 +1,5 @@
 import BuildingSetting from '@/interfaces/building-setting';
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useState } from 'react';
 import BuildingEfficiency from '@/interfaces/building-efficiency';
 import { calculateBuildingEfficiency } from '@/utils/calculate-building-efficiency';
 import useDataHook from '@/hooks/use-data-hook';
@@ -9,18 +9,26 @@ const BuildingEfficiencyDisplay = ({ buildingSetting }: { buildingSetting: Build
   const { goods, buildings } = useDataHook();
   const [currentBuildingEfficiency, setCurrentBuildingEfficiency] = useState<BuildingEfficiency | undefined>(undefined);
 
-  useEffect(() => {
+  const buildingEfficiency = useMemo(() => {
     if (buildingSetting && goods.length && buildings.length) {
-      const buildingEfficiency = calculateBuildingEfficiency(buildingSetting, goods, buildings);
-      setCurrentBuildingEfficiency(buildingEfficiency);
+      return calculateBuildingEfficiency(buildingSetting, goods, buildings);
     }
   }, [buildingSetting, goods, buildings]);
+
+  useEffect(() => {
+    setCurrentBuildingEfficiency(buildingEfficiency);
+  }, [buildingEfficiency]);
 
   if (
     currentBuildingEfficiency &&
     (currentBuildingEfficiency.constructionEfficiency ||
       currentBuildingEfficiency.priceFlexibility ||
-      currentBuildingEfficiency.netValue)
+      currentBuildingEfficiency.netValue) &&
+    !(
+      (currentBuildingEfficiency.constructionEfficiency || 0) < 0 ||
+      (currentBuildingEfficiency.priceFlexibility || 0) < 0 ||
+      (currentBuildingEfficiency.netValue || 0) < 0
+    )
   ) {
     return (
       <div css={css({ display: 'flex', gap: '1rem' })}>
@@ -56,9 +64,10 @@ const BuildingEfficiencyDisplay = ({ buildingSetting }: { buildingSetting: Build
         <span css={css({ color: 'var(--text-color-secondary)' })}>)</span>
       </div>
     );
+  } else {
+    console.log(`${buildingSetting.displayName}`, currentBuildingEfficiency);
+    return <></>;
   }
-
-  return <></>;
 };
 
 export default BuildingEfficiencyDisplay;

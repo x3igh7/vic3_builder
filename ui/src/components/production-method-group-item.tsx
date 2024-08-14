@@ -31,7 +31,7 @@ const ProductionMethodGroupItem = ({
   const handleProductionMethodChange = (e: AutoCompleteSelectEvent) => {
     if (
       e.value?.hasOwnProperty('displayName') &&
-      groupProductionMethods.some((method) => method.displayName === e.value.displayName())
+      groupProductionMethods.some((method) => method.displayName === e.value?.displayName)
     ) {
       onSelectedProductionMethodChange(name, e.value);
     }

@@ -27,7 +27,7 @@ const getOutputsValue = (setting: BuildingSetting, goods: Good[]) => {
 };
 
 const getNetValue = (inputsValue: number, outputsValue: number) => {
-  if (outputsValue === 0 || inputsValue === 0) {
+  if (outputsValue === 0 && inputsValue === 0) {
     return undefined;
   }
   return outputsValue - inputsValue;
@@ -39,7 +39,7 @@ const getConstructionEfficiency = (
   outputsValue: number,
   buildings: Building[],
 ) => {
-  if (inputsValue === 0 || outputsValue === 0) {
+  if (inputsValue === 0 && outputsValue === 0) {
     return undefined;
   }
   const building = buildings.find((b) => b.name === buildingName);
@@ -53,7 +53,7 @@ const getConstructionEfficiency = (
 };
 
 const getPriceEfficiency = (inputsValue: number, outputsValue: number) => {
-  if (inputsValue === 0 || inputsValue === 0) {
+  if (!inputsValue || !outputsValue) {
     return undefined;
   }
   return (outputsValue / inputsValue) * 100;
