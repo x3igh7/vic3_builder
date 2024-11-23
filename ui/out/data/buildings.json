@@ -9,7 +9,8 @@
       "pmg_canning",
       "pmg_distillery",
       "pmg_automation_building_food_industry"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_textile_mills",
@@ -20,7 +21,8 @@
       "pmg_base_building_textile_mills",
       "pmg_luxury_building_textile_mills",
       "pmg_automation_building_textile_mills"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_furniture_manufacturies",
@@ -31,7 +33,8 @@
       "pmg_base_building_furniture_manufacturies",
       "pmg_luxury_building_furniture_manufacturies",
       "pmg_automation_building_furniture_manufacturies"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_glassworks",
@@ -42,7 +45,8 @@
       "pmg_base_building_glassworks",
       "pmg_luxury_building_glassworks",
       "pmg_glassblowing"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_tooling_workshops",
@@ -52,7 +56,8 @@
     "production_method_groups": [
       "pmg_base_building_tooling_workshops",
       "pmg_automation_building_tooling_workshops"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_paper_mills",
@@ -62,7 +67,8 @@
     "production_method_groups": [
       "pmg_base_building_paper_mills",
       "pmg_automation_building_paper_mills"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_chemical_plants",
@@ -71,7 +77,8 @@
     ],
     "production_method_groups": [
       "pmg_fertilizer_production"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_explosives_factory",
@@ -80,7 +87,8 @@
     ],
     "production_method_groups": [
       "pmg_explosives_building_chemical_plants"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_synthetics_plants",
@@ -90,7 +98,8 @@
     "production_method_groups": [
       "pmg_synthetic_dyes",
       "pmg_synthetic_silk"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_steel_mills",
@@ -100,7 +109,8 @@
     "production_method_groups": [
       "pmg_steelmaking_process",
       "pmg_automation_building_steel_mills"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_motor_industry",
@@ -111,7 +121,8 @@
       "pmg_base_building_motor_industry",
       "pmg_automobile_production",
       "pmg_automation_building_motor_industry"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_shipyards",
@@ -120,7 +131,8 @@
     ],
     "production_method_groups": [
       "pmg_base_building_shipyards"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_military_shipyards",
@@ -129,7 +141,8 @@
     ],
     "production_method_groups": [
       "pmg_military_base"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_war_machine_industry",
@@ -139,7 +152,8 @@
     "production_method_groups": [
       "pmg_aeroplanes",
       "pmg_tanks"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_electrics_industry",
@@ -149,7 +163,8 @@
     "production_method_groups": [
       "pmg_telephones_category",
       "pmg_radios_category"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_arms_industry",
@@ -159,7 +174,8 @@
     "production_method_groups": [
       "pmg_firearms_manufacturing",
       "pmg_automation_building_arms_industry"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_artillery_foundries",
@@ -169,7 +185,8 @@
     "production_method_groups": [
       "pmg_foundries",
       "pmg_automation_building_arms_industry"
-    ]
+    ],
+    "required_construction": 600
   },
   {
     "name": "building_munition_plants",
@@ -179,7 +196,8 @@
     "production_method_groups": [
       "pmg_base_building_munition_plants",
       "pmg_automation_building_munition_plants"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_rye_farm",
@@ -190,7 +208,8 @@
       "pmg_base_building_rye_farm",
       "pmg_secondary_building_rye_farm",
       "pmg_harvesting_process_building_rye_farm"
-    ]
+    ],
+    "required_construction": 200
   },
   {
     "name": "building_wheat_farm",
@@ -201,7 +220,8 @@
       "pmg_base_building_wheat_farm",
       "pmg_secondary_building_wheat_farm",
       "pmg_harvesting_process_building_wheat_farm"
-    ]
+    ],
+    "required_construction": 200
   },
   {
     "name": "building_rice_farm",
@@ -212,7 +232,8 @@
       "pmg_base_building_rice_farm",
       "pmg_secondary_building_rice_farm",
       "pmg_harvesting_process_building_rice_farm"
-    ]
+    ],
+    "required_construction": 200
   },
   {
     "name": "building_maize_farm",
@@ -223,7 +244,8 @@
       "pmg_base_building_maize_farm",
       "pmg_secondary_building_maize_farm",
       "pmg_harvesting_process_building_maize_farm"
-    ]
+    ],
+    "required_construction": 200
   },
   {
     "name": "building_millet_farm",
@@ -234,7 +256,8 @@
       "pmg_base_building_millet_farm",
       "pmg_secondary_building_millet_farm",
       "pmg_harvesting_process_building_millet_farm"
-    ]
+    ],
+    "required_construction": 200
   },
   {
     "name": "building_livestock_ranch",
@@ -246,10 +269,12 @@
       "pmg_sheep_ranch",
       "pmg_fencing",
       "pmg_refrigeration_building_livestock_ranch"
-    ]
+    ],
+    "required_construction": 200
   },
   {
     "name": "building_vineyard_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -260,6 +285,7 @@
   },
   {
     "name": "building_coal_mine",
+    "required_construction": 400,
     "unlocking_technologies": [
       "shaft_mining"
     ],
@@ -272,6 +298,7 @@
   },
   {
     "name": "building_iron_mine",
+    "required_construction": 400,
     "unlocking_technologies": [
       "shaft_mining"
     ],
@@ -284,6 +311,7 @@
   },
   {
     "name": "building_lead_mine",
+    "required_construction": 400,
     "unlocking_technologies": [
       "shaft_mining"
     ],
@@ -296,6 +324,7 @@
   },
   {
     "name": "building_sulfur_mine",
+    "required_construction": 400,
     "unlocking_technologies": [
       "shaft_mining"
     ],
@@ -308,6 +337,7 @@
   },
   {
     "name": "building_gold_mine",
+    "required_construction": 400,
     "unlocking_technologies": [
       "prospecting"
     ],
@@ -329,6 +359,7 @@
   },
   {
     "name": "building_coffee_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -339,6 +370,7 @@
   },
   {
     "name": "building_cotton_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -349,6 +381,7 @@
   },
   {
     "name": "building_dye_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -359,6 +392,7 @@
   },
   {
     "name": "building_opium_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -369,6 +403,7 @@
   },
   {
     "name": "building_tea_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -379,6 +414,7 @@
   },
   {
     "name": "building_tobacco_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -389,6 +425,7 @@
   },
   {
     "name": "building_sugar_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -399,6 +436,7 @@
   },
   {
     "name": "building_banana_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -409,6 +447,7 @@
   },
   {
     "name": "building_silk_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "enclosure"
     ],
@@ -424,7 +463,8 @@
     ],
     "production_method_groups": [
       "pmg_training"
-    ]
+    ],
+    "required_construction": 100
   },
   {
     "name": "building_conscription_center",
@@ -441,7 +481,8 @@
     ],
     "production_method_groups": [
       "pmg_naval_theory"
-    ]
+    ],
+    "required_construction": 100
   },
   {
     "name": "building_urban_center",
@@ -464,7 +505,8 @@
       "pmg_base_building_arts_academy",
       "pmg_ownership_building_arts_academy",
       "pmg_principle_freedom_of_movement_3"
-    ]
+    ],
+    "required_construction": 400
   },
   {
     "name": "building_power_plant",
@@ -473,7 +515,8 @@
     ],
     "production_method_groups": [
       "pmg_base_building_power_plant"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_port",
@@ -484,7 +527,8 @@
     ],
     "production_method_groups": [
       "pmg_base_building_port"
-    ]
+    ],
+    "required_construction": 400
   },
   {
     "name": "building_government_administration",
@@ -495,7 +539,8 @@
       "pmg_base_building_government_administration",
       "pmg_government_administration_bureaucrat_professionalism",
       "pmg_government_administration_religious_administration"
-    ]
+    ],
+    "required_construction": 400
   },
   {
     "name": "building_university",
@@ -506,17 +551,20 @@
       "pmg_base_building_university",
       "pmg_university_academia",
       "pmg_principle_freedom_of_movement_3"
-    ]
+    ],
+    "required_construction": 400
   },
   {
     "name": "building_skyscraper",
     "production_method_groups": [
       "pmg_base_building_skyscraper",
       "pmg_airship_mooring_post"
-    ]
+    ],
+    "required_construction": 2500
   },
   {
     "name": "building_logging_camp",
+    "required_construction": 200,
     "production_method_groups": [
       "pmg_base_building_logging_camp",
       "pmg_hardwood",
@@ -526,6 +574,7 @@
   },
   {
     "name": "building_rubber_plantation",
+    "required_construction": 200,
     "unlocking_technologies": [
       "rubber_mastication"
     ],
@@ -536,6 +585,7 @@
   },
   {
     "name": "building_fishing_wharf",
+    "required_construction": 200,
     "production_method_groups": [
       "pmg_base_building_fishing_wharf",
       "pmg_refrigeration_building_fishing_wharf"
@@ -543,6 +593,7 @@
   },
   {
     "name": "building_whaling_station",
+    "required_construction": 200,
     "unlocking_technologies": [
       "navigation"
     ],
@@ -553,6 +604,7 @@
   },
   {
     "name": "building_oil_rig",
+    "required_construction": 400,
     "unlocking_technologies": [
       "pumpjacks"
     ],
@@ -569,7 +621,8 @@
     "production_method_groups": [
       "pmg_base_building_railway",
       "pmg_passenger_trains"
-    ]
+    ],
+    "required_construction": 800
   },
   {
     "name": "building_trade_center",
@@ -593,6 +646,7 @@
   },
   {
     "name": "building_construction_sector",
+    "required_construction": 100,
     "unlocking_technologies": [
       "urbanization"
     ],
