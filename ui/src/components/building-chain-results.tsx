@@ -20,7 +20,7 @@ const BuildingChainResults = ({
   quantity: number | null;
 }): ReactElement => {
   const { t } = useTranslation();
-  const [settings] = useLocalStorage<BuildingSetting[]>([], 'settings_v3');
+  const [settings] = useLocalStorage<BuildingSetting[]>([], 'settings_v4');
   const [currentBuildingChains, setCurrentBuildingChains] = useState<BuildingChain[][]>([]);
 
   useEffect(() => {

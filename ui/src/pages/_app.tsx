@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     // remove any old settings from local storage
     Object.keys(localStorage).forEach(function (key) {
       // if not the current settings version, remove it
-      if (key !== 'settings_v3') {
+      if (key !== 'settings_v4') {
         localStorage.removeItem(key);
       }
     });

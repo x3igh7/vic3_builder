@@ -658,7 +658,7 @@
     "outputs": [
       {
         "good": "glass",
-        "amount": 70.0
+        "amount": 60.0
       }
     ]
   },
@@ -670,17 +670,17 @@
     "inputs": [
       {
         "good": "oil",
-        "amount": 25.0
+        "amount": 20.0
       },
       {
         "good": "lead",
-        "amount": 35.0
+        "amount": 30.0
       }
     ],
     "outputs": [
       {
         "good": "glass",
-        "amount": 110.0
+        "amount": 100.0
       }
     ]
   },
@@ -698,11 +698,11 @@
     "outputs": [
       {
         "good": "glass",
-        "amount": -20.0
+        "amount": -10.0
       },
       {
         "good": "porcelain",
-        "amount": 20.0
+        "amount": 10.0
       }
     ]
   },
@@ -714,17 +714,17 @@
     "inputs": [
       {
         "good": "dye",
-        "amount": 15.0
+        "amount": 10.0
       }
     ],
     "outputs": [
       {
         "good": "glass",
-        "amount": -55.0
+        "amount": -20.0
       },
       {
         "good": "porcelain",
-        "amount": 55.0
+        "amount": 30.0
       }
     ]
   },
@@ -739,11 +739,15 @@
     "inputs": [
       {
         "good": "tools",
-        "amount": 5.0
+        "amount": 2.0
+      },
+      {
+        "good": "engines",
+        "amount": 2.0
       },
       {
         "good": "oil",
-        "amount": 10.0
+        "amount": 5.0
       }
     ],
     "outputs": []
@@ -1170,17 +1174,17 @@
     "inputs": [
       {
         "good": "wood",
-        "amount": 40.0
+        "amount": 10.0
       }
     ],
     "outputs": [
       {
         "good": "dye",
-        "amount": -40.0
+        "amount": -10.0
       },
       {
         "good": "silk",
-        "amount": 40.0
+        "amount": 30.0
       }
     ]
   },
@@ -1381,7 +1385,7 @@
       },
       {
         "good": "oil",
-        "amount": 20.0
+        "amount": 10.0
       }
     ],
     "outputs": [
@@ -1391,7 +1395,7 @@
       },
       {
         "good": "automobiles",
-        "amount": 25.0
+        "amount": 30.0
       }
     ]
   },
@@ -1477,7 +1481,7 @@
     "inputs": [
       {
         "good": "wood",
-        "amount": 40.0
+        "amount": 20.0
       },
       {
         "good": "hardwood",
@@ -1641,15 +1645,15 @@
     "inputs": [
       {
         "good": "steel",
-        "amount": 50.0
+        "amount": 40.0
       },
       {
         "good": "electricity",
-        "amount": 35.0
+        "amount": 30.0
       },
       {
         "good": "engines",
-        "amount": 15.0
+        "amount": 20.0
       }
     ],
     "outputs": [
@@ -2289,7 +2293,7 @@
     "inputs": [
       {
         "good": "fertilizer",
-        "amount": 30.0
+        "amount": 20.0
       }
     ],
     "outputs": [
@@ -3195,7 +3199,7 @@
     "outputs": [
       {
         "good": "gold",
-        "amount": 5.0
+        "amount": 10.0
       }
     ]
   },
@@ -3527,17 +3531,13 @@
     "name": "pm_nco_incorporation",
     "unlocking_technologies": [
       "nco_training"
-    ],
-    "inputs": [],
-    "outputs": []
+    ]
   },
   {
     "name": "pm_mobile_warfare_tactics",
     "unlocking_technologies": [
       "mobile_armor"
-    ],
-    "inputs": [],
-    "outputs": []
+    ]
   },
   {
     "name": "pm_no_organization_conscription"
@@ -3570,9 +3570,7 @@
     "name": "pm_mobile_warfare_tactics_conscription",
     "unlocking_technologies": [
       "mobile_armor"
-    ],
-    "inputs": [],
-    "outputs": []
+    ]
   },
   {
     "name": "pm_no_naval_theory"
@@ -3679,13 +3677,13 @@
     "inputs": [
       {
         "good": "coal",
-        "amount": 1.0
+        "amount": 2.0
       }
     ],
     "outputs": [
       {
         "good": "services",
-        "amount": 2.0
+        "amount": 5.0
       }
     ]
   },
@@ -3713,7 +3711,7 @@
     "outputs": [
       {
         "good": "transportation",
-        "amount": 5.0
+        "amount": 2.0
       }
     ]
   },
@@ -3725,13 +3723,13 @@
     "inputs": [
       {
         "good": "engines",
-        "amount": 1.0
+        "amount": 0.5
       }
     ],
     "outputs": [
       {
         "good": "transportation",
-        "amount": 8.0
+        "amount": 4.0
       }
     ]
   },
@@ -3749,7 +3747,7 @@
     "outputs": [
       {
         "good": "transportation",
-        "amount": 10.0
+        "amount": 8.0
       }
     ]
   },
@@ -4209,12 +4207,12 @@
     ],
     "inputs": [
       {
-        "good": "tools",
-        "amount": 10.0
+        "good": "engines",
+        "amount": 1.0
       },
       {
         "good": "oil",
-        "amount": 5.0
+        "amount": 4.0
       }
     ],
     "outputs": []
@@ -4766,6 +4764,9 @@
   },
   {
     "name": "pm_manor_house_clergy_ownership"
+  },
+  {
+    "name": "pm_company_headquarter_privately_owned"
   },
   {
     "name": "pm_wooden_buildings",

@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 const SettingsPage = (): ReactElement => {
   const { t } = useTranslation();
   const { buildings, productionMethods, productionMethodGroups } = useDataHook();
-  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings_v3');
+  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings_v4');
   const [filterQuery, setFilterQuery] = useState<string>('');
   const [filteredSettings, setFilteredSettings] = useState<BuildingSetting[]>([]);
 

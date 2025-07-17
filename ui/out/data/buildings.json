@@ -273,17 +273,6 @@
     "required_construction": 200
   },
   {
-    "name": "building_vineyard_plantation",
-    "required_construction": 200,
-    "unlocking_technologies": [
-      "enclosure"
-    ],
-    "production_method_groups": [
-      "pmg_base_building_vineyard_plantation",
-      "pmg_train_automation_building_vineyard_plantation"
-    ]
-  },
-  {
     "name": "building_coal_mine",
     "required_construction": 400,
     "unlocking_technologies": [
@@ -454,6 +443,17 @@
     "production_method_groups": [
       "pmg_base_building_silk_plantation",
       "pmg_train_automation_building_silk_plantation"
+    ]
+  },
+  {
+    "name": "building_vineyard_plantation",
+    "required_construction": 200,
+    "unlocking_technologies": [
+      "enclosure"
+    ],
+    "production_method_groups": [
+      "pmg_base_building_vineyard_plantation",
+      "pmg_train_automation_building_vineyard_plantation"
     ]
   },
   {
@@ -642,6 +642,12 @@
     "name": "building_financial_district",
     "production_method_groups": [
       "pmg_ownership_building_financial_district"
+    ]
+  },
+  {
+    "name": "building_company_headquarter",
+    "production_method_groups": [
+      "pmg_ownership_building_company_headquarter"
     ]
   },
   {

@@ -65,7 +65,6 @@ const BuildingEfficiencyDisplay = ({ buildingSetting }: { buildingSetting: Build
       </div>
     );
   } else {
-    console.log(`${buildingSetting.displayName}`, currentBuildingEfficiency);
     return <></>;
   }
 };
