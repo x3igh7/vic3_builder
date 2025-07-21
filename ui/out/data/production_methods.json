@@ -625,7 +625,7 @@
   {
     "name": "pm_leaded_glass",
     "unlocking_technologies": [
-      "lathe "
+      "lathe"
     ],
     "inputs": [
       {
@@ -1371,35 +1371,6 @@
     ]
   },
   {
-    "name": "pm_automobiles_disabled"
-  },
-  {
-    "name": "pm_automobile_production",
-    "unlocking_technologies": [
-      "combustion_engine"
-    ],
-    "inputs": [
-      {
-        "good": "rubber",
-        "amount": 10.0
-      },
-      {
-        "good": "oil",
-        "amount": 10.0
-      }
-    ],
-    "outputs": [
-      {
-        "good": "engines",
-        "amount": -20.0
-      },
-      {
-        "good": "automobiles",
-        "amount": 30.0
-      }
-    ]
-  },
-  {
     "name": "pm_watertube_boiler_building_motor_industry",
     "unlocking_technologies": [
       "watertube_boiler"
@@ -1435,6 +1406,27 @@
   },
   {
     "name": "pm_assembly_lines_building_motor_industry",
+    "unlocking_technologies": [
+      "conveyors"
+    ],
+    "inputs": [
+      {
+        "good": "tools",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 5.0
+      },
+      {
+        "good": "electricity",
+        "amount": 5.0
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "name": "pm_assembly_lines_building_automotive_industry",
     "unlocking_technologies": [
       "conveyors"
     ],
@@ -1664,29 +1656,83 @@
     ]
   },
   {
-    "name": "pm_aeroplane_production",
+    "name": "pm_automobile_production",
+    "unlocking_technologies": [
+      "combustion_engine"
+    ],
     "inputs": [
       {
         "good": "engines",
         "amount": 10.0
       },
       {
-        "good": "hardwood",
-        "amount": 20.0
-      },
-      {
-        "good": "fabric",
-        "amount": 20.0
+        "good": "rubber",
+        "amount": 5.0
       },
       {
         "good": "oil",
-        "amount": 20.0
+        "amount": 5.0
       }
     ],
     "outputs": [
       {
+        "good": "automobiles",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
+    "name": "pm_mass_automobile_production",
+    "unlocking_technologies": [
+      "compression_ignition"
+    ],
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 10.0
+      },
+      {
+        "good": "rubber",
+        "amount": 10.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "automobiles",
+        "amount": 60.0
+      }
+    ]
+  },
+  {
+    "name": "pm_no_aeroplane_production"
+  },
+  {
+    "name": "pm_aeroplane_production",
+    "unlocking_technologies": [
+      "military_aviation"
+    ],
+    "inputs": [
+      {
+        "good": "hardwood",
+        "amount": 4.0
+      },
+      {
+        "good": "fabric",
+        "amount": 4.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "automobiles",
+        "amount": -10.0
+      },
+      {
         "good": "aeroplanes",
-        "amount": 50.0
+        "amount": 10.0
       }
     ]
   },
@@ -1700,26 +1746,18 @@
     ],
     "inputs": [
       {
-        "good": "engines",
-        "amount": 10.0
-      },
-      {
         "good": "steel",
-        "amount": 20.0
-      },
-      {
-        "good": "oil",
-        "amount": 10.0
+        "amount": 5.0
       }
     ],
     "outputs": [
       {
-        "good": "aeroplanes",
-        "amount": -10.0
+        "good": "automobiles",
+        "amount": -20.0
       },
       {
         "good": "tanks",
-        "amount": 40.0
+        "amount": 20.0
       }
     ]
   },
@@ -2136,7 +2174,7 @@
     "outputs": [
       {
         "good": "grain",
-        "amount": 70.0
+        "amount": 60.0
       }
     ]
   },
@@ -2263,7 +2301,7 @@
     "outputs": [
       {
         "good": "grain",
-        "amount": 40.0
+        "amount": 35.0
       }
     ]
   },
@@ -2281,7 +2319,7 @@
     "outputs": [
       {
         "good": "grain",
-        "amount": 60.0
+        "amount": 50.0
       }
     ]
   },
@@ -2299,7 +2337,7 @@
     "outputs": [
       {
         "good": "grain",
-        "amount": 90.0
+        "amount": 75.0
       }
     ]
   },
@@ -2317,7 +2355,7 @@
     "outputs": [
       {
         "good": "grain",
-        "amount": 140.0
+        "amount": 100.0
       }
     ]
   },
@@ -2424,7 +2462,7 @@
     "inputs": [
       {
         "good": "grain",
-        "amount": 20.0
+        "amount": 15.0
       }
     ],
     "outputs": [
@@ -2453,13 +2491,13 @@
     "inputs": [
       {
         "good": "tools",
-        "amount": 5.0
+        "amount": 2.0
       }
     ],
     "outputs": [
       {
         "good": "meat",
-        "amount": 20.0
+        "amount": 15.0
       }
     ]
   },
@@ -2471,13 +2509,13 @@
     "inputs": [
       {
         "good": "tools",
-        "amount": 10.0
+        "amount": 5.0
       }
     ],
     "outputs": [
       {
         "good": "meat",
-        "amount": 30.0
+        "amount": 25.0
       }
     ]
   },
@@ -2489,7 +2527,7 @@
     "inputs": [
       {
         "good": "tools",
-        "amount": 10.0
+        "amount": 5.0
       },
       {
         "good": "coal",
@@ -2499,7 +2537,7 @@
     "outputs": [
       {
         "good": "meat",
-        "amount": 45.0
+        "amount": 35.0
       }
     ]
   },
@@ -2514,7 +2552,7 @@
     "inputs": [
       {
         "good": "iron",
-        "amount": 2.0
+        "amount": 1.0
       }
     ],
     "outputs": []
@@ -2527,11 +2565,11 @@
     "inputs": [
       {
         "good": "iron",
-        "amount": 2.0
+        "amount": 1.0
       },
       {
         "good": "electricity",
-        "amount": 2.0
+        "amount": 1.0
       }
     ],
     "outputs": []
@@ -2547,7 +2585,7 @@
     "inputs": [
       {
         "good": "electricity",
-        "amount": 3.0
+        "amount": 1.0
       }
     ],
     "outputs": []
@@ -2560,11 +2598,11 @@
     "inputs": [
       {
         "good": "electricity",
-        "amount": 3.0
+        "amount": 1.0
       },
       {
         "good": "transportation",
-        "amount": 2.0
+        "amount": 1.0
       }
     ],
     "outputs": []
@@ -3771,7 +3809,7 @@
     "outputs": [
       {
         "good": "fine_art",
-        "amount": 4.0
+        "amount": 5.0
       }
     ]
   },
@@ -3789,7 +3827,7 @@
     "outputs": [
       {
         "good": "fine_art",
-        "amount": 5.0
+        "amount": 6.0
       }
     ]
   },
@@ -3811,7 +3849,7 @@
     "outputs": [
       {
         "good": "fine_art",
-        "amount": 7.0
+        "amount": 8.0
       }
     ]
   },
@@ -3831,13 +3869,13 @@
       },
       {
         "good": "electricity",
-        "amount": 2.0
+        "amount": 5.0
       }
     ],
     "outputs": [
       {
         "good": "fine_art",
-        "amount": 8.0
+        "amount": 10.0
       }
     ]
   },
@@ -3878,6 +3916,29 @@
     ]
   },
   {
+    "name": "pm_early_power_plant",
+    "inputs": [
+      {
+        "good": "engines",
+        "amount": 4.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      },
+      {
+        "good": "wood",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "electricity",
+        "amount": 25.0
+      }
+    ]
+  },
+  {
     "name": "pm_coalfired_plant",
     "unlocking_technologies": [
       "steam_turbine"
@@ -3885,17 +3946,17 @@
     "inputs": [
       {
         "good": "engines",
-        "amount": 15.0
+        "amount": 6.0
       },
       {
         "good": "coal",
-        "amount": 30.0
+        "amount": 20.0
       }
     ],
     "outputs": [
       {
         "good": "electricity",
-        "amount": 100.0
+        "amount": 50.0
       }
     ]
   },
@@ -3907,68 +3968,19 @@
     "inputs": [
       {
         "good": "engines",
-        "amount": 20.0
+        "amount": 10.0
       },
       {
         "good": "oil",
-        "amount": 40.0
+        "amount": 25.0
       }
     ],
     "outputs": [
       {
         "good": "electricity",
-        "amount": 150.0
+        "amount": 80.0
       }
     ]
-  },
-  {
-    "name": "pm_anchorage",
-    "inputs": [],
-    "outputs": []
-  },
-  {
-    "name": "pm_basic_port",
-    "inputs": [
-      {
-        "good": "clippers",
-        "amount": 5.0
-      }
-    ],
-    "outputs": []
-  },
-  {
-    "name": "pm_industrial_port",
-    "unlocking_technologies": [
-      "gantry_cranes"
-    ],
-    "inputs": [
-      {
-        "good": "steamers",
-        "amount": 5.0
-      },
-      {
-        "good": "coal",
-        "amount": 5.0
-      }
-    ],
-    "outputs": []
-  },
-  {
-    "name": "pm_modern_port",
-    "unlocking_technologies": [
-      "concrete_dockyards"
-    ],
-    "inputs": [
-      {
-        "good": "steamers",
-        "amount": 5.0
-      },
-      {
-        "good": "oil",
-        "amount": 5.0
-      }
-    ],
-    "outputs": []
   },
   {
     "name": "pm_simple_organization"
@@ -4535,6 +4547,68 @@
     "outputs": []
   },
   {
+    "name": "pm_anchorage"
+  },
+  {
+    "name": "pm_basic_port",
+    "inputs": [
+      {
+        "good": "clippers",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "merchant_marine",
+        "amount": 10.0
+      }
+    ]
+  },
+  {
+    "name": "pm_industrial_port",
+    "unlocking_technologies": [
+      "gantry_cranes"
+    ],
+    "inputs": [
+      {
+        "good": "steamers",
+        "amount": 5.0
+      },
+      {
+        "good": "coal",
+        "amount": 5.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "merchant_marine",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "pm_modern_port",
+    "unlocking_technologies": [
+      "concrete_dockyards"
+    ],
+    "inputs": [
+      {
+        "good": "steamers",
+        "amount": 5.0
+      },
+      {
+        "good": "oil",
+        "amount": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "good": "merchant_marine",
+        "amount": 30.0
+      }
+    ]
+  },
+  {
     "name": "pm_early_trains",
     "inputs": [
       {
@@ -4609,7 +4683,7 @@
       },
       {
         "good": "electricity",
-        "amount": 10.0
+        "amount": 8.0
       }
     ],
     "outputs": [
@@ -4631,7 +4705,7 @@
       },
       {
         "good": "electricity",
-        "amount": 12.0
+        "amount": 10.0
       }
     ],
     "outputs": [
@@ -4653,7 +4727,7 @@
       },
       {
         "good": "oil",
-        "amount": 8.0
+        "amount": 6.0
       }
     ],
     "outputs": [
@@ -4675,13 +4749,13 @@
       },
       {
         "good": "oil",
-        "amount": 10.0
+        "amount": 8.0
       }
     ],
     "outputs": [
       {
         "good": "transportation",
-        "amount": 55.0
+        "amount": 50.0
       }
     ]
   },
@@ -4728,13 +4802,42 @@
     "name": "pm_trade_center_principle_external_trade_2"
   },
   {
-    "name": "pm_trade_center_merchant_guilds"
+    "name": "pm_trade_center_trade_quantity_limited",
+    "inputs": [
+      {
+        "good": "merchant_marine",
+        "amount": 3.0
+      }
+    ],
+    "outputs": []
   },
   {
-    "name": "pm_trade_center_privately_owned"
+    "name": "pm_trade_center_trade_quantity_normal",
+    "inputs": [
+      {
+        "good": "merchant_marine",
+        "amount": 4.0
+      }
+    ],
+    "outputs": []
   },
   {
-    "name": "pm_trade_center_bureaucrat_ownership"
+    "name": "pm_trade_center_trade_quantity_high",
+    "unlocking_technologies": [
+      "",
+      "building_modifiers = {",
+      "workforce_scaled = {",
+      "goods_input_merchant_marine_add = 5"
+    ]
+  },
+  {
+    "name": "pm_trade_center_trade_quantity_very_high",
+    "unlocking_technologies": [
+      "",
+      "building_modifiers = {",
+      "workforce_scaled = {",
+      "goods_input_merchant_marine_add = 6"
+    ]
   },
   {
     "name": "pm_financial_district_privately_owned"
@@ -4743,11 +4846,11 @@
     "name": "pm_financial_district_publicly_traded",
     "unlocking_technologies": [
       "",
-      "building_modifiers = { ",
+      "building_modifiers = {",
       "level_scaled = {",
       "building_employment_capitalists_add = 50",
-      "building_employment_bureaucrats_add = 50",
-      "building_employment_clerks_add = 150"
+      "building_employment_bureaucrats_add = 25",
+      "building_employment_clerks_add = 25"
     ]
   },
   {
@@ -4767,6 +4870,15 @@
   },
   {
     "name": "pm_company_headquarter_privately_owned"
+  },
+  {
+    "name": "pm_company_headquarter_principle_divine_economics_2"
+  },
+  {
+    "name": "pm_company_headquarter_government_run"
+  },
+  {
+    "name": "pm_company_headquarter_worker_cooperative"
   },
   {
     "name": "pm_wooden_buildings",
