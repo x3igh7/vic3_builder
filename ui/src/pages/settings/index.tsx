@@ -12,11 +12,12 @@ import { Button } from 'primereact/button';
 import ProductionMethod from '@/interfaces/production-method';
 import useDebounce from '@/hooks/use-debounce';
 import { useTranslation } from 'react-i18next';
+import { SettingsKeyConstant } from '@/settings-key-constant';
 
 const SettingsPage = (): ReactElement => {
   const { t } = useTranslation();
   const { buildings, productionMethods, productionMethodGroups } = useDataHook();
-  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], 'settings_v4');
+  const [settings, setSettings] = useLocalStorage<BuildingSetting[]>([], SettingsKeyConstant.VALUE);
   const [filterQuery, setFilterQuery] = useState<string>('');
   const [filteredSettings, setFilteredSettings] = useState<BuildingSetting[]>([]);
 

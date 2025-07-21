@@ -11,6 +11,7 @@ import { css } from '@emotion/react';
 import { useLocalStorage } from 'primereact/hooks';
 import BuildingSetting from '@/interfaces/building-setting';
 import { useTranslation } from 'react-i18next';
+import { SettingsKeyConstant } from '@/settings-key-constant';
 
 const BuildingChainResults = ({
   selectedBuilding,
@@ -20,7 +21,7 @@ const BuildingChainResults = ({
   quantity: number | null;
 }): ReactElement => {
   const { t } = useTranslation();
-  const [settings] = useLocalStorage<BuildingSetting[]>([], 'settings_v4');
+  const [settings] = useLocalStorage<BuildingSetting[]>([], SettingsKeyConstant.VALUE);
   const [currentBuildingChains, setCurrentBuildingChains] = useState<BuildingChain[][]>([]);
 
   useEffect(() => {

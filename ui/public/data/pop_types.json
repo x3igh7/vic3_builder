@@ -1,1 +1,47 @@
-[{"name": "academics"}, {"name": "aristocrats"}, {"name": "bureaucrats"}, {"name": "capitalists"}, {"name": "clergymen"}, {"name": "clerks"}, {"name": "engineers"}, {"name": "farmers"}, {"name": "laborers"}, {"name": "machinists"}, {"name": "officers"}, {"name": "peasants"}, {"name": "shopkeepers"}, {"name": "slaves"}, {"name": "soldiers"}]
+[
+  {
+    "name": "academics"
+  },
+  {
+    "name": "aristocrats"
+  },
+  {
+    "name": "bureaucrats"
+  },
+  {
+    "name": "capitalists"
+  },
+  {
+    "name": "clergymen"
+  },
+  {
+    "name": "clerks"
+  },
+  {
+    "name": "engineers"
+  },
+  {
+    "name": "farmers"
+  },
+  {
+    "name": "laborers"
+  },
+  {
+    "name": "machinists"
+  },
+  {
+    "name": "officers"
+  },
+  {
+    "name": "peasants"
+  },
+  {
+    "name": "shopkeepers"
+  },
+  {
+    "name": "slaves"
+  },
+  {
+    "name": "soldiers"
+  }
+]

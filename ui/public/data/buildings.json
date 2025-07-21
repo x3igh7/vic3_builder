@@ -119,7 +119,6 @@
     ],
     "production_method_groups": [
       "pmg_base_building_motor_industry",
-      "pmg_automobile_production",
       "pmg_automation_building_motor_industry"
     ],
     "required_construction": 800
@@ -145,13 +144,15 @@
     "required_construction": 800
   },
   {
-    "name": "building_war_machine_industry",
+    "name": "building_automotive_industry",
     "unlocking_technologies": [
-      "military_aviation"
+      "combustion_engine"
     ],
     "production_method_groups": [
+      "pmg_automobile_production",
       "pmg_aeroplanes",
-      "pmg_tanks"
+      "pmg_tanks",
+      "pmg_automation_building_automotive_industry"
     ],
     "required_construction": 800
   },
@@ -511,22 +512,10 @@
   {
     "name": "building_power_plant",
     "unlocking_technologies": [
-      "electrical_generation "
+      "electrical_generation"
     ],
     "production_method_groups": [
       "pmg_base_building_power_plant"
-    ],
-    "required_construction": 800
-  },
-  {
-    "name": "building_port",
-    "unlocking_technologies": [
-      "",
-      "production_method_groups = {",
-      "pmg_base_building_port"
-    ],
-    "production_method_groups": [
-      "pmg_base_building_port"
     ],
     "required_construction": 400
   },
@@ -540,7 +529,7 @@
       "pmg_government_administration_bureaucrat_professionalism",
       "pmg_government_administration_religious_administration"
     ],
-    "required_construction": 400
+    "required_construction": 100
   },
   {
     "name": "building_university",
@@ -614,6 +603,18 @@
     ]
   },
   {
+    "name": "building_port",
+    "unlocking_technologies": [
+      "",
+      "production_method_groups = {",
+      "pmg_base_building_port"
+    ],
+    "production_method_groups": [
+      "pmg_base_building_port"
+    ],
+    "required_construction": 400
+  },
+  {
     "name": "building_railway",
     "unlocking_technologies": [
       "railways"
@@ -626,9 +627,10 @@
   },
   {
     "name": "building_trade_center",
+    "required_construction": 100,
     "production_method_groups": [
       "pmg_base_building_trade_center",
-      "pmg_ownership_building_trade_center"
+      "pmg_trade_quantity_trade_center"
     ]
   },
   {
@@ -646,6 +648,12 @@
   },
   {
     "name": "building_company_headquarter",
+    "production_method_groups": [
+      "pmg_ownership_building_company_headquarter"
+    ]
+  },
+  {
+    "name": "building_company_regional_headquarter",
     "production_method_groups": [
       "pmg_ownership_building_company_headquarter"
     ]

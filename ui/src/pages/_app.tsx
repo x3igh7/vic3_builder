@@ -8,13 +8,14 @@ import Link from 'next/link';
 import { Suspense, useEffect } from 'react';
 import Loading from '@/components/loading';
 import { Button } from 'primereact/button';
+import { SettingsKeyConstant } from '@/settings-key-constant';
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // remove any old settings from local storage
     Object.keys(localStorage).forEach(function (key) {
       // if not the current settings version, remove it
-      if (key !== 'settings_v4') {
+      if (key !== SettingsKeyConstant.VALUE) {
         localStorage.removeItem(key);
       }
     });

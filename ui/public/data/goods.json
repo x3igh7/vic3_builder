@@ -1,1 +1,214 @@
-[{"name": "ammunition", "cost": 50}, {"name": "small_arms", "cost": 60}, {"name": "artillery", "cost": 70}, {"name": "tanks", "cost": 80}, {"name": "aeroplanes", "cost": 80}, {"name": "manowars", "cost": 70}, {"name": "ironclads", "cost": 80}, {"name": "grain", "cost": 20}, {"name": "fish", "cost": 20}, {"name": "fabric", "cost": 20}, {"name": "wood", "cost": 20}, {"name": "groceries", "cost": 30}, {"name": "clothes", "cost": 30}, {"name": "furniture", "cost": 30}, {"name": "paper", "cost": 30}, {"name": "services", "cost": 30}, {"name": "transportation", "cost": 30}, {"name": "electricity", "cost": 30}, {"name": "clippers", "cost": 60}, {"name": "steamers", "cost": 70}, {"name": "silk", "cost": 40}, {"name": "dye", "cost": 40}, {"name": "sulfur", "cost": 50}, {"name": "coal", "cost": 30}, {"name": "iron", "cost": 40}, {"name": "lead", "cost": 40}, {"name": "hardwood", "cost": 40}, {"name": "rubber", "cost": 40}, {"name": "oil", "cost": 40}, {"name": "engines", "cost": 60}, {"name": "steel", "cost": 50}, {"name": "glass", "cost": 40}, {"name": "fertilizer", "cost": 30}, {"name": "tools", "cost": 40}, {"name": "explosives", "cost": 50}, {"name": "porcelain", "cost": 70}, {"name": "meat", "cost": 30}, {"name": "fruit", "cost": 30}, {"name": "liquor", "cost": 30}, {"name": "wine", "cost": 50}, {"name": "tea", "cost": 50}, {"name": "coffee", "cost": 50}, {"name": "sugar", "cost": 30}, {"name": "tobacco", "cost": 40}, {"name": "opium", "cost": 50}, {"name": "automobiles", "cost": 100}, {"name": "telephones", "cost": 70}, {"name": "radios", "cost": 80}, {"name": "luxury_clothes", "cost": 60}, {"name": "luxury_furniture", "cost": 60}, {"name": "gold", "cost": 100}, {"name": "fine_art", "cost": 200}]
+[
+  {
+    "name": "ammunition",
+    "cost": 50
+  },
+  {
+    "name": "small_arms",
+    "cost": 60
+  },
+  {
+    "name": "artillery",
+    "cost": 70
+  },
+  {
+    "name": "tanks",
+    "cost": 80
+  },
+  {
+    "name": "aeroplanes",
+    "cost": 80
+  },
+  {
+    "name": "manowars",
+    "cost": 70
+  },
+  {
+    "name": "ironclads",
+    "cost": 80
+  },
+  {
+    "name": "grain",
+    "cost": 20
+  },
+  {
+    "name": "fish",
+    "cost": 20
+  },
+  {
+    "name": "fabric",
+    "cost": 20
+  },
+  {
+    "name": "wood",
+    "cost": 20
+  },
+  {
+    "name": "groceries",
+    "cost": 30
+  },
+  {
+    "name": "clothes",
+    "cost": 30
+  },
+  {
+    "name": "furniture",
+    "cost": 30
+  },
+  {
+    "name": "paper",
+    "cost": 30
+  },
+  {
+    "name": "services",
+    "cost": 30
+  },
+  {
+    "name": "transportation",
+    "cost": 30
+  },
+  {
+    "name": "electricity",
+    "cost": 30
+  },
+  {
+    "name": "merchant_marine",
+    "cost": 50
+  },
+  {
+    "name": "clippers",
+    "cost": 60
+  },
+  {
+    "name": "steamers",
+    "cost": 70
+  },
+  {
+    "name": "silk",
+    "cost": 40
+  },
+  {
+    "name": "dye",
+    "cost": 40
+  },
+  {
+    "name": "sulfur",
+    "cost": 50
+  },
+  {
+    "name": "coal",
+    "cost": 30
+  },
+  {
+    "name": "iron",
+    "cost": 40
+  },
+  {
+    "name": "lead",
+    "cost": 40
+  },
+  {
+    "name": "hardwood",
+    "cost": 40
+  },
+  {
+    "name": "rubber",
+    "cost": 40
+  },
+  {
+    "name": "oil",
+    "cost": 40
+  },
+  {
+    "name": "engines",
+    "cost": 60
+  },
+  {
+    "name": "steel",
+    "cost": 50
+  },
+  {
+    "name": "glass",
+    "cost": 40
+  },
+  {
+    "name": "fertilizer",
+    "cost": 30
+  },
+  {
+    "name": "tools",
+    "cost": 40
+  },
+  {
+    "name": "explosives",
+    "cost": 50
+  },
+  {
+    "name": "porcelain",
+    "cost": 70
+  },
+  {
+    "name": "meat",
+    "cost": 30
+  },
+  {
+    "name": "fruit",
+    "cost": 30
+  },
+  {
+    "name": "liquor",
+    "cost": 30
+  },
+  {
+    "name": "wine",
+    "cost": 50
+  },
+  {
+    "name": "tea",
+    "cost": 50
+  },
+  {
+    "name": "coffee",
+    "cost": 50
+  },
+  {
+    "name": "sugar",
+    "cost": 30
+  },
+  {
+    "name": "tobacco",
+    "cost": 40
+  },
+  {
+    "name": "opium",
+    "cost": 50
+  },
+  {
+    "name": "automobiles",
+    "cost": 100
+  },
+  {
+    "name": "telephones",
+    "cost": 70
+  },
+  {
+    "name": "radios",
+    "cost": 80
+  },
+  {
+    "name": "luxury_clothes",
+    "cost": 60
+  },
+  {
+    "name": "luxury_furniture",
+    "cost": 60
+  },
+  {
+    "name": "gold",
+    "cost": 100
+  },
+  {
+    "name": "fine_art",
+    "cost": 200
+  }
+]

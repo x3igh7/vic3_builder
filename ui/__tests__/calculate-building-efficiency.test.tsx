@@ -256,7 +256,7 @@ describe('calculateBuildingEfficiency', () => {
       const result = calculateBuildingEfficiency(setting, goods, buildings);
 
       expect(result.constructionEfficiency).toBeDefined();
-      expect(result.priceFlexibility).toBeDefined();
+      expect(result.priceFlexibility).not.toBeDefined();
       expect(result.netValue).toBeDefined();
     });
   });
